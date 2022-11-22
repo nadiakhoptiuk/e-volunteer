@@ -1,0 +1,7 @@
+.wrapper {
+  @apply flex min-h-screen flex-col;
+}
+
+.main {
+  @apply flex-grow;
+}
