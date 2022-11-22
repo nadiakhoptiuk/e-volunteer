@@ -44,9 +44,7 @@ const query = gql`
 `;
 
 export const getStaticProps = async () => {
-  const url = 'https://graphql.datocms.com/';
-
-  const graphQLClient = new GraphQLClient(url, {
+  const graphQLClient = new GraphQLClient(process.env.DATOCMS_API_URL, {
     headers: {
       'content-type': 'application/json',
       authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
