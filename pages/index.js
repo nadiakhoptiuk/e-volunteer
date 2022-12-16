@@ -1,13 +1,13 @@
-import { gql, GraphQLClient } from 'graphql-request';
-import { useRouter } from 'next/router';
+// import { gql, GraphQLClient } from 'graphql-request';
+// import { useRouter } from 'next/router';
 
-const Home = ({ allBannerHeaders }) => {
-  const { locale } = useRouter();
+const Home = () => {
+  // const { locale } = useRouter();
 
-  const bannerData = allBannerHeaders
-    .flatMap(el => el._allBannerDescriptionLocales)
-    .filter(el => el.locale === locale)
-    .flatMap(el => el.value);
+  // const bannerData = allBannerHeaders
+  //   .flatMap(el => el._allBannerDescriptionLocales)
+  //   .filter(el => el.locale === locale)
+  //   .flatMap(el => el.value);
 
   return (
     <section className="py-20">
@@ -17,9 +17,11 @@ const Home = ({ allBannerHeaders }) => {
         </h1>
 
         <div>
-          {bannerData.map(el => {
+          {/* {bannerData.map(el => {
             return el.displayBanner && <h2 key={el.id}>{el.description}</h2>;
-          })}
+          })} */}
+
+          <h2>description</h2>
         </div>
       </div>
     </section>
@@ -28,32 +30,32 @@ const Home = ({ allBannerHeaders }) => {
 
 export default Home;
 
-const query = gql`
-  query {
-    allBannerHeaders {
-      _allBannerDescriptionLocales {
-        locale
-        value {
-          id
-          displayBanner
-          description
-        }
-      }
-    }
-  }
-`;
+// const query = gql`
+//   query {
+//     allBannerHeaders {
+//       _allBannerDescriptionLocales {
+//         locale
+//         value {
+//           id
+//           displayBanner
+//           description
+//         }
+//       }
+//     }
+//   }
+// `;
 
-export const getStaticProps = async () => {
-  const graphQLClient = new GraphQLClient(process.env.DATOCMS_API_URL, {
-    headers: {
-      'content-type': 'application/json',
-      authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
-    },
-  });
+// export const getStaticProps = async () => {
+//   const graphQLClient = new GraphQLClient(process.env.DATOCMS_API_URL, {
+//     headers: {
+//       'content-type': 'application/json',
+//       authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
+//     },
+//   });
 
-  const data = await graphQLClient.request(query);
+//   const data = await graphQLClient.request(query);
 
-  return {
-    props: data,
-  };
-};
+//   return {
+//     props: data,
+//   };
+// };
