@@ -1,7 +1,13 @@
+import Banner from 'components/Banner/Banner';
+import Categories from 'components/Categories/Categories';
+import Centers from 'components/Centers/Centers';
 import { gql, GraphQLClient } from 'graphql-request';
 
 const query = gql`
   query ($locale: SiteLocale) {
+    banner {
+      content
+    }
     allArticles(locale: $locale) {
       cardInfo {
         slugRoute
@@ -10,14 +16,24 @@ const query = gql`
         description
         image {
           alt
+          url
         }
       }
+    }
+    center(locale: $locale) {
+      receptionCenter {
+        phoneNumber
+        id
+        city
+        centerTitle
+        address
+      }
+      titleAtPage
     }
   }
 `;
 
 export const getStaticProps = async ({ locale }) => {
-  // console.log(locale);
   const variables = { locale: locale };
 
   const endpoint = 'https://graphql.datocms.com/';
@@ -30,38 +46,25 @@ export const getStaticProps = async ({ locale }) => {
   };
 
   const data = await client.request(query, variables, requestHeaders);
-  // console.log(data);
 
   return {
-    props: { articles: data.allArticles },
+    props: {
+      articles: data.allArticles,
+      centers: data.center,
+      banner: data.banner.content,
+    },
   };
 };
 
-const Home = ({ articles }) => {
-  // console.log(articles);
-
+const Home = ({ articles, centers, banner }) => {
   return (
     <section className="py-20">
       <div className="container">
-        <h1 className="mb-10 text-center text-3xl font-bold underline">
-          Banner text
-        </h1>
+        <Banner banner={banner} />
 
-        <div>
-          {articles?.map(({ cardInfo }) => {
-            // console.log(cardInfo[0]);
+        <Categories articles={articles} />
 
-            const { id, description, slugRoute, title } = cardInfo[0];
-            return (
-              <div key={id} className="border-red mb-4 border-2">
-                {/* <Image src={image} alt={image.alt} /> */}
-                <h2>{title}</h2>
-                <p>{description}</p>
-                <span>route: {slugRoute}</span>
-              </div>
-            );
-          })}
-        </div>
+        <Centers centers={centers} />
       </div>
     </section>
   );
