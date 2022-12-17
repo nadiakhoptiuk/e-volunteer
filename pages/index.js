@@ -1,22 +1,4 @@
 import { gql, GraphQLClient } from 'graphql-request';
-import { useRouter } from 'next/router';
-// import { useQuerySubscription } from 'react-datocms';
-
-// const query = gql`
-//   query {
-//     allArticles {
-//       id
-//       cardInfo {
-//         image {
-//           alt
-//         }
-//         slugRoute
-//         title
-//         description
-//       }
-//     }
-//   }
-// `;
 
 const query = gql`
   query ($locale: SiteLocale) {
@@ -34,18 +16,21 @@ const query = gql`
   }
 `;
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }) => {
+  // console.log(locale);
+  const variables = { locale: locale };
+
   const endpoint = 'https://graphql.datocms.com/';
 
-  const graphQLClient = new GraphQLClient(endpoint, {
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-    },
-  });
+  const client = new GraphQLClient(endpoint);
 
-  const data = await graphQLClient.request(query);
-  console.log(data);
+  const requestHeaders = {
+    'Content-Type': 'application/json',
+    authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+  };
+
+  const data = await client.request(query, variables, requestHeaders);
+  // console.log(data);
 
   return {
     props: { articles: data.allArticles },
@@ -53,16 +38,7 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ articles }) => {
-  const { locale } = useRouter();
-
-  console.log(locale);
-
-  console.log(articles);
-
-  // const bannerData = allBannerHeaders
-  //   .flatMap(el => el._allBannerDescriptionLocales)
-  //   .filter(el => el.locale === locale)
-  //   .flatMap(el => el.value);
+  // console.log(articles);
 
   return (
     <section className="py-20">
@@ -72,11 +48,19 @@ const Home = ({ articles }) => {
         </h1>
 
         <div>
-          {/* {bannerData.map(el => {
-            return el.displayBanner && <h2 key={el.id}>{el.description}</h2>;
-          })} */}
+          {articles?.map(({ cardInfo }) => {
+            // console.log(cardInfo[0]);
 
-          <h2>description</h2>
+            const { id, description, slugRoute, title } = cardInfo[0];
+            return (
+              <div key={id} className="border-red mb-4 border-2">
+                {/* <Image src={image} alt={image.alt} /> */}
+                <h2>{title}</h2>
+                <p>{description}</p>
+                <span>route: {slugRoute}</span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
