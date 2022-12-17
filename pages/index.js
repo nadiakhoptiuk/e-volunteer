@@ -1,5 +1,6 @@
-// import { gql, GraphQLClient } from 'graphql-request';
-// import { useRouter } from 'next/router';
+import { gql, GraphQLClient } from 'graphql-request';
+import { useRouter } from 'next/router';
+// import { useQuerySubscription } from 'react-datocms';
 
 // const query = gql`
 //   query {
@@ -17,28 +18,46 @@
 //   }
 // `;
 
-// export const getStaticProps = async () => {
-//   const client = new GraphQLClient('https://qraphql.datocms.com/', {
-//     headers: {
-//       'content-type': 'application/json',
-//       authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-//     },
-//   });
+const query = gql`
+  query ($locale: SiteLocale) {
+    allArticles(locale: $locale) {
+      cardInfo {
+        slugRoute
+        title
+        id
+        description
+        image {
+          alt
+        }
+      }
+    }
+  }
+`;
 
-//   const data = await client.request(query);
-//   console.log(data);
+export const getStaticProps = async () => {
+  const endpoint = 'https://graphql.datocms.com/';
 
-//   return {
-//     props: { articles: data },
-//   };
-// };
+  const graphQLClient = new GraphQLClient(endpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
+    },
+  });
 
-const Home = () => {
-  // const { locale } = useRouter();
+  const data = await graphQLClient.request(query);
+  console.log(data);
 
-  // console.log(locale);
+  return {
+    props: { articles: data.allArticles },
+  };
+};
 
-  // console.log(articles);
+const Home = ({ articles }) => {
+  const { locale } = useRouter();
+
+  console.log(locale);
+
+  console.log(articles);
 
   // const bannerData = allBannerHeaders
   //   .flatMap(el => el._allBannerDescriptionLocales)
