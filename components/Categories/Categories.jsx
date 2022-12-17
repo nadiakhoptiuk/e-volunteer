@@ -1,8 +1,6 @@
 import Image from 'next/image';
 
 const Categories = ({ articles }) => {
-  console.log(articles);
-
   return (
     <section className="py-20">
       <div className="container">

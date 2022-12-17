@@ -58,15 +58,13 @@ export const getStaticProps = async ({ locale }) => {
 
 const Home = ({ articles, centers, banner }) => {
   return (
-    <section className="py-20">
-      <div className="container">
-        <Banner banner={banner} />
+    <>
+      <Banner banner={banner} />
 
-        <Categories articles={articles} />
+      <Categories articles={articles} />
 
-        <Centers centers={centers} />
-      </div>
-    </section>
+      <Centers centers={centers} />
+    </>
   );
 };
 
