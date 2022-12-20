@@ -1,6 +1,7 @@
 import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
+import Hero from 'views/Hero/Hero';
 import { gql, GraphQLClient } from 'graphql-request';
 
 const query = gql`
@@ -60,6 +61,8 @@ const Home = ({ articles, centers, banner }) => {
   return (
     <>
       <Banner banner={banner} />
+
+      <Hero />
 
       <Categories articles={articles} />
 
