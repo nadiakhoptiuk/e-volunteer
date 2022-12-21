@@ -9,10 +9,11 @@ const query = gql`
     banner {
       content
     }
-    allArticles(locale: $locale) {
+    allCategories(locale: $locale) {
+      title
+      route
+      range
       cardInfo {
-        slugRoute
-        title
         id
         description
         image {
@@ -22,14 +23,31 @@ const query = gql`
       }
     }
     center(locale: $locale) {
+      titleAtPage
       receptionCenter {
-        phoneNumber
-        id
         city
+        phoneNumber
         centerTitle
         address
+        id
       }
-      titleAtPage
+    }
+    footer(locale: $locale) {
+      connectText
+      additionalInfo {
+        value
+        links
+        blocks
+      }
+    }
+    help(locale: $locale) {
+      route
+      buttonText
+      content {
+        links
+        blocks
+        value
+      }
     }
   }
 `;
@@ -50,9 +68,11 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      articles: data.allArticles,
+      articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
+      help: data.help,
+      footer: data.footer,
     },
   };
 };
