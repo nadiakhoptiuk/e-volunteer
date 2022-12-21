@@ -1,0 +1,82 @@
+.wrapper {
+  @apply w-full md:w-[335px] xl:w-[505px];
+}
+.title {
+  @apply mb-2 mt-9 text-xl font-bold md:mt-0 xl:mb-[14px] xl:text-2xl;
+}
+.subTitle {
+  @apply mb-9 md:mb-[38px];
+}
+.wrapperInputs {
+  @apply mb-[62px] grid grid-cols-1 gap-y-[54px] md:mb-[58px] xl:mb-[67px];
+}
+.inputWrapper {
+  @apply relative w-full;
+}
+.input {
+  @apply !w-full !rounded !border-2 border-[#60A5FA] !bg-transparent p-[14px] text-[#4571B1];
+}
+.inputRed {
+  @apply !w-full !rounded !border-2 !border-red-400 !bg-transparent p-[14px] text-[#4571B1];
+}
+.phoneInput {
+  @apply !h-[52px] !w-full !rounded !border-2 !border-[#60A5FA] !bg-transparent !pl-[102px] !text-sm text-[#4571B1];
+}
+.phoneInputRed {
+  @apply !h-[52px] !w-full !rounded !border-2 !border-red-400 !bg-transparent !pl-[102px] !text-sm text-[#4571B1];
+}
+.textarea {
+  @apply h-[112px] w-full resize-none rounded border-2 border-[#60A5FA] bg-transparent  p-[14px] text-[#4571B1] xl:h-[150px];
+}
+.textareaRed {
+  @apply h-[112px] w-full resize-none rounded border-2 border-red-400 bg-transparent  p-[14px] text-[#4571B1] xl:h-[150px];
+}
+.input::placeholder,
+.phoneInput::placeholder,
+.textarea::placeholder,
+.inputRed::placeholder,
+.phoneInputRed::placeholder,
+.textareaRed::placeholder {
+  @apply !text-[#93989E];
+}
+.input:not(:placeholder-shown),
+.phoneInput:not(:placeholder-shown),
+.textarea:not(:placeholder-shown) {
+  @apply !border-[#4571B1];
+}
+.input:focus,
+.phoneInput:focus,
+.inputRed:focus,
+.phoneInputRed:focus,
+.textarea:focus,
+.textareaRed:focus {
+  @apply !border-[#FFD500] text-[#FFD500] outline-0;
+}
+.errorMsg {
+  @apply absolute w-full text-[12px] font-medium text-red-400;
+}
+.errorMsgTextarea {
+  @apply absolute w-full text-[12px] font-medium text-red-400;
+}
+.button {
+  @apply block h-[52px] min-w-[153px] rounded border border-[#60A5FA] !bg-[#60A5FA] !text-white transition-all;
+}
+.button:hover,
+.button:focus {
+  @apply !bg-[#5483C9] !text-white outline-none;
+}
+.button:active {
+  @apply border-[#FFD500] !bg-[#FFD500] !text-slate-600;
+}
+.dropdownBtn,
+.dropdownBtn:hover,
+.dropdownBtn:focus,
+.dropdownBtn .selected-flag,
+.dropdownBtn .selected-flag:hover,
+.dropdownBtn .selected-flag:focus,
+.dropdownBtn .selected-flag:active {
+  @apply !border-hidden !bg-transparent !pl-4;
+}
+.dropdown {
+  @apply left-1 !w-[calc(100vw-63px)] !rounded !bg-white !pr-[18px] !text-sm !text-[#5483C9] !outline !outline-white sm:!w-[434px] md:!w-[329px] xl:!w-[499px];
+}
