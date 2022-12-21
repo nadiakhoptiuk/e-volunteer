@@ -2,8 +2,10 @@ import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
+import Form from 'components/Form/Form';
 import { gql } from 'graphql-request';
 import { datoCmsRequest } from '@/lib/datocms';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const query = gql`
   query ($locale: SiteLocale) {
@@ -66,6 +68,7 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common'])),
       articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
@@ -81,6 +84,8 @@ const Home = ({ articles, centers, banner }) => {
       <Banner banner={banner} />
 
       <Hero />
+
+      <Form />
 
       <Categories articles={articles} />
 

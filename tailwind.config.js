@@ -7,7 +7,7 @@ module.exports = {
     './pages/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './views/**/*.{js,ts,jsx,tsx}',
-    './layout/*.{js,ts,jsx,tsx}',
+    './layout/**/*.{js,ts,jsx,tsx}',
   ],
 
   theme: {
@@ -17,6 +17,16 @@ module.exports = {
         padding: {
           DEFAULT: '1rem',
         },
+      },
+
+      colors: {
+        blueDark: '#5483C9',
+        blueLight: '#BFDBFE',
+        blue2: '#73A9FF',
+        button: '#60A5FA',
+        hero: '#4571B1',
+        textForm: '#475569',
+        textFormState: '#9498AB',
       },
 
       fontFamily: {
@@ -32,9 +42,5 @@ module.exports = {
     },
   },
 
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-animate'),
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
 };
