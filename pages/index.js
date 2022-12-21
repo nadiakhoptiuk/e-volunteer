@@ -2,7 +2,8 @@ import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
-import { gql, GraphQLClient } from 'graphql-request';
+import { gql } from 'graphql-request';
+import { datoCmsRequest } from '@/lib/datocms';
 
 const query = gql`
   query ($locale: SiteLocale) {
@@ -55,16 +56,13 @@ const query = gql`
 export const getStaticProps = async ({ locale }) => {
   const variables = { locale: locale };
 
-  const endpoint = 'https://graphql.datocms.com/';
+  const data = await datoCmsRequest({ query, variables });
 
-  const client = new GraphQLClient(endpoint);
-
-  const requestHeaders = {
-    'Content-Type': 'application/json',
-    authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-  };
-
-  const data = await client.request(query, variables, requestHeaders);
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
