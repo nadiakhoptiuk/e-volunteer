@@ -15,6 +15,7 @@ import * as s from './Form.module.css';
 
 const Form = () => {
   const schema = Schema();
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
   // const { t } = useTranslation();
   // const { success } = t('formValidation', {
