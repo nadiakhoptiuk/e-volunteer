@@ -2,17 +2,20 @@ import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
-import { gql, GraphQLClient } from 'graphql-request';
+import { gql } from 'graphql-request';
+import { datoCmsRequest } from '@/lib/datocms';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const query = gql`
   query ($locale: SiteLocale) {
     banner {
       content
     }
-    allArticles(locale: $locale) {
+    allCategories(locale: $locale) {
+      title
+      route
+      range
       cardInfo {
-        slugRoute
-        title
         id
         description
         image {
@@ -22,14 +25,31 @@ const query = gql`
       }
     }
     center(locale: $locale) {
+      titleAtPage
       receptionCenter {
-        phoneNumber
-        id
         city
+        phoneNumber
         centerTitle
         address
+        id
       }
-      titleAtPage
+    }
+    footer(locale: $locale) {
+      connectText
+      additionalInfo {
+        value
+        links
+        blocks
+      }
+    }
+    help(locale: $locale) {
+      route
+      buttonText
+      content {
+        links
+        blocks
+        value
+      }
     }
   }
 `;
@@ -37,22 +57,22 @@ const query = gql`
 export const getStaticProps = async ({ locale }) => {
   const variables = { locale: locale };
 
-  const endpoint = 'https://graphql.datocms.com/';
+  const data = await datoCmsRequest({ query, variables });
 
-  const client = new GraphQLClient(endpoint);
-
-  const requestHeaders = {
-    'Content-Type': 'application/json',
-    authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-  };
-
-  const data = await client.request(query, variables, requestHeaders);
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
-      articles: data.allArticles,
+      ...(await serverSideTranslations(locale, ['common'])),
+      articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
+      help: data.help,
+      footer: data.footer,
     },
   };
 };
