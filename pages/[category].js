@@ -1,4 +1,4 @@
-// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { categoryRequest, routeRequest } from '@/lib/datoCmsRequests';
 
 const CategoryPage = ({ category }) => {
@@ -48,7 +48,7 @@ export async function getStaticProps({ locale, params }) {
 
   return {
     props: {
-      // ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common'])),
       category: data.allCategories.find(el => el.route === category),
       banner: data.banner.content,
       help: data.help,

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
@@ -10,11 +10,11 @@ const locales = [
 
 export const LanguageToggle = ({ handleLocaleChange, value }) => {
   const { locale } = useRouter();
-  const [selected] = useState(value ?? locale);
+  const selected = value ?? locale;
 
   return (
     <Listbox value={selected} onChange={handleLocaleChange}>
-      <div className="relative h-[32px] w-[88px]">
+      <div className="relative">
         <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-slate-50 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-300 sm:text-sm">
           <span className="block truncate font-normal uppercase">
             {selected === 'uk' ? 'ua' : selected}

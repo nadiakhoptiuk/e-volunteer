@@ -1,11 +1,10 @@
-import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
 import Form from 'components/Form/Form';
 // import { gql } from 'graphql-request';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
-// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getStaticProps = async ({ locale }) => {
   const variables = { locale: locale };
@@ -22,7 +21,7 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      // ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common'])),
       articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
@@ -32,11 +31,9 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers, banner }) => {
+const Home = ({ articles, centers }) => {
   return (
     <>
-      <Banner banner={banner} />
-
       <Hero />
 
       <Form />
