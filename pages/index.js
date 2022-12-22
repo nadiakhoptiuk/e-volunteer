@@ -5,14 +5,14 @@ import Hero from 'views/Hero/Hero';
 import Form from 'components/Form/Form';
 import { gql } from 'graphql-request';
 import { datoCmsRequest } from '@/lib/datocms';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const query = gql`
   query ($locale: SiteLocale) {
     banner {
       content
     }
-    allCategories(locale: $locale) {
+    allCategories(locale: $locale, orderBy: range_ASC) {
       title
       route
       range
@@ -68,7 +68,7 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      // ...(await serverSideTranslations(locale, ['common'])),
       articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
