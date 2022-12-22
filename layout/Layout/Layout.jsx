@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { Footer, Header } from 'layout';
 import { wrapper, main } from './Layout.module.css';
+const LinkToTop = dynamic(() =>
+  import('../../components/LinkToTop/LinkToTop').then(mod => mod.LinkToTop),
+);
 
 export const Layout = ({ children }) => {
   return (
@@ -8,6 +12,8 @@ export const Layout = ({ children }) => {
       <Header />
 
       <main className={main}>{children}</main>
+
+      <LinkToTop />
 
       <Footer />
     </div>
