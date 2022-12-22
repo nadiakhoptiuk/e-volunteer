@@ -1,4 +1,3 @@
-import Banner from 'components/Banner/Banner';
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
@@ -59,6 +58,8 @@ export const getStaticProps = async ({ locale }) => {
 
   const data = await datoCmsRequest({ query, variables });
 
+  console.log(data.footer);
+
   if (!data) {
     return {
       notFound: true,
@@ -77,11 +78,9 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers, banner }) => {
+const Home = ({ articles, centers }) => {
   return (
     <>
-      <Banner banner={banner} />
-
       <Hero />
 
       <Categories articles={articles} />

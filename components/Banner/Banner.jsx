@@ -1,6 +1,13 @@
+import { Container } from '..';
 const Banner = ({ banner }) => {
   return (
-    <h1 className="mb-10 text-center text-3xl font-bold underline">{banner}</h1>
+    <div className="bg-blueLight">
+      <Container>
+        <h1 className=" py-5 text-center  text-3xl font-bold text-fontBlueDark underline ">
+          {banner}
+        </h1>
+      </Container>
+    </div>
   );
 };
 
