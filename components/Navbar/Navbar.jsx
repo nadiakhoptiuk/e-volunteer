@@ -1,6 +1,6 @@
 // import Link from 'next/link';
 
-import { LanguageToggle, ButtonLink } from 'components';
+import { LanguageToggle, ButtonLink, Search } from 'components';
 // import LangSwitcher from 'components/LanguageToggle/LanguageToggle';
 
 export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
@@ -18,7 +18,8 @@ export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
       >
         {linkValue}
       </Link> */}
-      <ButtonLink button className=" bg-white text-fontBlueDark ">
+      <Search />
+      <ButtonLink button className=" ml-[46px] bg-white text-fontBlueDark">
         {linkValue}
       </ButtonLink>
 

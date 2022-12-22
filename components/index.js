@@ -5,3 +5,4 @@ export * from './LanguageToggle/LanguageToggle';
 export * from './Centers/Centers';
 export * from './Banner/Banner';
 export * from './ButtonLink/ButtonLink';
+export * from './Search/Search';
