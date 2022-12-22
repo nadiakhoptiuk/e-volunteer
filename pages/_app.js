@@ -4,10 +4,8 @@ import nextI18NextConfig from '../next-i18next.config.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  // console.log(pageProps.banner);
-  // console.log(pageProps);
   return (
-    <Layout banner={pageProps.banner}>
+    <Layout data={pageProps}>
       <Component {...pageProps} />
     </Layout>
   );
