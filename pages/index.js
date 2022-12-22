@@ -2,7 +2,6 @@ import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
 import Form from 'components/Form/Form';
-// import { gql } from 'graphql-request';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -10,8 +9,6 @@ export const getStaticProps = async ({ locale }) => {
   const variables = { locale: locale };
 
   const data = await datoCmsRequest({ variables });
-
-  console.log(data.footer);
 
   if (!data) {
     return {

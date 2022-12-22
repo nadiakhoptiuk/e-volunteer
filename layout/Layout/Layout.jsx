@@ -7,10 +7,10 @@ const LinkToTop = dynamic(() =>
   import('../../components/LinkToTop/LinkToTop').then(mod => mod.LinkToTop),
 );
 
-export const Layout = ({ children, banner }) => {
+export const Layout = ({ children, data }) => {
   return (
     <div className={wrapper}>
-      <Banner banner={banner} />
+      <Banner data={data.banner} />
 
       <Header />
 
@@ -18,7 +18,7 @@ export const Layout = ({ children, banner }) => {
 
       <LinkToTop />
 
-      <Footer />
+      <Footer data={data.footer} />
     </div>
   );
 };
