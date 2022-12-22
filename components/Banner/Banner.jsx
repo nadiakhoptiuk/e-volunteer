@@ -1,5 +1,5 @@
 import { Container } from '..';
-const Banner = ({ banner }) => {
+export const Banner = ({ banner }) => {
   return (
     <div className="bg-blueLight">
       <Container>
@@ -10,5 +10,3 @@ const Banner = ({ banner }) => {
     </div>
   );
 };
-
-export default Banner;
