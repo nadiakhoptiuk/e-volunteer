@@ -60,6 +60,8 @@ export const getStaticProps = async ({ locale }) => {
 
   const data = await datoCmsRequest({ query, variables });
 
+  console.log(data.footer);
+
   if (!data) {
     return {
       notFound: true,
