@@ -1,15 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 // import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React, { useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import {
   NotificationContainer,
   NotificationManager,
 } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 import { sendMessage } from '../../utils/telegramApi';
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
 import { Schema } from '../../utils/schema';
 import * as s from './Form.module.css';
 
@@ -42,7 +40,6 @@ const Form = () => {
     register,
     handleSubmit,
     reset,
-    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -88,23 +85,10 @@ const Form = () => {
             <p className={s.errorMsg}>{errors.name?.message}</p>
           </div>
           <div className={s.inputWrapper}>
-            <Controller
-              control={control}
-              name="phone"
-              defaultValue=""
-              render={({ field }) => (
-                <PhoneInput
-                  placeholder="Номер телефона"
-                  inputClass={
-                    errors.phone === undefined ? s.phoneInput : s.phoneInputRed
-                  }
-                  buttonClass={s.dropdownBtn}
-                  dropdownClass={s.dropdown}
-                  country={'ua'}
-                  preferredCountries={['ua', 'ru']}
-                  {...field}
-                />
-              )}
+            <input
+              className={errors.name === undefined ? s.input : s.inputRed}
+              {...register('phone')}
+              placeholder="+380"
             />
             <p className={s.errorMsg}>{errors.phone?.message}</p>
           </div>
