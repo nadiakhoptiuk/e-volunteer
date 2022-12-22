@@ -1,17 +1,14 @@
-// import { datoCmsSimpleRequest, routeRequest } from '@/lib/routeRequest';
-// import { categoryRequest } from '@/lib/categoryRequest';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { categoryRequest, routeRequest } from '@/lib/datoCmsRequests';
 
-import { routeRequest } from '@/lib/routeRequest';
-
-const CategoryPage = ({ route }) => {
+const CategoryPage = ({ category }) => {
   // const router = useRouter();
   // console.log(router);
   // console.log(article);
 
   // const { category } = router.query;
 
-  return <p>category {route}</p>;
+  return <p>category {category.route}</p>;
 };
 
 export default CategoryPage;
@@ -34,25 +31,28 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ locale, params }) {
   const { category } = params;
-  console.log(category);
-  console.log(locale);
+  // console.log(category);
+  // console.log(locale);
 
-  // const variables = { locale: locale, route: category.toString() };
+  const variables = { locale: locale };
 
-  // const data = await categoryRequest({ variables });
+  const data = await categoryRequest({ variables });
 
   // console.log(data);
 
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
       // ...(await serverSideTranslations(locale, ['common'])),
-      route: category,
+      category: data.allCategories.find(el => el.route === category),
+      banner: data.banner.content,
+      help: data.help,
+      footer: data.footer,
     },
   };
 }
