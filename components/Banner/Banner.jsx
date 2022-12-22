@@ -1,4 +1,5 @@
 import { Container } from '..';
+
 export const Banner = ({ banner }) => {
   return (
     <div className="bg-blueLight">
