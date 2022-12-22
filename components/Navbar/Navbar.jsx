@@ -1,10 +1,12 @@
 import Link from 'next/link';
 
-import { LanguageToggle } from 'components';
+import { LanguageToggle, Search } from 'components';
 
 export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
   return (
     <div className="flex items-center gap-10">
+      <Search />
+
       <Link
         href=""
         className="flex !h-[44px] !w-[196px] items-center justify-center
