@@ -1,11 +1,6 @@
-// import Link from 'next/link';
-
 import { LanguageToggle, ButtonLink, Search } from 'components';
-// import LangSwitcher from 'components/LanguageToggle/LanguageToggle';
 
 export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
-  console.log(locale);
-
   return (
     <div className="flex items-center gap-10">
       {/* <Link
@@ -22,7 +17,6 @@ export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
       <ButtonLink button className=" ml-[46px] bg-white text-fontBlueDark">
         {linkValue}
       </ButtonLink>
-
       <LanguageToggle handleLocaleChange={handleLocaleChange} value={locale} />
     </div>
   );

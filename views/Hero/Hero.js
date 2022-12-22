@@ -1,9 +1,9 @@
 import React from 'react';
 // import * as s from './Hero.module.css';
-// import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Hero = () => {
-  // const { t } = useTranslation('');
+  const { t } = useTranslation('common');
 
   return (
     <section className="pt-20 pb-[294px] text-[#5483C9] sm:pb-[456px] md:pb-[354px] xl:pb-[420px]">
@@ -13,7 +13,7 @@ const Hero = () => {
             E-VOLUNTEER
           </h1>
           <p className="max-w-[260px] text-xl leading-6 md:max-w-[497px] md:text-[40px] md:font-medium md:leading-[46px]">
-            Электронный волонтёр для помощи беженцам
+            {t('hero')}
           </p>
         </div>
       </div>
