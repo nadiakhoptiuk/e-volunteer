@@ -54,7 +54,7 @@ export const Footer = ({ data }) => {
 
           <div className="flex pb-[24px] pt-[20px]">
             <span className="pr-1 text-white">&copy;</span>
-            <span className="text-white ">2022</span>
+            <span className="text-white ">{new Date().getFullYear()}</span>
             <p className="pl-1 text-white">E-VOLUNTEER</p>
           </div>
         </div>
