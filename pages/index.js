@@ -33,11 +33,11 @@ const Home = ({ articles, centers }) => {
     <>
       <Hero />
 
-      <Form />
-
       <Categories articles={articles} />
 
       <Centers centers={centers} />
+
+      <Form />
     </>
   );
 };

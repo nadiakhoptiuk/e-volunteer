@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { useTranslation } from 'next-i18next';
+// import { useTranslation } from 'next-i18next';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
 
 export const Footer = ({ data }) => {
-  const { t } = useTranslation('common');
+  const { connectText: text, additionalInfo: info } = data;
+  // const { t } = useTranslation('common');
+  // console.log(info.value.document.children[0]);
+  console.log(info);
 
   return (
     <footer className="bg-blue-400">
@@ -23,7 +26,7 @@ export const Footer = ({ data }) => {
                 className="flex items-center"
               >
                 <span className="mr-[19px] text-sm text-white">
-                  {t('telegram')}
+                  {text}
                 </span>
                 <Teleg className="w-[22px]" />
               </a>
@@ -46,7 +49,7 @@ export const Footer = ({ data }) => {
           {data && (
             <div className="border-b-2 pb-[24px] text-center text-white">
               <ReactMarkdown>
-                {/* {data.additionalInfo} */}
+                {/* {info} */}
                 TO DO // TODO
               </ReactMarkdown>
             </div>
