@@ -1,7 +1,13 @@
-const Banner = ({ banner }) => {
+import { Container } from '..';
+
+export const Banner = ({ data }) => {
   return (
-    <h1 className="mb-10 text-center text-3xl font-bold underline" id="banner">{banner}</h1>
+    <div className="bg-blueLight">
+      <Container>
+        <h1 className=" py-5 text-center  text-3xl font-bold text-fontBlueDark underline ">
+          {data}
+        </h1>
+      </Container>
+    </div>
   );
 };
-
-export default Banner;

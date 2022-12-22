@@ -7,8 +7,8 @@ export const Header = () => {
   const { t } = useTranslation('common');
 
   return (
-    <header className="bg-blue pt-[12px] pb-[12px]">
-      <Container>
+    <header className="bg-blueDark pt-[12px] pb-[12px]">
+      <Container className="flex items-center justify-between ">
         <Logo />
 
         <Navbar

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'next-i18next';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
 
-export const Footer = ({ slugs }) => {
+export const Footer = ({ data }) => {
   const { t } = useTranslation('common');
 
   return (
@@ -31,7 +31,7 @@ export const Footer = ({ slugs }) => {
           </div>
 
           <ul className="pb-[32px] pt-[32px]">
-            {slugs &&
+            {/* {slugs &&
               slugs.map(({ href, title }) => (
                 <li className="pl-[20px] text-white " key={href}>
                   <Link href={`/${href}`}>
@@ -40,14 +40,17 @@ export const Footer = ({ slugs }) => {
                     </a>
                   </Link>
                 </li>
-              ))}
+              ))} */}
           </ul>
 
-          {/* {footerData && (
+          {data && (
             <div className="border-b-2 pb-[24px] text-center text-white">
-              <ReactMarkdown>{footerData.contents}</ReactMarkdown>
+              <ReactMarkdown>
+                {/* {data.additionalInfo} */}
+                TO DO // TODO
+              </ReactMarkdown>
             </div>
-          )} */}
+          )}
 
           <div className="flex pb-[24px] pt-[20px]">
             <span className="pr-1 text-white">&copy;</span>
