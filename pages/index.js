@@ -1,6 +1,7 @@
 import Centers from 'components/Centers/Centers';
-import { Hero, Categories } from 'views';
+import Help from 'components/Help/Help';
 import { Form } from '@/components';
+import { Hero, Categories } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -27,12 +28,16 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers }) => {
+const Home = ({ articles, centers, help }) => {
   return (
     <>
       <Hero />
 
+      <Help title="Ma tahan aidata" button="Vali" EST />
+
       <Categories articles={articles} />
+
+      <Help help={help} />
 
       <Centers centers={centers} />
 
