@@ -16,11 +16,15 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: '1rem',
+          sm: '1.25rem',
+          md: '2.25rem',
+          xl: '1.25rem',
         },
       },
 
       boxShadow: {
         card: '-2px -2px 12px rgba(84, 131, 201, 0.25), 2px 2px 12px rgba(84, 131, 201, 0.25)',
+        slugHeader: '0px 4px 12px rgba(141, 172, 222, 0.3)',
       },
 
       colors: {
@@ -40,10 +44,16 @@ module.exports = {
         sans: ['Ubuntu', 'sans-serif'],
       },
 
+      fontSize: {
+        small: ['16px', '24px'], // class="text-small"
+        middle: ['20px', '24px'], // class='text-middle'
+        big: ['24px', '27px'], // class="text-big"
+        large: ['34px', '44px'], // class="text-large"
+      },
+
       screens: {
         sm: '480px',
         md: '768px',
-        // lg: '768px',
         xl: '1280px',
       },
     },
