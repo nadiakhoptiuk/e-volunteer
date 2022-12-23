@@ -4,9 +4,19 @@ import Link from 'next/link';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
 
-export const Footer = (data) => {
-  const slugs = [{href: "#", title: "Первые шаги"}, {href: "#", title: "Жилье"}, {href: "#", title: "Работа"}, {href: "#", title: "Медицинская помощь"}, {href: "#", title: "Психологическая помощь"}, {href: "#", title: "Дети"}, {href: "#", title: "Выплаты"}, {href: "#", title: "Инфо телефоны"}, {href: "#", title: "Полезные ссылки"}]
-  
+export const Footer = data => {
+  const slugs = [
+    { href: '#', title: 'Первые шаги' },
+    { href: '#', title: 'Жилье' },
+    { href: '#', title: 'Работа' },
+    { href: '#', title: 'Медицинская помощь' },
+    { href: '#', title: 'Психологическая помощь' },
+    { href: '#', title: 'Дети' },
+    { href: '#', title: 'Выплаты' },
+    { href: '#', title: 'Инфо телефоны' },
+    { href: '#', title: 'Полезные ссылки' },
+  ];
+
   return (
     <footer className="bg-blue-400">
       <div className="container">
@@ -30,7 +40,7 @@ export const Footer = (data) => {
             </Link>
           </div>
 
-          <ul className="pb-[32px] pt-[32px] grid grid-cols-4 gap-y-5">
+          <ul className="grid grid-cols-4 gap-y-5 pb-[32px] pt-[32px]">
             {slugs &&
               slugs.map(({ href, title }, index) => (
                 <li className="text-white" key={index}>
@@ -48,10 +58,10 @@ export const Footer = (data) => {
             {/* <ReactMarkdown>
                 За дополнительной информацией обращайтесь по телефону +37253499911 в центр приема беженцев
               </ReactMarkdown> */}
-              {/* <ReactMarkdown> */}
-              {data.additionalInfo}
-              {/* </ReactMarkdown> */}
-            </div>
+            {/* <ReactMarkdown> */}
+            {data.additionalInfo}
+            {/* </ReactMarkdown> */}
+          </div>
           {/* )} */}
 
           <div className="flex pb-[24px] pt-[20px]">
