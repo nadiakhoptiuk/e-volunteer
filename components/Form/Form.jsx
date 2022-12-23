@@ -1,23 +1,27 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useForm } from 'react-hook-form';
-import {
-  NotificationContainer,
-  NotificationManager,
-} from 'react-notifications';
-import 'react-notifications/lib/notifications.css';
 import { sendMessage } from '../../utils/telegramApi';
 import { Schema } from '../../utils/schema';
 import * as s from './Form.module.css';
+import { FormModal, ScreenLoader } from '..';
 
-const Form = () => {
+export const Form = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const schema = Schema();
   const { t } = useTranslation('common');
-  const createNotification = () =>
-    NotificationManager.success('Повідомлення відправлено');
-  const createNotificationError = () =>
-    NotificationManager.error('error in API');
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   const {
     register,
@@ -28,7 +32,15 @@ const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data, e) => {
+  useEffect(() => {
+    isLoading
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
+  }, [isLoading]);
+
+  const onSubmit = async (data, e) => {
+    setIsLoading(true);
+    try {
     e.preventDefault();
     // --- TELEGRAM ---
     let text = `<b>Повідомлення з сайту!</b>\n`;
@@ -38,14 +50,38 @@ const Form = () => {
     text += `<b>Повідомлення: </b> ${data.message}\n`;
     text += `<b>Форма отримана з:</b>\n`;
     text += `<a href="https://xxx.netlify.app/">https://xxx.netlify.app/</a>`;
-    const res = sendMessage(text);
-    res.then(res => {
-      res?.data.ok ? createNotification() : createNotificationError();
-    });
-    reset();
+      await sendMessage(text);
+      openModal();
+      reset();
+      } catch (error) {
+      console.log(error);
+      setError(true);
+    } finally {
+      setIsLoading(false);
+
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
+    }
   };
 
   return (
+  <>
+    {error && (
+        <ScreenLoader error={error}>
+          <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
+            {t('error')}
+          </p>
+        </ScreenLoader>
+      )}
+
+      {isLoading && (
+        <ScreenLoader>
+          <p className="text-[30px] font-medium leading-[46px] text-button md:text-[40px] md:leading-[44px]">
+            {t('loading')}
+          </p>
+        </ScreenLoader>
+      )}
     <section className="py-20">
       <div className="container">
         <div className={s.wrapper}>
@@ -96,11 +132,10 @@ const Form = () => {
               {t('formButton')}
             </button>
           </form>
-          <NotificationContainer />
         </div>
       </div>
-    </section>
+      <FormModal closeModal={closeModal} show={isOpen} />
+      </section>
+      </>
   );
 };
-
-export default Form;

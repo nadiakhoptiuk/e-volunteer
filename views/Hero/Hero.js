@@ -2,7 +2,7 @@ import React from 'react';
 // import * as s from './Hero.module.css';
 import { useTranslation } from 'next-i18next';
 
-const Hero = () => {
+export const Hero = () => {
   const { t } = useTranslation('common');
 
   return (
@@ -20,5 +20,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
