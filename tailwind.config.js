@@ -19,6 +19,10 @@ module.exports = {
         },
       },
 
+      boxShadow: {
+        card: '-2px -2px 12px rgba(84, 131, 201, 0.25), 2px 2px 12px rgba(84, 131, 201, 0.25)',
+      },
+
       colors: {
         blueDark: '#5483C9',
         blueLight: '#BFDBFE',
