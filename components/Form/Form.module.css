@@ -2,10 +2,10 @@
   @apply w-full md:w-[335px] xl:w-[505px];
 }
 .title {
-  @apply mb-2 mt-9 text-xl font-bold md:mt-0 xl:mb-[14px] xl:text-2xl;
+  @apply mb-2 font-sans text-xl font-medium text-textForm md:mt-0 xl:mb-[14px] xl:text-2xl;
 }
 .subTitle {
-  @apply mb-9 md:mb-[38px];
+  @apply mb-9 font-sans text-textForm md:mb-[38px];
 }
 .wrapperInputs {
   @apply mb-[62px] grid grid-cols-1 gap-y-[54px] md:mb-[58px] xl:mb-[67px];
@@ -59,7 +59,7 @@
   @apply absolute w-full text-[12px] font-medium text-red-400;
 }
 .button {
-  @apply block h-[52px] min-w-[153px] rounded border border-[#60A5FA] !bg-[#60A5FA] !text-white transition-all;
+  @apply block h-[56px] min-w-[214px] rounded border border-[#60A5FA] !bg-[#60A5FA] !text-white transition-all;
 }
 .button:hover,
 .button:focus {
