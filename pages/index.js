@@ -30,7 +30,6 @@ export const getStaticProps = async ({ locale }) => {
 };
 
 const Home = ({ articles, centers, help }) => {
-  console.log(help);
   return (
     <>
       <Hero />
