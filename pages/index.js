@@ -1,8 +1,8 @@
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
-import Hero from 'views/Hero/Hero';
-import Form from 'components/Form/Form';
 import Help from 'components/Help/Help';
+import { Hero } from 'views';
+import { Form } from '@/components';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -36,10 +36,13 @@ const Home = ({ articles, centers, help }) => {
       <Hero />
 
       <Help title="Ma tahan aidata" button="Vali" EST />
+
       <Categories articles={articles} />
-      <Help help={help} href="helping" />
+
+      <Help help={help} />
 
       <Centers centers={centers} />
+
       <Form />
     </>
   );
