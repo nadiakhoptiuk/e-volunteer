@@ -1,7 +1,6 @@
-import { Container } from '@/components';
 import Image from 'next/image';
-// import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import { ButtonLink, Container } from '@/components';
 
 export const Categories = ({ articles }) => {
   const { t } = useTranslation('common');
@@ -11,7 +10,7 @@ export const Categories = ({ articles }) => {
       <Container>
         <h2 className="visually-hidden">{t('categories')}</h2>
 
-        {articles?.map(({ cardInfo, title }) => {
+        {articles?.map(({ cardInfo, title, route }) => {
           const { id, description, image } = cardInfo[0];
 
           return (
@@ -25,7 +24,7 @@ export const Categories = ({ articles }) => {
               </h3>
               <p>{description}</p>
 
-              {/* <Link href={route}>{t('buttonCard')}</Link> */}
+              <ButtonLink href={route}>{t('btnChoose')}</ButtonLink>
             </article>
           );
         })}
