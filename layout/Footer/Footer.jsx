@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 import { useTranslation } from 'next-i18next';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
@@ -45,10 +45,9 @@ export const Footer = ({ data }) => {
 
           {data && (
             <div className="border-b-2 pb-[24px] text-center text-white">
-              <ReactMarkdown>
-                {/* {data.additionalInfo} */}
-                TO DO // TODO
-              </ReactMarkdown>
+              {/* <ReactMarkdown> */}
+              {data.additionalInfo}
+              {/* </ReactMarkdown> */}
             </div>
           )}
 
