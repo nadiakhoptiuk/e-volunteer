@@ -6,3 +6,7 @@ export * from './Centers/Centers';
 export * from './Banner/Banner';
 export * from './ButtonLink/ButtonLink';
 export * from './Search/Search';
+export * from './Form/Form';
+export * from './FormModal/FormModal';
+export * from './Spinner/Spinner';
+export * from './ScreenLoader/ScreenLoader';

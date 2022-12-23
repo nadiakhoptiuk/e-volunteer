@@ -35,8 +35,6 @@
     "react-i18next": "^12.0.0",
     "react-icons": "^4.6.0",
     "react-markdown": "^8.0.4",
-    "react-notifications": "^1.7.4",
-    "react-phone-input-2": "^2.15.1",
     "react-responsive": "^9.0.0",
     "react-scroll": "^1.8.9",
     "yup": "^0.32.11"

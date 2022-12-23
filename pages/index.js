@@ -1,7 +1,7 @@
 import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
-import Hero from 'views/Hero/Hero';
-import Form from 'components/Form/Form';
+import { Hero } from 'views';
+import { Form } from '@/components';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -33,11 +33,11 @@ const Home = ({ articles, centers }) => {
     <>
       <Hero />
 
-      <Form />
-
       <Categories articles={articles} />
 
       <Centers centers={centers} />
+
+      <Form />
     </>
   );
 };
