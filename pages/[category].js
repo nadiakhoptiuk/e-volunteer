@@ -9,8 +9,6 @@ import { ArrowLongLeftIcon } from '@heroicons/react/20/solid';
 const CategoryPage = props => {
   const { category } = props;
 
-  console.log(category);
-
   return (
     <>
       {category && (
