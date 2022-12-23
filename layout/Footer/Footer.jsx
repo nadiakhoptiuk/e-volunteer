@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 // import { useTranslation } from 'next-i18next';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
 
-export const Footer = () => {
+export const Footer = (data) => {
   const slugs = [{href: "#", title: "Первые шаги"}, {href: "#", title: "Жилье"}, {href: "#", title: "Работа"}, {href: "#", title: "Медицинская помощь"}, {href: "#", title: "Психологическая помощь"}, {href: "#", title: "Дети"}, {href: "#", title: "Выплаты"}, {href: "#", title: "Инфо телефоны"}, {href: "#", title: "Полезные ссылки"}]
-
+  
   return (
     <footer className="bg-blue-400">
       <div className="container">
@@ -44,10 +44,13 @@ export const Footer = () => {
           </ul>
 
           {/* {data && ( */}
-            <div className="border-b-2 pb-[24px] text-center text-white">
-              <ReactMarkdown>
+          <div className="border-b-2 pb-[24px] text-center text-white">
+            {/* <ReactMarkdown>
                 За дополнительной информацией обращайтесь по телефону +37253499911 в центр приема беженцев
-              </ReactMarkdown>
+              </ReactMarkdown> */}
+              {/* <ReactMarkdown> */}
+              {data.additionalInfo}
+              {/* </ReactMarkdown> */}
             </div>
           {/* )} */}
 

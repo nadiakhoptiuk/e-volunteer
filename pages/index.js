@@ -28,7 +28,7 @@ import { Form } from '@/components';
 //   };
 // };
 
-const Home = ({ articles, centers }) => {
+const Home = () => {
   return (
     <>
       <Hero />
