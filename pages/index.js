@@ -1,6 +1,5 @@
-import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
-import { Hero } from 'views';
+import { Hero, Categories } from 'views';
 import { Form } from '@/components';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
