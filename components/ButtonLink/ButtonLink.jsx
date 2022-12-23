@@ -13,7 +13,7 @@ export const ButtonLink = ({ children, href, button, className, ...props }) => {
   ) : (
     <Link
       href={href}
-      className={`block h-[54px] w-[220px] rounded-[20px] bg-button py-[14px] text-center text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600 sm:w-[298px]  xl:w-[300px] ${className}`}
+      className={`block rounded-lg bg-button px-14 py-4 text-center text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600  ${className}`}
       {...props}
     >
       {children}

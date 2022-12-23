@@ -2,6 +2,7 @@ import Categories from 'components/Categories/Categories';
 import Centers from 'components/Centers/Centers';
 import Hero from 'views/Hero/Hero';
 import Form from 'components/Form/Form';
+import Help from 'components/Help/Help';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -28,16 +29,18 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers }) => {
+const Home = ({ articles, centers, help }) => {
+  console.log(help);
   return (
     <>
       <Hero />
 
-      <Form />
-
+      <Help title="Ma tahan aidata" button="Vali" EST />
       <Categories articles={articles} />
+      <Help help={help} href="helping" />
 
       <Centers centers={centers} />
+      <Form />
     </>
   );
 };
