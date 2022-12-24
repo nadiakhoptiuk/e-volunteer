@@ -18,7 +18,7 @@ export const Layout = ({ children, data }) => {
 
       <LinkToTop />
 
-      <Footer data={data.footer} />
+      <Footer data={data} />
     </div>
   );
 };

@@ -1,0 +1,34 @@
+.section {
+  @apply pt-20 pb-[294px] text-fontBlue sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pb-[420px];
+  background-position: center bottom;
+  background-image: url('/image/hero/hero-320.svg');
+  background-size: 310px;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 480px) {
+  .section {
+    background-image: url('/image/hero/hero-480.svg');
+    background-size: 455px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section {
+    background-image: url('/image/hero/hero-768.svg');
+    background-size: 736px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section {
+    background-image: url('/image/hero/hero-1440.svg');
+    background-size: 1436px;
+  }
+}
+.wrapper {
+  @apply mx-auto flex max-w-[280px] flex-col gap-8 sm:m-0 sm:max-w-[440px] md:max-w-[558px] md:gap-10 xl:ml-20;
+}
+.title {
+  @apply text-hTitle uppercase md:text-hmdTitle xl:text-hxlTitle;
+}
+.text {
+  @apply max-w-[260px] text-hText md:max-w-[497px] md:text-hmdText  xl:text-hxlText;
+}
