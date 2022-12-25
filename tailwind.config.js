@@ -33,6 +33,10 @@ module.exports = {
         card: '-2px -2px 12px rgba(84, 131, 201, 0.25), 2px 2px 12px rgba(84, 131, 201, 0.25)',
       },
 
+      dropShadow: {
+        main: '8px 8px 12px rgba(84, 131, 201, 0.5)',
+      },
+
       colors: {
         redAccent: '#EF4444',
         yellowAccent: '#FFD500',
@@ -43,6 +47,7 @@ module.exports = {
         fontBlueDark: '#4571B1',
         fontGrey: '#475569',
         fontGreyLight: '#93989E',
+        yellowAccent: '#FFD500',
       },
 
       fontFamily: {
@@ -52,7 +57,7 @@ module.exports = {
       fontSize: {
         small: ['16px', '24px'], // class="text-small"
         middle: ['20px', '24px'], // class='text-middle'
-        big: ['24px', '27px'], // class="text-big"
+        big: ['24px', '28px'], // class="text-big"
         large: ['34px', '44px'], // class="text-large"
         //---Hero
         hTitle: [

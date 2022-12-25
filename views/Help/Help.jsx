@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import {
   sectionCommon,
@@ -12,7 +12,7 @@ import {
 import { ButtonLink } from '/components';
 import Flower from 'public/image/flower-help.svg';
 
-const Help = ({ title, button, EST, help, ...props }) => {
+export const Help = ({ title, button, EST, help, ...props }) => {
   const { t } = useTranslation('common');
 
   return (
@@ -23,13 +23,16 @@ const Help = ({ title, button, EST, help, ...props }) => {
         {EST ? (
           <ButtonLink
             button
-            className="mx-auto !px-14 text-white md:mx-0"
+            className="mx-auto mt-6 w-[146px] !px-14 text-white md:mx-0 md:mt-0 xl:ml-12"
             {...props}
           >
             {button}
           </ButtonLink>
         ) : (
-          <ButtonLink href="helping" className="mx-auto md:mx-0 ">
+          <ButtonLink
+            href="helping"
+            className="mx-auto mt-[26px] w-[280px] sm:w-[194px] md:mx-0 md:mt-0"
+          >
             {t('btnChoose')}
           </ButtonLink>
         )}
@@ -38,11 +41,9 @@ const Help = ({ title, button, EST, help, ...props }) => {
   );
 };
 
-export default Help;
-
-// Help.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   button: PropTypes.string.isRequired,
-//   href: PropTypes.string,
-//   EST: PropTypes.bool,
-// };
+Help.propTypes = {
+  title: PropTypes.string,
+  button: PropTypes.string,
+  EST: PropTypes.bool,
+  help: PropTypes.object,
+};
