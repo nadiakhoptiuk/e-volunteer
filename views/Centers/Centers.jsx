@@ -5,8 +5,10 @@ export const Centers = ({ centers }) => {
     <section className=" bg-blueAccent py-20 text-white md:py-[100px]">
       <div className="container relative">
         <Flower className="hidden w-[214px] xl:absolute xl:top-[-62px] xl:right-5 xl:block" />
-        <h2 className=" mb-12 text-big font-medium">{centers?.titleAtPage}</h2>
-        <ul className="grid gap-9 md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px]">
+        <h2 className=" mb-12 text-big font-medium xl:mb-[100px] xl:text-[40px] xl:leading-[1.15]">
+          {centers?.titleAtPage}
+        </h2>
+        <ul className="grid gap-9 md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px] xl:gap-y-10">
           {centers?.receptionCenter?.map(
             ({ id, city, phoneNumber, centerTitle, address }) => {
               const street = address.split(' ');
@@ -17,7 +19,7 @@ export const Centers = ({ centers }) => {
                   className="border-b border-slate-50  md:first:row-span-2"
                 >
                   {centerTitle && (
-                    <h3 className="mb-5 text-middle md:mb-[52px] md:text-2xl">
+                    <h3 className="mb-5 text-middle md:mb-[52px] md:text-big">
                       {centerTitle}
                     </h3>
                   )}
@@ -32,7 +34,9 @@ export const Centers = ({ centers }) => {
                       <p className="mb-3 text-lg tracking-tight">{city}</p>
                     )}
                     {address && (
-                      <address className="mb-3 not-italic">{address}</address>
+                      <address className="mb-3 not-italic md:text-base md:leading-6 xl:text-small">
+                        {address}
+                      </address>
                     )}
                   </a>
                   {phoneNumber && (
