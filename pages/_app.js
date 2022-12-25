@@ -22,6 +22,7 @@ const Hydrated = ({ children }) => {
       setHydration(true);
     }
   }, []);
+
   return hydration ? children : <p>Loading...</p>;
 };
 
