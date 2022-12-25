@@ -52,8 +52,9 @@ export async function getStaticPaths() {
   }
 
   const paths = data.allCategories.flatMap(el => {
-    return el._allRouteLocales.map(({ value }) => ({
+    return el._allRouteLocales.map(({ value, locale }) => ({
       params: { category: value },
+      locale: locale,
     }));
   });
 
