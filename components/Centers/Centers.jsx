@@ -1,6 +1,6 @@
 const Centers = ({ centers }) => {
   return (
-    <section className="bg-button py-20">
+    <section className="bg-blueAccent py-20">
       <div className="container">
         <h2>{centers?.titleAtPage}</h2>
 

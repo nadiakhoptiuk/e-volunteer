@@ -3,32 +3,22 @@
 }
 
 .sectionEst {
-  @apply bg-gradient-to-b from-blue-200 to-white shadow-card;
+  @apply drop-shadow-main xl:shadow-card xl:drop-shadow-none;
   background: linear-gradient(180deg, #bfdbfe 0%, #ffffff 100%);
 }
+
 .section {
-  @apply drop-shadow-card;
+  @apply drop-shadow-main;
   background: linear-gradient(360deg, #bfdbfe -39.06%, #ffffff 100%);
 }
-
-/* .section {
-  @apply drop-shadow-[8px_8px_12px_rgba(84,131,201,0.5)];
-  background: linear-gradient(360deg, #bfdbfe -39.06%, #ffffff 100%);
-  /* box-shadow: 0px 8px 12px rgba(84, 131, 201, 0.5); */
-/* }  */
 
 @media screen and (min-width: 1280px) {
   .section {
-    /* @apply drop-shadow-none; */
-    /* background: linear-gradient(
-      349.27deg,
-      #bfdbfe -23.79%,
-      rgba(255, 255, 255, 0.5) 51.12%
-    ); */
+    @apply drop-shadow-none;
     background: linear-gradient(
       0deg,
-      #bfdbfe -172%,
-      rgba(255, 255, 255, 0.5) 50%
+      #bfdbfe -23.79%,
+      rgba(255, 255, 255, 0.5) 51.12%
     );
   }
 }
@@ -38,9 +28,9 @@
 }
 
 .flower {
-  @apply hidden h-[113px] w-[175px] xl:mr-[45px] xl:block;
+  @apply hidden h-[113px] w-[175px]  xl:block;
 }
 
 .content {
-  @apply mb-6 text-[24px] leading-[28px] text-slate-600 md:mb-0 md:text-[34px] md:leading-[44px];
+  @apply mb-6 text-big font-medium text-slate-600 md:mb-0 md:text-large md:font-normal;
 }
