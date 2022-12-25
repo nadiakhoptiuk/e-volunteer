@@ -5,7 +5,7 @@ export const ButtonLink = ({ children, href, button, className, ...props }) => {
   return button ? (
     <button
       type="button"
-      className={` rounded-lg bg-button py-4 px-8 text-center text-lg font-medium  transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600 md:px-5  ${className}`}
+      className={`flex items-center justify-center rounded-lg bg-blueAccent py-4 px-8 text-lg font-medium  transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600 md:px-5  ${className}`}
       {...props}
     >
       {children}
@@ -13,7 +13,7 @@ export const ButtonLink = ({ children, href, button, className, ...props }) => {
   ) : (
     <Link
       href={href}
-      className={`block rounded-lg bg-button px-14 py-4 text-center text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600  ${className}`}
+      className={`flex items-center justify-center rounded-lg bg-blueAccent px-14 py-4 text-lg font-medium text-slate-50 transition duration-300 ease-in-out hover:bg-yellow-200 hover:text-slate-600 focus:bg-yellow-200 focus:text-slate-600  ${className}`}
       {...props}
     >
       {children}

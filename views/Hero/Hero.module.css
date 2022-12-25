@@ -1,5 +1,5 @@
 .section {
-  @apply pt-20 pb-[294px] text-fontBlue sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pb-[420px];
+  @apply pt-20 pb-[294px] text-blueAccent sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pb-[420px];
   background-position: center bottom;
   background-image: url('/image/hero/hero-320.svg');
   background-size: 310px;

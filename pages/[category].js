@@ -18,12 +18,12 @@ const CategoryPage = props => {
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
-                className="flex h-[50px] w-[50px] items-center justify-center text-button"
+                className="flex h-[50px] w-[50px] items-center justify-center text-blueAccent"
               >
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
 
-              <h2 className="ml-10 text-big font-medium text-button md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
+              <h2 className="ml-10 text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
                 {category.title}
               </h2>
             </div>
@@ -52,8 +52,9 @@ export async function getStaticPaths() {
   }
 
   const paths = data.allCategories.flatMap(el => {
-    return el._allRouteLocales.map(({ value }) => ({
+    return el._allRouteLocales.map(({ value, locale }) => ({
       params: { category: value },
+      locale: locale,
     }));
   });
 

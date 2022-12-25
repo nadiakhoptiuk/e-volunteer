@@ -5,7 +5,7 @@ export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
     <div className="flex items-center gap-10">
       <Search />
 
-      <ButtonLink button className=" ml-[46px] bg-white text-fontBlueDark">
+      <ButtonLink button className="ml-[46px] bg-white text-fontBlueDark">
         {linkValue}
       </ButtonLink>
 
