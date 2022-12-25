@@ -18,12 +18,12 @@ const CategoryPage = props => {
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
-                className="text-button flex h-[50px] w-[50px] items-center justify-center"
+                className="flex h-[50px] w-[50px] items-center justify-center text-blueAccent"
               >
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
 
-              <h2 className="text-button ml-10 text-big font-medium md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
+              <h2 className="ml-10 text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
                 {category.title}
               </h2>
             </div>
