@@ -1,0 +1,36 @@
+.sectionCommon {
+  @apply py-10  md:py-[52px] xl:py-6;
+}
+
+.sectionEst {
+  @apply drop-shadow-main xl:shadow-card xl:drop-shadow-none;
+  background: linear-gradient(180deg, #bfdbfe 0%, #ffffff 100%);
+}
+
+.section {
+  @apply drop-shadow-main;
+  background: linear-gradient(360deg, #bfdbfe -39.06%, #ffffff 100%);
+}
+
+@media screen and (min-width: 1280px) {
+  .section {
+    @apply drop-shadow-none;
+    background: linear-gradient(
+      0deg,
+      #bfdbfe -23.79%,
+      rgba(255, 255, 255, 0.5) 51.12%
+    );
+  }
+}
+
+.wrapper {
+  @apply container text-center md:flex md:flex-row md:items-center md:justify-between;
+}
+
+.flower {
+  @apply hidden h-[113px] w-[175px]  xl:block;
+}
+
+.content {
+  @apply mb-6 text-big font-medium text-fontGrey md:mb-0 md:text-large md:font-normal;
+}
