@@ -69,7 +69,7 @@ export const Form = () => {
     <>
       {error && (
         <ScreenLoader error={error}>
-          <p className="text-button text-[30px] font-medium leading-[46px] md:text-[40px] md:leading-[44px]">
+          <p className="text-[30px] font-medium leading-[46px] text-blueAccent md:text-[40px] md:leading-[44px]">
             {t('error')}
           </p>
         </ScreenLoader>
@@ -77,7 +77,7 @@ export const Form = () => {
 
       {isLoading && (
         <ScreenLoader>
-          <p className="text-button text-[30px] font-medium leading-[46px] md:text-[40px] md:leading-[44px]">
+          <p className="text-[30px] font-medium leading-[46px] text-blueAccent md:text-[40px] md:leading-[44px]">
             {t('loading')}
           </p>
         </ScreenLoader>
