@@ -34,13 +34,14 @@ const Home = ({ articles, centers, help }) => {
     text: 'Электронный волонтёр для помощи беженцам',
     title: 'E-VOLUNTEER',
   };
+
   return (
     <>
       <Hero hero={hero} />
 
       <Help title="Ma tahan aidata" button="Vali" EST />
 
-      <Categories articles={articles} />
+      <Categories articles={articles.sort((a, b) => a.range - b.range)} />
 
       <Help help={help} />
 
