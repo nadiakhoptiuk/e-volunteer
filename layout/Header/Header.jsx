@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <header className="bg-blueDark pt-[12px] pb-[12px]">
-      <Container className="flex items-center justify-between ">
+      <Container className="flex items-center justify-between">
         <Logo />
 
         <Navbar
