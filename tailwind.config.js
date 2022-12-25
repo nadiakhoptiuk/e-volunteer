@@ -32,6 +32,10 @@ module.exports = {
         slugHeader: '0px 4px 12px rgba(141, 172, 222, 0.3)',
       },
 
+      dropShadow: {
+        card: '8px 15px 12px rgba(84, 131, 201, 0.5)',
+      },
+
       colors: {
         blueDark: '#5483C9',
         blueLight: '#BFDBFE',
