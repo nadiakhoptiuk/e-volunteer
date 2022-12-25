@@ -1,6 +1,30 @@
 .modal {
-  @apply pointer-events-none fixed top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center bg-slate-800/50 opacity-0 transition-all;
+  @apply pointer-events-none fixed top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center bg-blue-200/[.9] opacity-0 transition-all;
 }
 .modalShow {
-  @apply pointer-events-auto fixed top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center bg-slate-800/50 opacity-100 transition-all;
+  @apply pointer-events-auto fixed top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center bg-blue-200/[.9] opacity-100 transition-all;
+}
+.wrapper {
+  @apply grid w-[280px] justify-items-center rounded-[20px] bg-white p-[28px] pb-[58px] text-center sm:w-[324px];
+}
+.button {
+  @apply mb-[52px] justify-self-end;
+}
+.close {
+  @apply h-[15px] w-[15px];
+}
+.mail {
+  @apply mb-[32px] h-[77px] w-[94px];
+}
+.title {
+  @apply mb-5 text-fModalTitle md:text-fModalmdTitle;
+}
+.text {
+  @apply text-fModalText xl:text-fModalxlText;
+}
+.link {
+  @apply flex items-center;
+}
+.telegramLink {
+  @apply text-fModalText text-fontBlueDark xl:text-fModalxlText;
 }

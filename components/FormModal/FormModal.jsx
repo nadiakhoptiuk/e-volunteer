@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import React, { useEffect, useCallback } from 'react';
+import { useTranslation } from 'next-i18next';
+import Mail from '../../public/image/form/mail.svg';
+import Close from '../../public/image/form/close.svg';
 import * as s from './FormModal.module.css';
 
 export const FormModal = ({
   show,
-  closeModal,
-  title = 'Спасибо за ответ',
-  text = 'Дождитесь ответа',
-  link = 'В телеграм канале',
+  closeModal
 }) => {
+  const { t } = useTranslation('common');
+
   const closeOnEscapeKeyDown = useCallback(
     e => {
       if ((e.charCode || e.keyCode) === 27) {
@@ -29,27 +31,27 @@ export const FormModal = ({
     <div onClick={closeModal} className={`${show ? s.modalShow : s.modal}`}>
       <div
         onClick={e => e.stopPropagation()}
-        className="w-56 rounded border border-slate-500 bg-blue-300 p-5 "
+        className={s.wrapper}
       >
-        <h3 className="text-xl font-bold">{title}</h3>
-        <p>{text}</p>
-        <Link href="https://t.me/eevolunteer" legacyBehavior>
+        <button className={s.button}
+          onClick={closeModal}
+        >
+          <Close className={s.close} />
+        </button>
+        <Mail className={s.mail} />
+        <h3 className={s.title}>{t("formModalTitle")}</h3>
+        <p className={s.text}>{t("formModalText")}</p>
+        <Link  href="https://t.me/eevolunteer" legacyBehavior>
           <a
             href="https://t.me/eevolunteer"
-            aria-label={link}
+            aria-label="https://t.me/eevolunteer"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
+            className={s.link}
           >
-            <span className="mr-[19px] text-sm text-blue-500">{link}</span>
+            <span className={s.telegramLink}>{t("formModalLink")}</span>
           </a>
         </Link>
-        <button
-          onClick={closeModal}
-          className="rounded border border-red-500 p-1"
-        >
-          Закрити модалку
-        </button>
       </div>
     </div>
   );

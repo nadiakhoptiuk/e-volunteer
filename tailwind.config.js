@@ -34,6 +34,8 @@ module.exports = {
       },
 
       colors: {
+        redAccent: '#EF4444',
+        yellowAccent: '#FFD500',
         blueAccent: '#60A5FA',
         blueDark: '#5483C9',
         blueLight: '#BFDBFE',
@@ -158,14 +160,28 @@ module.exports = {
             lineHeight: '24px',
             fontWeight: '400',
           },
-        ], // class="text-fModalTitle"
+        ], // class="text-fModalText"
         fModalxlText: [
           '14px',
           {
             lineHeight: '24px',
             fontWeight: '400',
           },
-        ], // class="text-fModalxlTitle"
+        ], // class="text-fModalxlText"
+        fModallargeText: [
+          '30px',
+          {
+            lineHeight: '46px',
+            fontWeight: '500',
+          },
+        ], // class="text-fModallargeText"
+        fModallargemdText: [
+          '40px',
+          {
+            lineHeight: '46px',
+            fontWeight: '500',
+          },
+        ], // class="text-fModallargemdText"
       },
     },
   },

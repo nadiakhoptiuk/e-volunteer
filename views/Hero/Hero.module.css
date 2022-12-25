@@ -36,5 +36,5 @@
   @apply text-hTitle uppercase md:text-hmdTitle xl:text-hxlTitle;
 }
 .text {
-  @apply max-w-[260px] text-hText md:max-w-[497px] md:text-hmdText  xl:text-hxlText;
+  @apply max-w-[260px] text-hText md:max-w-[497px] md:text-hmdText xl:text-hxlText;
 }
