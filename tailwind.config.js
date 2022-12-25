@@ -47,7 +47,6 @@ module.exports = {
         fontBlueDark: '#4571B1',
         fontGrey: '#475569',
         fontGreyLight: '#93989E',
-        yellowAccent: '#FFD500',
       },
 
       fontFamily: {

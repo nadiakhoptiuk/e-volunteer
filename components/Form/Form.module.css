@@ -76,8 +76,8 @@
   @apply border-yellowAccent !bg-yellowAccent !text-fontGrey;
 }
 .error {
-  @apply text-fModallargeText md:text-fModallargemdText text-redAccent;
+  @apply text-fModallargeText text-redAccent md:text-fModallargemdText;
 }
 .loading {
-  @apply text-fModallargeText md:text-fModallargemdText text-blueAccent;
+  @apply text-fModallargeText text-blueAccent md:text-fModallargemdText;
 }

@@ -69,17 +69,13 @@ export const Form = () => {
     <>
       {error && (
         <ScreenLoader error={error}>
-          <p className={s.error}>
-            {t('error')}
-          </p>
+          <p className={s.error}>{t('error')}</p>
         </ScreenLoader>
       )}
 
       {isLoading && (
         <ScreenLoader>
-          <p className={s.loading}>
-            {t('loading')}
-          </p>
+          <p className={s.loading}>{t('loading')}</p>
         </ScreenLoader>
       )}
       <section className={s.section}>
@@ -103,7 +99,9 @@ export const Form = () => {
                 </div>
                 <div className={s.inputWrapper}>
                   <input
-                    className={errors.phone === undefined ? s.input : s.inputRed}
+                    className={
+                      errors.phone === undefined ? s.input : s.inputRed
+                    }
                     {...register('phone')}
                     placeholder="+380"
                   />
