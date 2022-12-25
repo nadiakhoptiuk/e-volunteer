@@ -32,5 +32,5 @@
 }
 
 .content {
-  @apply mb-6 text-big font-medium text-slate-600 md:mb-0 md:text-large md:font-normal;
+  @apply mb-6 text-big font-medium text-fontGrey md:mb-0 md:text-large md:font-normal;
 }

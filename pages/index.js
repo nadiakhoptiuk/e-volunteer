@@ -1,7 +1,5 @@
-import Centers from 'components/Centers/Centers';
-import Help from 'components/Help/Help';
 import { Form } from '@/components';
-import { Hero, Categories } from 'views';
+import { Hero, Categories, Help, Centers } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 

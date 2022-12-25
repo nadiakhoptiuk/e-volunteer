@@ -12,7 +12,7 @@ import {
 import { ButtonLink } from '/components';
 import Flower from 'public/image/flower-help.svg';
 
-const Help = ({ title, button, EST, help, ...props }) => {
+export const Help = ({ title, button, EST, help, ...props }) => {
   const { t } = useTranslation('common');
 
   return (
@@ -40,8 +40,6 @@ const Help = ({ title, button, EST, help, ...props }) => {
     </section>
   );
 };
-
-export default Help;
 
 Help.propTypes = {
   title: PropTypes.string,

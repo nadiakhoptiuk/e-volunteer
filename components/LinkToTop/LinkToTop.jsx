@@ -22,7 +22,7 @@ export const LinkToTop = () => {
           to="banner"
           smooth={true}
           hashSpy={true}
-          className="hover:bg-yellow-300 fixed bottom-10 right-5 h-12 w-12 cursor-pointer rounded-full bg-yellow shadow-xl transition duration-300 ease-in-out md:right-6"
+          className="fixed bottom-10 right-5 h-12 w-12 cursor-pointer rounded-full bg-yellow-200 shadow-xl transition duration-300 ease-in-out hover:bg-yellow-300 md:right-6"
           href=""
           aria-label="scroll to Top"
           aria-controls="scroll to Top"
