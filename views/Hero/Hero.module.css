@@ -17,6 +17,12 @@
     background-size: 736px;
   }
 }
+@media screen and (min-width: 1280px) {
+  .section {
+    background-image: url('/image/hero/hero-1440.svg');
+    background-size: 1250px;
+  }
+}
 @media screen and (min-width: 1440px) {
   .section {
     background-image: url('/image/hero/hero-1440.svg');

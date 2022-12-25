@@ -1,5 +1,8 @@
+.section {
+  @apply py-20;
+}
 .wrapper {
-  @apply w-full md:w-[335px] xl:w-[505px];
+  @apply w-full md:ml-auto md:w-[518px] xl:w-[522px];
 }
 .title {
   @apply mb-2 font-sans text-xl font-medium text-fontGrey md:mt-0 xl:mb-[14px] xl:text-2xl;

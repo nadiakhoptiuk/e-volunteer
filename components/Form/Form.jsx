@@ -82,7 +82,7 @@ export const Form = () => {
           </p>
         </ScreenLoader>
       )}
-      <section className="py-20">
+      <section className={s.section}>
         <div className="container">
           <div className={s.wrapper}>
             <h3 className={s.title}>{t('formTitle')}</h3>

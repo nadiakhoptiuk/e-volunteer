@@ -53,27 +53,6 @@ module.exports = {
         big: ['24px', '27px'], // class="text-big"
         large: ['34px', '44px'], // class="text-large"
         //---Hero
-        hText: [
-          '20px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-hText"
-        hmdText: [
-          '34px',
-          {
-            lineHeight: '39px',
-            fontWeight: '500',
-          },
-        ], // class="text-hmdText"
-        hxlText: [
-          '40px',
-          {
-            lineHeight: '46px',
-            fontWeight: '500',
-          },
-        ], // class="text-hxlText"
         hTitle: [
           '40px',
           {
@@ -95,6 +74,98 @@ module.exports = {
             fontWeight: '500',
           },
         ], // class="text-hxlTitle"
+        hText: [
+          '20px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-hText"
+        hmdText: [
+          '34px',
+          {
+            lineHeight: '39px',
+            fontWeight: '500',
+          },
+        ], // class="text-hmdText"
+        hxlText: [
+          '40px',
+          {
+            lineHeight: '46px',
+            fontWeight: '500',
+          },
+        ], // class="text-hxlText"
+        //---Form
+        fTitle: [
+          '24px',
+          {
+            lineHeight: '28px',
+            fontWeight: '500',
+          },
+        ], // class="text-fTitle"
+        fsmTitle: [
+          '34px',
+          {
+            lineHeight: '44px',
+            fontWeight: '400',
+          },
+        ], // class="text-fsmTitle"
+        fText: [
+          '18px',
+          {
+            lineHeight: '22px',
+            fontWeight: '400',
+          },
+        ], // class="text-fText"
+        fPlaceholder: [
+          '16px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fPlaceholder"
+        fBtn: [
+          '20px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fBtn"
+        fError: [
+          '14px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fError"
+        fModalTitle: [
+          '20px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fModalTitle"
+        fModalmdTitle: [
+          '24px',
+          {
+            lineHeight: '28px',
+            fontWeight: '500',
+          },
+        ], // class="text-fModalmdTitle"
+        fModalText: [
+          '16px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fModalTitle"
+        fModalxlText: [
+          '14px',
+          {
+            lineHeight: '24px',
+            fontWeight: '400',
+          },
+        ], // class="text-fModalxlTitle"
       },
     },
   },
