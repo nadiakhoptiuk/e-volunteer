@@ -4,7 +4,6 @@ import Teleg from '../../public/image/teleg.svg';
 import * as s from './Footer.module.css';
 
 export const Footer = ({ data }) => {
-  // console.log(data);
   const { additionalInfo, connectText, email, telegram } = data.footer;
 
   return (
