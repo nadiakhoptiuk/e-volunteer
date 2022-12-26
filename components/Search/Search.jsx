@@ -4,7 +4,7 @@ import { DebounceInput } from 'react-debounce-input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
-export const Search = ({ articles }) => {
+export const Search = ({ articles, menu }) => {
   const [searchWords, setSearchWords] = useState('');
   const [filteredData, setFilteredData] = useState(null);
 
@@ -34,8 +34,16 @@ export const Search = ({ articles }) => {
 
   return (
     <div className="relative">
-      <div className="relative border-b md:h-8 md:w-[228px] xl:h-11 xl:w-[522px]">
-        <MagnifyingGlassIcon className="absolute left-5 h-5 w-5 translate-y-1/2  text-white" />
+      <div
+        className={`relative border-b ${
+          menu && 'border-blueAccent'
+        } md:h-8 md:w-[228px] xl:h-11 xl:w-[522px]`}
+      >
+        <MagnifyingGlassIcon
+          className={`absolute left-5 h-5 w-5 translate-y-1/2  text-white ${
+            menu && '!text-blueAccent'
+          }`}
+        />
 
         <DebounceInput
           onChange={handleInputChange}
@@ -50,7 +58,7 @@ export const Search = ({ articles }) => {
             onClick={resetForm}
             className="absolute right-[20px] translate-y-1/2 text-slate-600 transition-all hover:text-slate-400"
           >
-            <XMarkIcon className="h-5 w-5 " />
+            <XMarkIcon className={`h-5 w-5 ${menu && 'text-blueAccent'}`} />
           </button>
         )}
       </div>
