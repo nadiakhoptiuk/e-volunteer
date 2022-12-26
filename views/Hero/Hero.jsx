@@ -1,14 +1,16 @@
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 import * as s from './Hero.module.css';
 
-export const Hero = ({ hero }) => {
-  const { title, text } = hero;
+export const Hero = () => {
+  const { t } = useTranslation('common');
+
   return (
     <section className={s.section}>
       <div className="container">
         <div className={s.wrapper}>
-          <h1 className={s.title}>{title}</h1>
-          <p className={s.text}>{text}</p>
+          <h1 className={s.title}>E-VOLUNTEER</h1>
+          <p className={s.text}>{t("hero")}</p>
         </div>
       </div>
     </section>
