@@ -27,17 +27,11 @@ export const getStaticProps = async ({ locale }) => {
 };
 
 const Home = props => {
-  //Необхідно створити запис hero в адмінпанелі структурою як вказано нижче
-  const hero = {
-    text: 'Электронный волонтёр для помощи беженцам',
-    title: 'E-VOLUNTEER',
-  };
-
   const { articles, centers, help } = props;
 
   return (
     <>
-      <Hero hero={hero} />
+      <Hero />
 
       <Help title="Ma tahan aidata" button="Vali" EST />
 

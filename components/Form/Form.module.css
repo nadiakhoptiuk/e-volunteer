@@ -1,82 +1,83 @@
+.section {
+  @apply py-[42px] sm:py-10 md:py-[38px] xl:pb-[60px] xl:pt-9;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: url('/image/form/form-768.svg');
+    background-size: 210px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    background-position: left 20px center;
+    background-image: url('/image/form/form-1280.svg');
+    background-size: 468px;
+  }
+}
 .wrapper {
-  @apply w-full md:w-[335px] xl:w-[505px];
+  @apply w-full md:ml-auto md:w-[518px] xl:w-[522px] xl:pt-6;
 }
 .title {
-  @apply mb-2 font-sans text-xl font-medium text-fontGrey md:mt-0 xl:mb-[14px] xl:text-2xl;
+  @apply mb-5 font-sans text-fTitle text-fontGrey sm:mb-3 sm:text-fsmTitle;
 }
 .subTitle {
-  @apply mb-9 font-sans text-fontGrey md:mb-[38px];
+  @apply mb-6 font-sans text-fText text-fontGrey md:mb-[38px];
 }
 .wrapperInputs {
-  @apply mb-[62px] grid grid-cols-1 gap-y-[54px] md:mb-[58px] xl:mb-[67px];
+  @apply mb-[46px] grid grid-cols-1 gap-y-[54px] sm:mb-[60px];
 }
 .inputWrapper {
   @apply relative w-full;
 }
 .input {
-  @apply !w-full !rounded !border-2 border-[#60A5FA] !bg-transparent p-[14px] text-[#4571B1];
+  @apply w-full rounded-lg border-2 border-blueAccent py-3 px-[9px];
 }
 .inputRed {
-  @apply !w-full !rounded !border-2 !border-red-400 !bg-transparent p-[14px] text-[#4571B1];
-}
-.phoneInput {
-  @apply !h-[52px] !w-full !rounded !border-2 !border-[#60A5FA] !bg-transparent !pl-[102px] !text-sm text-[#4571B1];
-}
-.phoneInputRed {
-  @apply !h-[52px] !w-full !rounded !border-2 !border-red-400 !bg-transparent !pl-[102px] !text-sm text-[#4571B1];
+  @apply w-full rounded-lg border-2 border-redAccent py-3 px-[9px] text-redAccent;
 }
 .textarea {
-  @apply h-[112px] w-full resize-none rounded border-2 border-[#60A5FA] bg-transparent  p-[14px] text-[#4571B1] xl:h-[150px];
+  @apply h-[150px] w-full resize-none rounded-lg border-2 border-blueAccent py-4 px-[9px];
 }
 .textareaRed {
-  @apply h-[112px] w-full resize-none rounded border-2 border-red-400 bg-transparent  p-[14px] text-[#4571B1] xl:h-[150px];
+  @apply h-[150px] w-full resize-none rounded-lg border-2 border-redAccent py-4 px-[9px] text-redAccent;
 }
 .input::placeholder,
-.phoneInput::placeholder,
 .textarea::placeholder,
 .inputRed::placeholder,
-.phoneInputRed::placeholder,
 .textareaRed::placeholder {
-  @apply !text-[#93989E];
+  @apply text-fPlaceholder text-fontGreyLight;
 }
 .input:not(:placeholder-shown),
-.phoneInput:not(:placeholder-shown),
 .textarea:not(:placeholder-shown) {
-  @apply !border-[#4571B1];
+  @apply border-fontBlueDark text-fontBlueDark;
 }
 .input:focus,
-.phoneInput:focus,
 .inputRed:focus,
-.phoneInputRed:focus,
 .textarea:focus,
 .textareaRed:focus {
-  @apply !border-[#FFD500] text-[#FFD500] outline-0;
+  @apply border-yellowAccent text-yellowAccent outline-0;
 }
 .errorMsg {
-  @apply absolute w-full text-[12px] font-medium text-red-400;
+  @apply absolute w-full text-fError text-redAccent;
 }
 .errorMsgTextarea {
-  @apply absolute w-full text-[12px] font-medium text-red-400;
+  @apply absolute w-full text-fError text-redAccent;
 }
 .button {
-  @apply block h-[56px] min-w-[214px] rounded border border-[#60A5FA] !bg-[#60A5FA] !text-white transition-all;
+  @apply block h-[56px] min-w-full rounded-lg border border-blueAccent !bg-blueAccent text-fBtn !text-white transition-all sm:min-w-[214px];
 }
 .button:hover,
 .button:focus {
-  @apply !bg-[#5483C9] !text-white outline-none;
+  @apply !bg-blueDark !text-white outline-none;
 }
 .button:active {
-  @apply border-[#FFD500] !bg-[#FFD500] !text-slate-600;
+  @apply border-yellowAccent !bg-yellowAccent !text-fontGrey;
 }
-.dropdownBtn,
-.dropdownBtn:hover,
-.dropdownBtn:focus,
-.dropdownBtn .selected-flag,
-.dropdownBtn .selected-flag:hover,
-.dropdownBtn .selected-flag:focus,
-.dropdownBtn .selected-flag:active {
-  @apply !border-hidden !bg-transparent !pl-4;
+.error {
+  @apply text-fModallargeText text-redAccent md:text-fModallargemdText;
 }
-.dropdown {
-  @apply left-1 !w-[calc(100vw-63px)] !rounded !bg-white !pr-[18px] !text-sm !text-[#5483C9] !outline !outline-white sm:!w-[434px] md:!w-[329px] xl:!w-[499px];
+.loading {
+  @apply text-fModallargeText text-blueAccent md:text-fModallargemdText;
 }
