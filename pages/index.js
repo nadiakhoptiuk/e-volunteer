@@ -26,7 +26,9 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers, help }) => {
+const Home = props => {
+  const { articles, centers, help } = props;
+
   return (
     <>
       <Hero />
