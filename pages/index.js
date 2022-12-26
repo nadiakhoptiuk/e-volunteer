@@ -26,12 +26,14 @@ export const getStaticProps = async ({ locale }) => {
   };
 };
 
-const Home = ({ articles, centers, help }) => {
+const Home = props => {
   //Необхідно створити запис hero в адмінпанелі структурою як вказано нижче
   const hero = {
     text: 'Электронный волонтёр для помощи беженцам',
     title: 'E-VOLUNTEER',
   };
+
+  const { articles, centers, help } = props;
 
   return (
     <>

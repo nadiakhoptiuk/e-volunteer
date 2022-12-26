@@ -61,10 +61,8 @@ export async function getStaticPaths() {
   return { paths, fallback: true };
 }
 
-export async function getStaticProps({ locale, params }) {
-  const { category } = params;
-
-  const variables = { locale: locale, category: category };
+export async function getStaticProps({ locale, params: { category } }) {
+  const variables = { locale: locale };
 
   const data = await categoryRequest({ variables });
 
@@ -77,7 +75,8 @@ export async function getStaticProps({ locale, params }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      category: data.allCategories[0],
+      articles: data.allCategories,
+      category: data.allCategories.find(el => el.route === category),
       banner: data.banner.content,
       help: data.help,
       footer: data.footer,
