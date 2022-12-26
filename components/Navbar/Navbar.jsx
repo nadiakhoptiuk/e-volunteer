@@ -1,9 +1,9 @@
 import { LanguageToggle, ButtonLink, Search } from 'components';
 
-export const Navbar = ({ linkValue, handleLocaleChange, locale }) => {
+export const Navbar = ({ linkValue, handleLocaleChange, locale, articles }) => {
   return (
     <div className="flex items-center gap-10">
-      <Search />
+      <Search articles={articles} />
 
       <ButtonLink button className="ml-[46px] bg-white text-fontBlueDark">
         {linkValue}

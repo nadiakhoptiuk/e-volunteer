@@ -1,31 +1,35 @@
 import { useEffect, useState } from 'react';
-// import Link from 'next/link';
-// import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { DebounceInput } from 'react-debounce-input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
-// import { XMarkIcon } from '@heroicons/react/24/solid';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
-export const Search = () => {
-  const [isActivated, setIsActivated] = useState(false);
+export const Search = ({ articles }) => {
   const [searchWords, setSearchWords] = useState('');
-  // const [allData, setAllData] = useState(null);
-  // const [filteredData, setFilteredData] = useState(null);
-
-  // const { locale } = useRouter();
+  const [filteredData, setFilteredData] = useState(null);
 
   useEffect(() => {
-    if (!isActivated) return;
-  }, [isActivated]);
+    if (!searchWords.trim()) {
+      setFilteredData(null);
+      return;
+    }
 
-  // useEffect(() => {
-  //   if (!searchWords.trim() || !allData) {
-  //     setFilteredData(null);
-  //     return;
-  //   }
-  // }, [allData, searchWords]);
+    const filteredArticles = articles.filter(
+      ({ title, cardInfo }) =>
+        title.toLowerCase().includes(searchWords) ||
+        cardInfo[0].description.toLowerCase().includes(searchWords) ||
+        cardInfo[0].contentAtPage.toLowerCase().includes(searchWords),
+    );
+
+    setFilteredData(filteredArticles);
+  }, [articles, searchWords]);
 
   const handleInputChange = ({ target: { value } }) => {
     setSearchWords(value.toLowerCase());
+  };
+
+  const resetForm = () => {
+    setSearchWords('');
   };
 
   return (
@@ -35,14 +39,45 @@ export const Search = () => {
 
         <DebounceInput
           onChange={handleInputChange}
-          onFocus={() => setIsActivated(true)}
           type="text"
           value={searchWords}
-          className="h-full w-full bg-transparent text-slate-600 placeholder:text-slate-300"
-          // id="search"
-          //   placeholder={t('searchPlaceholder')}
+          className="h-full w-full bg-transparent py-4 pl-[52px] pr-[20px] text-slate-600 placeholder:text-slate-300"
         />
+
+        {searchWords && (
+          <button
+            type="button"
+            onClick={resetForm}
+            className="absolute right-[20px] translate-y-1/2 text-slate-600 transition-all hover:text-slate-400"
+          >
+            <XMarkIcon className="h-5 w-5 " />
+          </button>
+        )}
       </div>
+
+      <ul className="absolute top-full left-0 right-0 z-20 max-h-[212px] overflow-auto rounded-lg border border-blue-200 shadow-lg">
+        {filteredData &&
+          filteredData.map(({ route, title, cardInfo }) => {
+            return (
+              <li
+                key={cardInfo[0].id}
+                className="h-[70px] border-b border-blue-200 bg-slate-50 text-slate-600"
+              >
+                <Link
+                  href={route}
+                  onClick={resetForm}
+                  className="block h-full w-full overflow-hidden truncate text-ellipsis  whitespace-nowrap py-3 px-8 text-inherit transition-all hover:bg-blue-200 focus:bg-blue-200"
+                >
+                  {title}
+                  <br />
+                  <span className="truncate text-ellipsis text-xs font-light text-fontGreyLight">
+                    {cardInfo[0].description}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+      </ul>
     </div>
   );
 };
