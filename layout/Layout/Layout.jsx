@@ -12,7 +12,7 @@ export const Layout = ({ children, data }) => {
     <div className={wrapper}>
       <Banner data={data.banner} />
 
-      <Header />
+      <Header data={data.articles} />
 
       <main className={main}>{children}</main>
 
