@@ -19,3 +19,12 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.main-prose {
+  @apply prose-headings:text-fontGrey prose-p:text-fontGrey prose-a:text-blueAccent prose-strong:font-medium prose-strong:text-fontGrey;
+}
+
+.desktop-prose {
+  @apply prose-h2:before:hidden xl:prose-h2:relative xl:prose-h2:mt-20 xl:prose-h2:mb-[25px] xl:prose-h2:text-big xl:prose-h2:font-medium xl:prose-h2:before:absolute xl:prose-h2:before:left-[-58px] xl:prose-h2:before:top-[-3px] xl:prose-h2:before:block xl:prose-h2:before:content-[url('/image/check-mark.svg')] xl:prose-h3:text-[18px] xl:prose-h3:font-normal xl:prose-h3:leading-[22px] xl:prose-p:my-3 xl:prose-p:text-[18px] xl:prose-p:leading-[22px] xl:prose-strong:text-big xl:prose-li:my-3 xl:prose-li:text-[18px] xl:prose-li:leading-[22px];
+  /* prose-h2:first-of-type:mt-0  */
+}

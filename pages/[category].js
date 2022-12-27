@@ -6,14 +6,16 @@ import { routes } from 'routes';
 import Link from 'next/link';
 import { ArrowLongLeftIcon } from '@heroicons/react/20/solid';
 
+// import img from '../public/image/flower-category.svg'
+
 const CategoryPage = props => {
   const { category } = props;
 
   return (
     <>
       {category && (
-        <section className="pt-[48px] pb-[103px] md:pt-[101px] md:pb-20 xl:pt-10">
-          <Container className="xl:w-[1104px]">
+        <section className="pt-[48px] pb-[103px] md:pt-[100px] md:pb-20 xl:pt-10">
+          <Container className="">
             <div className="mb-[132px] flex items-center md:mb-[102px] xl:mb-[107px]">
               <Link
                 href={routes.HOME}
@@ -23,15 +25,17 @@ const CategoryPage = props => {
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
 
-              <h2 className="ml-10 text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
+              <h1 className="ml-10 text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
                 {category.title}
-              </h2>
+              </h1>
             </div>
 
-            <div className="xl:w-630px ml-[14px] w-[366px] md:ml-[20px] md:w-[560px]">
-              <ReactMarkdown>
-                {category.cardInfo[0].contentAtPage}
-              </ReactMarkdown>
+            <div className="contentWrapper mx-auto min-h-[532px] bg-[url('/image/flower-category.svg')] bg-right-top bg-no-repeat xl:w-[1032px]">
+              <div className="main-prose desktop-prose prose w-[366px] md:w-[560px] xl:w-[612px] xl:pl-[58px]">
+                <ReactMarkdown>
+                  {category.cardInfo[0].contentAtPage}
+                </ReactMarkdown>
+              </div>
             </div>
           </Container>
         </section>
