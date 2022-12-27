@@ -63,9 +63,9 @@ export const Search = ({ articles, menu }) => {
         )}
       </div>
 
-      <ul className="absolute top-full left-0 right-0 z-20 max-h-[212px] overflow-auto rounded-lg border border-blue-200 shadow-lg">
-        {filteredData &&
-          filteredData.map(({ route, title, cardInfo }) => {
+      {filteredData && (
+        <ul className="absolute top-full left-0 right-0 z-20 max-h-[212px] overflow-auto rounded-lg border border-blue-200 shadow-lg">
+          {filteredData?.map(({ route, title, cardInfo }) => {
             return (
               <li
                 key={cardInfo[0].id}
@@ -85,7 +85,8 @@ export const Search = ({ articles, menu }) => {
               </li>
             );
           })}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 };
