@@ -14,10 +14,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.datocms-assets.com',
-        // port: '',
-        pathname: '/**',
+        protocol: 'http',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
