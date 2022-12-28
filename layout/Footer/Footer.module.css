@@ -26,7 +26,7 @@
   @apply text-white;
 }
 .link {
-  @apply transition-all hover:text-yellowAccent focus:text-yellowAccent;
+  @apply transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }
 .deskText {
   @apply border-b-2 pb-6 text-center text-white;

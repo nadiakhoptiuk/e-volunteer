@@ -4,7 +4,8 @@ import Teleg from '../../public/image/teleg.svg';
 import * as s from './Footer.module.css';
 
 export const Footer = ({ data }) => {
-  const { additionalInfo, connectText, email, telegram } = data.footer;
+  const { additionalInfo, additionalPhone, connectText, email, telegram } =
+    data.footer;
 
   return (
     <>
@@ -49,7 +50,15 @@ export const Footer = ({ data }) => {
                   </li>
                 ))}
             </ul>
-            <p className={s.deskText}>{additionalInfo}</p>
+            <p className={s.deskText}>
+              {additionalInfo}
+              <Link
+                href={`tel:${additionalPhone}`}
+                className={`${s.link} pl-1`}
+              >
+                {additionalPhone}
+              </Link>
+            </p>
             <div className={s.copyright}>
               <span className="pr-1">&copy;</span>
               <span>{new Date().getFullYear()}</span>
