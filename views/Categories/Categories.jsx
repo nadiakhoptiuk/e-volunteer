@@ -12,7 +12,7 @@ export const Categories = ({ articles }) => {
 
         <div className="grid gap-x-[20px] gap-y-10 md:grid-cols-2 xl:grid-cols-3">
           {articles?.map(({ cardInfo, title, route }) => {
-            const { id, description, image } = cardInfo[0];
+            const { id, description, image, alt } = cardInfo[0];
 
             return (
               <article
@@ -22,7 +22,7 @@ export const Categories = ({ articles }) => {
                 <div className="mb-8 h-[220px] w-full overflow-hidden rounded-[20px]">
                   <Image
                     src={image.url}
-                    alt={image.alt}
+                    alt={alt}
                     height={220}
                     width={392}
                     className="h-full w-full object-cover object-center"
