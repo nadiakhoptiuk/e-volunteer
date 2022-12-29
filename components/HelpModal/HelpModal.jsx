@@ -164,7 +164,7 @@ export const HelpModal = ({
                       ? links.map(({ name, link }) => (
                           <li
                             key={name}
-                            className="relative flex h-[38px] items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark.svg')]"
+                            className="relative flex h-[38px] cursor-pointer items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')]"
                           >
                             <a
                               href={link}
@@ -178,7 +178,7 @@ export const HelpModal = ({
                       : facebookLinks.map(({ name, link }) => (
                           <li
                             key={name}
-                            className="relative flex h-[38px] items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark.svg')]"
+                            className="relative flex h-[38px] items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')]"
                           >
                             <a
                               href={link}
