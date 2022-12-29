@@ -58,51 +58,6 @@ module.exports = {
         middle: ['20px', '24px'], // class='text-middle'
         big: ['24px', '28px'], // class="text-big"
         large: ['34px', '44px'], // class="text-large"
-
-        //---Form
-
-        fModalTitle: [
-          '20px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fModalTitle"
-        fModalmdTitle: [
-          '24px',
-          {
-            lineHeight: '28px',
-            fontWeight: '500',
-          },
-        ], // class="text-fModalmdTitle"
-        fModalText: [
-          '16px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fModalText"
-        fModalxlText: [
-          '14px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fModalxlText"
-        fModallargeText: [
-          '30px',
-          {
-            lineHeight: '46px',
-            fontWeight: '500',
-          },
-        ], // class="text-fModallargeText"
-        fModallargemdText: [
-          '40px',
-          {
-            lineHeight: '46px',
-            fontWeight: '500',
-          },
-        ], // class="text-fModallargemdText"
       },
     },
   },

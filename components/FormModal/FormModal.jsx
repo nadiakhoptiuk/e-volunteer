@@ -7,8 +7,6 @@ import Close from '../../public/image/form/close.svg';
 import * as s from './FormModal.module.css';
 
 export const FormModal = ({ show, error, closeModal }) => {
-  // const error = 0;
-  // const show = 1;
   const { t } = useTranslation('common');
 
   const closeOnEscapeKeyDown = useCallback(
@@ -42,18 +40,19 @@ export const FormModal = ({ show, error, closeModal }) => {
         ) : (
           <div className={s.innerWrapper}>
             <h3 className={s.title}>{t('formModalTitle')}</h3>
-            <p className={s.text}>{t('formModalText')}</p>
-            <Link href="https://t.me/eevolunteer" legacyBehavior>
-              <a
-                href="https://t.me/eevolunteer"
-                aria-label="https://t.me/eevolunteer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={s.link}
-              >
-                <span className={s.telegramLink}>{t('formModalLink')}</span>
-              </a>
-            </Link>
+            <p className={s.text}>
+              {t('formModalText')}
+              <Link href="https://t.me/eevolunteer" legacyBehavior>
+                <a
+                  href="https://t.me/eevolunteer"
+                  aria-label="https://t.me/eevolunteer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={s.telegramLink}>{t('formModalLink')}</span>
+                </a>
+              </Link>
+            </p>
             <Mail className={s.mail} />
           </div>
         )}

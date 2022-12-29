@@ -5,13 +5,19 @@
   @apply pointer-events-auto fixed top-0 left-0 right-0 bottom-0 z-10 flex items-center justify-center bg-slate-600/[.5] opacity-100 transition-all;
 }
 .wrapper {
-  @apply relative flex rounded-[20px] bg-white p-[28px] pb-[58px] text-center md:h-[510px] md:w-[600px] md:p-[45px] xl:w-[710px];
+  @apply relative flex w-[280px] rounded-[20px] bg-white p-[30px] text-center sm:w-[370px] md:w-[690px] xl:w-[800px];
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    box-shadow: -2px -2px 12px rgba(84, 131, 201, 0.25),
+      2px 2px 12px rgba(84, 131, 201, 0.25);
+  }
 }
 @media screen and (min-width: 768px) {
   .wrapper {
     background-position: center;
     background-image: url('/image/form/bg-768.svg');
-    background-size: 580px;
+    background-size: 680px;
     background-repeat: no-repeat;
   }
 }
@@ -19,12 +25,12 @@
   .wrapper {
     background-position: center;
     background-image: url('/image/form/bg-1280.svg');
-    background-size: 680px;
+    background-size: 790px;
     background-repeat: no-repeat;
   }
 }
 .innerWrapper {
-  @apply m-auto grid w-[224px] justify-items-center px-[46px] py-20 sm:w-[324px] md:w-[370px] md:rounded-[20px];
+  @apply m-auto grid w-[224px] justify-items-center py-[50px] sm:w-[324px] md:my-[90px] md:w-[370px] md:rounded-[20px]  md:py-20;
 }
 @media screen and (min-width: 768px) {
   .innerWrapper {
@@ -33,23 +39,20 @@
   }
 }
 .button {
-  @apply absolute right-[28px] rounded-full stroke-blueAccent p-[11px] transition-colors hover:bg-blueAccent hover:stroke-white focus:bg-blueAccent focus:stroke-white md:right-[45px];
+  @apply absolute right-[30px] rounded-full stroke-blueAccent p-[11px] transition-colors hover:bg-blueAccent hover:stroke-white focus:bg-blueAccent focus:stroke-white;
 }
 .close {
   @apply h-[15px] w-[15px];
 }
 .mail {
-  @apply h-[77px] w-[94px];
+  @apply mt-8 h-[77px] w-[94px];
 }
 .title {
-  @apply mb-5 text-fModalTitle md:text-fModalmdTitle;
+  @apply mb-4 text-big font-medium;
 }
 .text {
-  @apply text-fModalText xl:text-fModalxlText;
-}
-.link {
-  @apply flex items-center;
+  @apply max-w-[240px] text-[14px] leading-[24px];
 }
 .telegramLink {
-  @apply text-fModalText text-fontBlueDark xl:text-fModalxlText;
+  @apply pl-1 text-[14px] leading-[24px] text-fontBlueDark;
 }
