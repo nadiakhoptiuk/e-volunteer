@@ -60,48 +60,7 @@ module.exports = {
         large: ['34px', '44px'], // class="text-large"
 
         //---Form
-        fTitle: [
-          '24px',
-          {
-            lineHeight: '28px',
-            fontWeight: '500',
-          },
-        ], // class="text-fTitle"
-        fsmTitle: [
-          '34px',
-          {
-            lineHeight: '44px',
-            fontWeight: '400',
-          },
-        ], // class="text-fsmTitle"
-        fText: [
-          '18px',
-          {
-            lineHeight: '22px',
-            fontWeight: '400',
-          },
-        ], // class="text-fText"
-        fPlaceholder: [
-          '16px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fPlaceholder"
-        fBtn: [
-          '20px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fBtn"
-        fError: [
-          '14px',
-          {
-            lineHeight: '24px',
-            fontWeight: '400',
-          },
-        ], // class="text-fError"
+
         fModalTitle: [
           '20px',
           {
