@@ -18,9 +18,9 @@ const CategoryPage = props => {
         <title>{category && category.title}</title>
       </Head>
       {category && (
-        <section className="pt-[48px] pb-[103px] md:pt-[100px] md:pb-20 xl:pt-10">
+        <section className="pt-[48px] pb-[103px] md:pt-10 md:pb-20">
           <Container className="">
-            <div className="mb-[132px] flex items-center md:mb-[102px] xl:mb-[107px]">
+            <div className="mb-[132px] flex items-center md:mb-[122px] xl:mb-[107px]">
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
@@ -34,8 +34,8 @@ const CategoryPage = props => {
               </h1>
             </div>
 
-            <div className="contentWrapper mx-auto min-h-[532px] bg-[url('/image/flower-category.svg')] bg-right-top bg-no-repeat xl:w-[1032px]">
-              <div className="main-prose desktop-prose prose w-[366px] md:w-[560px] xl:w-[612px] xl:pl-[58px]">
+            <div className="contentWrapper mx-auto min-h-[420px] bg-right-top bg-no-repeat xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')]">
+              <div className="main-prose desktop-prose tablet-prose prose w-[366px] md:w-[460px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>
