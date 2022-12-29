@@ -21,10 +21,15 @@ body {
 }
 
 .main-prose {
-  @apply prose-headings:text-fontGrey prose-p:text-fontGrey prose-a:text-blueAccent prose-strong:font-medium prose-strong:text-fontGrey;
+  @apply prose-headings:text-fontGrey prose-p:text-fontGrey prose-a:text-blueAccent prose-strong:font-medium prose-strong:text-fontGrey prose-ul:list-none prose-ul:pl-0 prose-li:relative prose-li:my-[18px] prose-li:pl-0 prose-li:before:absolute prose-li:before:left-[-50px] prose-li:before:content-[url('/image/check-mark-light.svg')];
 }
 
 .desktop-prose {
-  @apply prose-h2:before:hidden xl:prose-h2:relative xl:prose-h2:mt-20 xl:prose-h2:mb-[25px] xl:prose-h2:text-big xl:prose-h2:font-medium xl:prose-h2:before:absolute xl:prose-h2:before:left-[-58px] xl:prose-h2:before:top-[-3px] xl:prose-h2:before:block xl:prose-h2:before:content-[url('/image/check-mark.svg')] xl:prose-h3:text-[18px] xl:prose-h3:font-normal xl:prose-h3:leading-[22px] xl:prose-p:my-3 xl:prose-p:text-[18px] xl:prose-p:leading-[22px] xl:prose-strong:text-big xl:prose-li:my-3 xl:prose-li:text-[18px] xl:prose-li:leading-[22px];
+  @apply prose-h2:before:hidden xl:prose-h2:relative xl:prose-h2:mt-20 xl:prose-h2:mb-[25px] xl:prose-h2:text-big xl:prose-h2:font-medium xl:prose-h2:before:absolute xl:prose-h2:before:left-[-58px] xl:prose-h2:before:top-[-3px] xl:prose-h2:before:block xl:prose-h2:before:content-[url('/image/check-mark.svg')] xl:prose-h3:text-[18px] xl:prose-h3:font-normal xl:prose-h3:leading-[22px] xl:prose-p:mt-3 xl:prose-p:mb-0 xl:prose-p:text-[18px] xl:prose-p:leading-[22px] xl:prose-strong:text-big xl:prose-em:relative xl:prose-em:mt-20 xl:prose-em:block xl:prose-em:text-big xl:prose-em:font-medium xl:prose-em:not-italic xl:prose-em:text-blueAccent xl:prose-em:before:absolute xl:prose-em:before:left-[-58px] xl:prose-em:before:top-[-3px] xl:prose-em:before:block xl:prose-em:before:content-[url('/image/check-mark.svg')] xl:prose-li:my-3 xl:prose-li:text-[18px] xl:prose-li:leading-[22px];
+  /* prose-h2:first-of-type:mt-0  */
+}
+
+.tablet-prose {
+  @apply prose-h2:before:hidden md:prose-h2:relative md:prose-h2:mt-20 md:prose-h2:mb-[25px] md:prose-h2:text-big md:prose-h2:font-medium md:prose-h2:before:absolute md:prose-h2:before:left-[-58px] md:prose-h2:before:top-[-3px] md:prose-h2:before:block md:prose-h2:before:content-[url('/image/check-mark.svg')] md:prose-h3:mt-[30px] md:prose-h3:text-[18px] md:prose-h3:font-normal md:prose-h3:leading-[22px] md:prose-p:mt-3 md:prose-p:mb-0 md:prose-p:text-[18px] md:prose-p:leading-[22px] md:prose-strong:text-big md:prose-em:relative md:prose-em:mt-20 md:prose-em:mb-10 md:prose-em:block md:prose-em:text-big md:prose-em:font-medium md:prose-em:not-italic md:prose-em:text-blueAccent md:prose-em:before:absolute md:prose-em:before:left-[-58px] md:prose-em:before:top-[-3px] md:prose-em:before:block md:prose-em:before:content-[url('/image/check-mark.svg')] md:prose-li:my-3 md:prose-li:text-[18px] md:prose-li:leading-[22px];
   /* prose-h2:first-of-type:mt-0  */
 }
