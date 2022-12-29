@@ -21,7 +21,9 @@ function MyApp({ Component, pageProps }) {
   }
 
   function estModalClose() {
-    setEst(false);
+    setTimeout(() => {
+      setEst(false);
+    }, 500);
   }
 
   return (

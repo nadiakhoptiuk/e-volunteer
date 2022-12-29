@@ -1,10 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'next-i18next';
-
 import ModalFlower from 'public/image/flower-modal.svg';
-// import { FormEst } from '..';
+import FlowerCategory from 'public/image/flower-modal-tab.svg';
+// import CheckIcon from 'public/image/check-mark-light.svg';
 
 const needs = [
   'riided',
@@ -88,19 +88,38 @@ export const HelpModal = ({
   const link = t('facebookLinks');
 
   const facebookLinks = link.split('|').map(el => {
-    const name = el.split(',')[0];
-    const link = el.split(',')[1];
+    const name = el.split(';')[0];
+    const link = el.split(';')[1];
 
     return {
       name,
       link,
     };
   });
-  console.log(facebookLinks);
+
+  useEffect(() => {
+    const handleEscape = e => {
+      if (e.code !== 'Escape') return;
+      window.removeEventListener('keydown', handleEscape);
+      estModalClose();
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [estModalClose]);
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-20" onClose={closeModal}>
+      <Dialog
+        as="div"
+        className="relative z-20"
+        onClose={() => {
+          closeModal();
+          estModalClose();
+        }}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -114,7 +133,7 @@ export const HelpModal = ({
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center bg-fontGrey/50 text-center">
+          <div className="flex min-h-full items-center justify-center bg-fontGrey/50 sm:py-[71px] md:py-10 xl:py-1 ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -124,15 +143,15 @@ export const HelpModal = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative h-[858px] w-[1240px] transform overflow-hidden  rounded-[20px]  bg-slate-50 text-lg leading-[22px] transition-all xl:flex xl:px-[108px] xl:py-[80px]">
-                <div className="relative  text-start  text-fontGrey  xl:mr-[121px] ">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-[20px] bg-white text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px]  sm:px-[44px] sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex xl:h-[700px] xl:w-[1240px] xl:px-[108px] xl:py-[40px]">
+                <div className="text-start  xl:relative    xl:mr-[121px] ">
                   <Dialog.Title
                     as="h3"
                     className=" text-[34px] font-medium leading-[39px] "
                   >
                     {estModalStatus ? 'Kallid Eestimaa elanikud!' : t('title')}
                   </Dialog.Title>
-                  <p className="mt-8 w-[506px]">
+                  <p className="mt-8 xl:w-[506px]">
                     {estModalStatus
                       ? 'Kahjuks sõjapõgenikud Ukrainast jätkuvalt tulevad Eestisse ning nad vajavad teie abi ja tuge! Saate vaadata, mida inimesed vajavad, või pakkuda teie abi meie telegrammi kanalis.'
                       : t('first')}
@@ -142,7 +161,7 @@ export const HelpModal = ({
                       ? 'Tavaliselt on need põhilised asjad:'
                       : t('third')}
                   </p>
-                  <ul className=" list-inside list-disc text-start text-slate-600">
+                  <ul className=" list-inside list-disc text-start">
                     {estModalStatus
                       ? needs.map(item => (
                           <li key={item} className="mt-3 ">
@@ -155,16 +174,15 @@ export const HelpModal = ({
                           </li>
                         ))}
                   </ul>
-                  <ModalFlower className="absolute -bottom-5 w-[230px] sm:w-[360px] xl:h-[172px] xl:w-[502px]" />
+                  <ModalFlower className="absolute left-[130px] bottom-[-10px] hidden xl:block xl:h-[154px] xl:w-[426px]" />
                 </div>
-                <div className="bg-slate-50  xl:pt-[62px]">
-                  {/* <FormEst /> */}
+                <div className="relative sm:mt-10 md:mt-[80px] xl:mt-0 xl:pt-[62px]">
                   <ul className="">
                     {estModalStatus
                       ? links.map(({ name, link }) => (
                           <li
                             key={name}
-                            className="relative flex h-[38px] cursor-pointer items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')]"
+                            className="relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-[7px] before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0"
                           >
                             <a
                               href={link}
@@ -178,8 +196,9 @@ export const HelpModal = ({
                       : facebookLinks.map(({ name, link }) => (
                           <li
                             key={name}
-                            className="relative flex h-[38px] items-center pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')]"
+                            className="relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-[7px] before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0"
                           >
+                            {/* <CheckIcon className=" mr-[21px] h-6 w-6" /> */}
                             <a
                               href={link}
                               target="_blank"
@@ -190,6 +209,7 @@ export const HelpModal = ({
                           </li>
                         ))}
                   </ul>
+                  <FlowerCategory className="absolute bottom-0 right-[-67px] hidden h-[612px] w-[215px] md:block xl:hidden" />
                 </div>
 
                 <button
@@ -198,11 +218,11 @@ export const HelpModal = ({
                     closeModal();
                     estModalClose();
                   }}
-                  className="lg:top-11 lg:right-11 absolute top-6 right-6"
+                  className=" absolute top-[33px] right-[33px]"
                   aria-label="Зачинити модальне вікно"
                   aria-controls="close PopUp"
                 >
-                  <XMarkIcon className="text-button h-6 w-6" />
+                  <XMarkIcon className="h-[38px] w-[38px] transform rounded-[50%] p-1 text-blueAccent transition-all hover:bg-blueAccent hover:text-white" />
                 </button>
               </Dialog.Panel>
             </Transition.Child>

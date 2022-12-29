@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { Banner, HelpModal } from '@/components';
@@ -9,6 +10,14 @@ const LinkToTop = dynamic(() =>
 );
 
 export const Layout = ({ children, data, modal }) => {
+  const isOpen = modal.isOpen;
+
+  useEffect(() => {
+    isOpen
+      ? (document.body.style.overflowY = 'hidden')
+      : (document.body.style.overflowY = 'auto');
+  }, [isOpen]);
+
   return (
     <div className={wrapper}>
       <Head>
@@ -24,7 +33,7 @@ export const Layout = ({ children, data, modal }) => {
 
       <Footer data={data} />
       <HelpModal
-        isOpen={modal.isOpen}
+        isOpen={isOpen}
         closeModal={modal.closeModal}
         estModalStatus={modal.estModalStatus}
         estModalClose={modal.estModalClose}

@@ -26,7 +26,7 @@ export const Centers = ({ centers }) => {
                   )}
 
                   <a
-                    className=" transition-all hover:text-slate-500 focus:text-slate-500"
+                    className=" transition-all hover:text-yellowAccent focus:text-yellowAccent"
                     rel="noopener noreferrer nofollow"
                     target="_blank"
                     href={href}
