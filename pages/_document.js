@@ -1,6 +1,17 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import i18nextConfig from '../next-i18next.config';
 
+const data = {
+  uk: {
+    metaDescription: 'Електронний волонтер для допомоги біженцям',
+    metaTitle: 'E-VOLUNTEER',
+  },
+  ru: {
+    metaDescription: 'Электронный волонтёр для помощи беженцам',
+    metaTitle: 'E-VOLUNTEER',
+  },
+};
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -24,6 +35,10 @@ class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content={data[currentLocale].metaDescription}
           />
         </Head>
 

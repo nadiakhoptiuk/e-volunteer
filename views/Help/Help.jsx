@@ -12,7 +12,7 @@ import {
 import { ButtonLink } from '/components';
 import Flower from 'public/image/flower-help.svg';
 
-export const Help = ({ title, button, EST, help, ...props }) => {
+export const Help = ({ title, button, EST, help, estModal, openModal }) => {
   const { t } = useTranslation('common');
 
   return (
@@ -24,7 +24,10 @@ export const Help = ({ title, button, EST, help, ...props }) => {
           <ButtonLink
             button
             className="mx-auto mt-6 w-[146px] !px-14 text-white md:mx-0 md:mt-0 xl:ml-12"
-            {...props}
+            onClick={() => {
+              estModal();
+              openModal();
+            }}
           >
             {button}
           </ButtonLink>

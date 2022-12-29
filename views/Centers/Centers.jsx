@@ -10,8 +10,9 @@ export const Centers = ({ centers }) => {
         </h2>
         <ul className="grid gap-9 md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px] xl:gap-y-10">
           {centers?.receptionCenter?.map(
-            ({ id, city, phoneNumber, centerTitle, address }) => {
-              const street = address.split(' ');
+            ({ id, city, phoneNumber, centerTitle, address, href }) => {
+              // console.log(href);
+              // const street = address.split(' ');
 
               return (
                 <li
@@ -25,10 +26,10 @@ export const Centers = ({ centers }) => {
                   )}
 
                   <a
-                    className="transition-all hover:text-slate-500 focus:text-slate-500"
+                    className=" transition-all hover:text-slate-500 focus:text-slate-500"
                     rel="noopener noreferrer nofollow"
                     target="_blank"
-                    href={`https://www.google.com.ua/maps/place/${street[0]}+${street[1]},${city}`}
+                    href={href}
                   >
                     {city && (
                       <p className="mb-3 text-lg tracking-tight">{city}</p>

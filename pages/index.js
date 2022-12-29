@@ -16,7 +16,7 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'modal'])),
       articles: data.allCategories,
       centers: data.center,
       banner: data.banner.content,
@@ -27,13 +27,19 @@ export const getStaticProps = async ({ locale }) => {
 };
 
 const Home = props => {
-  const { articles, centers, help } = props;
+  const { articles, centers, help, modal } = props;
 
   return (
     <>
       <Hero />
 
-      <Help title="Ma tahan aidata" button="Vali" EST />
+      <Help
+        title="Ma tahan aidata"
+        button="Vali"
+        EST
+        estModal={modal.estModalOpen}
+        openModal={modal.openModal}
+      />
 
       <Categories articles={articles.sort((a, b) => a.range - b.range)} />
 
