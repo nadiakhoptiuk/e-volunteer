@@ -4,7 +4,6 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'next-i18next';
 import ModalFlower from 'public/image/flower-modal.svg';
 import FlowerCategory from 'public/image/flower-modal-tab.svg';
-// import CheckIcon from 'public/image/check-mark-light.svg';
 
 const needs = [
   'riided',
@@ -143,15 +142,15 @@ export const HelpModal = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-[20px] bg-white text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px]  sm:px-[44px] sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex xl:h-[700px] xl:w-[1240px] xl:px-[108px] xl:py-[40px]">
-                <div className="text-start  xl:relative    xl:mr-[121px] ">
+              <Dialog.Panel className="relative transform overflow-hidden bg-white px-5 py-[67px] text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px] sm:rounded-[32px] sm:px-[44px]  sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex xl:h-[700px] xl:w-[1240px] xl:rounded-[20px] xl:px-[108px] xl:py-[40px]">
+                <div className="text-start text-sm  leading-6  sm:text-small md:text-lg md:leading-[22px] xl:relative    xl:mr-[121px] ">
                   <Dialog.Title
                     as="h3"
-                    className=" text-[34px] font-medium leading-[39px] "
+                    className="text-big font-medium sm:text-middle md:text-[34px] md:leading-[39px] "
                   >
                     {estModalStatus ? 'Kallid Eestimaa elanikud!' : t('title')}
                   </Dialog.Title>
-                  <p className="mt-8 xl:w-[506px]">
+                  <p className="mt-[38px] sm:mt-5 md:mt-8 xl:w-[506px]">
                     {estModalStatus
                       ? 'Kahjuks sõjapõgenikud Ukrainast jätkuvalt tulevad Eestisse ning nad vajavad teie abi ja tuge! Saate vaadata, mida inimesed vajavad, või pakkuda teie abi meie telegrammi kanalis.'
                       : t('first')}
@@ -161,7 +160,7 @@ export const HelpModal = ({
                       ? 'Tavaliselt on need põhilised asjad:'
                       : t('third')}
                   </p>
-                  <ul className=" list-inside list-disc text-start">
+                  <ul className=" list-inside list-disc ">
                     {estModalStatus
                       ? needs.map(item => (
                           <li key={item} className="mt-3 ">
@@ -176,7 +175,7 @@ export const HelpModal = ({
                   </ul>
                   <ModalFlower className="absolute left-[130px] bottom-[-10px] hidden xl:block xl:h-[154px] xl:w-[426px]" />
                 </div>
-                <div className="relative sm:mt-10 md:mt-[80px] xl:mt-0 xl:pt-[62px]">
+                <div className="relative mt-10 text-sm leading-6 sm:text-lg sm:leading-[22px] md:mt-[80px] xl:mt-0 xl:pt-[62px]">
                   <ul className="">
                     {estModalStatus
                       ? links.map(({ name, link }) => (
@@ -198,7 +197,6 @@ export const HelpModal = ({
                             key={name}
                             className="relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-[7px] before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0"
                           >
-                            {/* <CheckIcon className=" mr-[21px] h-6 w-6" /> */}
                             <a
                               href={link}
                               target="_blank"
@@ -218,7 +216,7 @@ export const HelpModal = ({
                     closeModal();
                     estModalClose();
                   }}
-                  className=" absolute top-[33px] right-[33px]"
+                  className=" absolute top-5 right-5 sm:top-[33px] sm:right-[33px]"
                   aria-label="Зачинити модальне вікно"
                   aria-controls="close PopUp"
                 >
