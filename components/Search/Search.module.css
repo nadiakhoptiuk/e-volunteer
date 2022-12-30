@@ -1,0 +1,27 @@
+.searchBox {
+  @apply relative;
+}
+
+.input {
+  @apply h-full w-full bg-transparent py-4 pl-[52px] pr-[20px] text-white placeholder:text-slate-300;
+}
+
+.clearBtn {
+  @apply absolute right-[20px] translate-y-1/2 text-slate-600 transition-all hover:text-slate-400;
+}
+
+.resultList {
+  @apply absolute top-full left-0 right-0 z-20 max-h-[212px] overflow-auto rounded-lg border border-blue-200 shadow-lg;
+}
+
+.resultItem {
+  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-slate-600;
+}
+
+.resultLink {
+  @apply block h-full w-full overflow-hidden truncate text-ellipsis  whitespace-nowrap py-3 px-8 text-inherit transition-all hover:bg-blue-200 focus:bg-blue-200;
+}
+
+.resultDesc {
+  @apply truncate text-ellipsis text-xs font-light text-fontGreyLight;
+}
