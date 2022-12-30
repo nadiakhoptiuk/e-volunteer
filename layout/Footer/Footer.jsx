@@ -40,7 +40,7 @@ export const Footer = ({ data }) => {
                     aria-label={email}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mr-20"
+                    className="group xl:mr-20"
                   >
                     <div
                       className={`${s.iconWrp} group-hover:bg-white group-focus:bg-white`}
