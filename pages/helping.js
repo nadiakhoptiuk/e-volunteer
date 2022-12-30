@@ -16,7 +16,7 @@ const Helping = props => {
         <title>{help && help.title}</title>
       </Head>
       {help && (
-        <section className="relative pt-[48px] pb-[103px] after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:after:top-[106px]">
+        <section className=" relative pt-[48px] pb-20  after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:after:top-[106px]">
           <Container>
             <div className="mb-[132px] flex items-center  md:mb-[122px] xl:mb-[107px]">
               <Link

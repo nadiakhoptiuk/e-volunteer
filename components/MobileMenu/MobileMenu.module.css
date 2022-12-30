@@ -1,4 +1,43 @@
+.bars {
+  @apply h-7 w-7 text-white transition-all hover:text-yellowAccent focus:text-yellowAccent;
+}
+
+.headerWrap {
+  @apply bg-blueAccent py-3;
+}
+
+.header {
+  @apply flex items-center justify-between;
+}
+
+.navbar {
+  @apply flex items-center gap-9;
+}
+
+.xicon {
+  @apply h-[30px] w-[30px] text-white transition-all;
+}
+
+.contentWrap {
+  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px] sm:px-5;
+}
+
+.list {
+  @apply mt-11 mb-[38px] flex flex-col gap-5 sm:mb-[108px];
+}
+
+.item {
+  @apply text-small text-fontGrey sm:text-lg sm:leading-[22px];
+}
+
+.buttonType {
+  @apply mx-auto w-[152px] bg-blueAccent !px-0 !text-small text-white;
+}
+
+.flower {
+  @apply absolute bottom-[-128px] left-1/2 w-[286px] -translate-x-1/2  sm:bottom-[-199px] sm:h-[176px] sm:w-[478px];
+}
+
 .dialogPanel {
   @apply h-screen w-full transform overflow-auto  bg-white transition-all;
-  /* background: linear-gradient(179.96deg, #bfdbfe 11.5%, #ffffff 87.34%); */
 }

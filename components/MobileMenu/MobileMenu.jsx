@@ -22,7 +22,7 @@ export const MobileMenu = ({ slugs, onClick }) => {
   return (
     <>
       <button type="button" onClick={toggleModal}>
-        <Bars3Icon className="h-7 w-7 text-slate-50 transition-all hover:text-yellow-200 focus:text-yellow-200" />
+        <Bars3Icon className={s.bars} />
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -51,35 +51,32 @@ export const MobileMenu = ({ slugs, onClick }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className={s.dialogPanel}>
-                  <div className=" bg-blue2 py-3">
+                  <div className={s.headerWrap}>
                     <div className="container">
-                      <div className="flex items-center justify-between">
+                      <div className={s.header}>
                         <Logo />
 
-                        <div className="flex items-center gap-10">
+                        <div className={s.navbar}>
                           <LanguageToggle
                             handleLocaleChange={handleLocaleChange}
                             locale={router.locale}
                           />
 
                           <button type="button" onClick={toggleModal}>
-                            <XMarkIcon className="h-7 w-7 text-slate-50 transition-all hover:text-slate-300 focus:text-slate-300" />
+                            <XMarkIcon className={s.xicon} />
                           </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="relative px-6 pt-9 sm:mx-auto sm:w-[440px] sm:px-5">
+                  <div className={s.contentWrap}>
                     <Search menu articles={slugs} />
 
-                    <ul className="mt-11 mb-[38px] flex flex-col gap-5 sm:mb-[72px]">
+                    <ul className={s.list}>
                       {slugs &&
                         slugs.map(({ route, title }) => (
-                          <li
-                            key={title}
-                            className="text-xl leading-[1.24] text-slate-600"
-                          >
+                          <li key={title} className={s.item}>
                             <Link href={route} onClick={toggleModal}>
                               {title}
                             </Link>
@@ -88,12 +85,12 @@ export const MobileMenu = ({ slugs, onClick }) => {
                     </ul>
                     <ButtonLink
                       button
-                      className="mx-auto w-[152px] bg-blueAccent !px-0 !text-small text-white"
+                      className={s.buttonType}
                       onClick={onClick}
                     >
                       {t('help')}
                     </ButtonLink>
-                    <Flower className="absolute bottom-[-128px] left-1/2 w-[286px] -translate-x-1/2  sm:bottom-[-199px] sm:h-[176px] sm:w-[478px]" />
+                    <Flower className={s.flower} />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
