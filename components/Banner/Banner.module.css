@@ -1,0 +1,12 @@
+.container {
+  @apply relative py-5;
+}
+.title {
+  @apply pr-[35px] text-[16px] font-normal leading-[24px] text-fontBlueDark xl:text-center xl:text-[18px] xl:font-medium xl:leading-[28px] xl:tracking-tight;
+}
+.button {
+  @apply absolute top-[12px] right-[10px] rounded-full stroke-blueAccent p-[11px] transition-colors hover:bg-blueAccent hover:stroke-white focus:bg-blueAccent focus:stroke-white;
+}
+.close {
+  @apply h-[15px] w-[15px];
+}
