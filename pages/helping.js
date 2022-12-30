@@ -1,14 +1,18 @@
+import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import ReactMarkdown from 'react-markdown';
 
 const Helping = props => {
   const { help } = props;
-  console.log(help);
-  //   return <h2>Helping Page</h2>;
+
   return (
     // <div>{help && <ReactMarkdown>{help.content}</ReactMarkdown>}</div>
     <div>
+      <Head>
+        <title>{help && help.title}</title>
+      </Head>
+      <h1>{help && help.title}</h1>
       <ReactMarkdown>{help && help.content}</ReactMarkdown>
     </div>
   );
@@ -17,15 +21,9 @@ const Helping = props => {
 export default Helping;
 
 export async function getStaticProps({ locale }) {
-  //   const { help } = params;
-  // console.log(category);
-  // console.log(locale);
-
   const variables = { locale: locale };
 
   const data = await datoCmsRequest({ variables });
-
-  // console.log(data);
 
   if (!data) {
     return {
@@ -35,8 +33,8 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      //   category: data.allCategories.find(el => el.route === help),
+      ...(await serverSideTranslations(locale, ['common', 'modal'])),
+      articles: data.allCategories,
       banner: data.banner.content,
       help: data.help,
       footer: data.footer,

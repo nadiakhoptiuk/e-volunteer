@@ -11,7 +11,7 @@ const MobileMenu = dynamic(() =>
   ),
 );
 
-export const Header = ({ data }) => {
+export const Header = ({ data, onClick }) => {
   const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
   const [showNavbar, setNavbar] = useState(null);
@@ -22,7 +22,7 @@ export const Header = ({ data }) => {
   }, [isTablet]);
 
   return (
-    <header className="bg-blueDark pt-[12px] pb-[12px]">
+    <header className="bg-blueAccent pt-[19px] pb-[19px]">
       <Container className="flex items-center justify-between">
         <Logo />
 
@@ -32,9 +32,10 @@ export const Header = ({ data }) => {
             locale={router.locale}
             handleLocaleChange={handleLocaleChange}
             articles={data}
+            onClick={onClick}
           />
         ) : (
-          <MobileMenu slugs={data} />
+          <MobileMenu slugs={data} onClick={onClick} />
         )}
       </Container>
     </header>

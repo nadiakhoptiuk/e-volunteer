@@ -10,3 +10,4 @@ export * from './FormModal/FormModal';
 export * from './Spinner/Spinner';
 export * from './ScreenLoader/ScreenLoader';
 export * from './MobileMenu/MobileMenu';
+export * from './HelpModal/HelpModal';
