@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Logo } from 'components';
 import Teleg from '../../public/image/teleg.svg';
+import Mail from '../../public/image/mail.svg';
 import * as s from './Footer.module.css';
 
 export const Footer = ({ data }) => {
@@ -22,9 +23,15 @@ export const Footer = ({ data }) => {
                     aria-label={telegram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={s.link}
+                    className="group sm:mr-[10px] md:mr-[16px]"
                   >
-                    <Teleg className={s.telegram} />
+                    <div
+                      className={`${s.iconWrp} group-hover:bg-white group-focus:bg-white`}
+                    >
+                      <Teleg
+                        className={`${s.telegram} group-hover:fill-blueAccent group-focus:fill-blueAccent`}
+                      />
+                    </div>
                   </a>
                 </Link>
                 <Link href={`mailto:${email}`} legacyBehavior>
@@ -33,9 +40,15 @@ export const Footer = ({ data }) => {
                     aria-label={email}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={s.linkIcon}
+                    className="group mr-20"
                   >
-                    <Teleg className={s.email} />
+                    <div
+                      className={`${s.iconWrp} group-hover:bg-white group-focus:bg-white`}
+                    >
+                      <Mail
+                        className={`${s.email} group-hover:fill-blueAccent group-focus:fill-blueAccent`}
+                      />
+                    </div>
                   </a>
                 </Link>
               </div>

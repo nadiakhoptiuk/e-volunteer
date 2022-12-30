@@ -54,5 +54,5 @@
   @apply max-w-[240px] text-[14px] leading-[24px];
 }
 .telegramLink {
-  @apply pl-1 text-[14px] leading-[24px] text-fontBlueDark;
+  @apply pl-1 text-[14px] leading-[24px] text-fontBlueDark transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }
