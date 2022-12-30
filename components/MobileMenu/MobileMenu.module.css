@@ -19,7 +19,7 @@
 }
 
 .contentWrap {
-  @apply relative px-5 pt-[34px];
+  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px] sm:px-5;
 }
 
 .list {

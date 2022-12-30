@@ -1,9 +1,9 @@
 .searchBox {
-  @apply relative xl:mr-[126px];
+  @apply relative max-md:w-full xl:mr-[126px];
 }
 
 .input {
-  @apply relative z-30 h-full w-full bg-blueAccent py-3 pl-[52px] pr-[22px] text-white placeholder:text-slate-300;
+  @apply relative z-30 h-full w-full py-3 pl-[52px] pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
 }
 
 .clearBtn {
@@ -11,7 +11,7 @@
 }
 
 .resultList {
-  @apply absolute top-[64px] left-0 right-0 z-30  max-h-[212px] min-h-[106px] overflow-auto rounded-lg border border-blue-200 bg-slate-50 text-slate-600 shadow-lg;
+  @apply absolute top-[64px] left-0 right-0 z-30 max-h-[350px] min-h-[212px] overflow-auto rounded-lg border border-blue-200 bg-slate-50 text-slate-600 shadow-lg md:max-h-[212px];
 }
 
 .notFound {
@@ -19,7 +19,7 @@
 }
 
 .resultItem {
-  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-slate-600;
+  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-left text-slate-600;
 }
 
 .resultLink {
