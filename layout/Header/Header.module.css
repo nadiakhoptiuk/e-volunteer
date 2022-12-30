@@ -1,0 +1,7 @@
+.header {
+  @apply bg-blueAccent pt-[19px] pb-[19px];
+}
+
+.containerWrap {
+  @apply flex items-center justify-between;
+}

@@ -8,12 +8,12 @@ export const Navbar = ({
   onClick,
 }) => {
   return (
-    <div className="flex items-center gap-10">
+    <div className="flex items-center gap-2 xl:gap-[54px]">
       <Search articles={articles} />
 
       <ButtonLink
         button
-        className="ml-[46px] w-[152px] bg-white !px-0 !text-small text-fontBlueDark"
+        className="ml-[33px] w-[152px] bg-white !px-0 !text-small text-fontBlueDark xl:ml-[72px]"
         onClick={onClick}
       >
         {linkValue}
