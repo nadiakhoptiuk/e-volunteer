@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { ButtonLink } from '/components';
+import { routes } from 'routes';
 import Flower from 'public/image/flower-help.svg';
 import {
   sectionCommon,
@@ -38,7 +39,7 @@ export const Help = ({ title, button, EST, help, estModal, openModal }) => {
             {button}
           </ButtonLink>
         ) : (
-          <ButtonLink href="helping" className={buttonLink}>
+          <ButtonLink href={routes.HELPING} className={buttonLink}>
             {t('btnChoose')}
           </ButtonLink>
         )}
