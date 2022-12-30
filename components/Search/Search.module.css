@@ -1,17 +1,21 @@
 .searchBox {
-  @apply relative;
+  @apply relative xl:mr-[126px];
 }
 
 .input {
-  @apply h-full w-full bg-transparent py-4 pl-[52px] pr-[20px] text-white placeholder:text-slate-300;
+  @apply relative z-30 h-full w-full bg-blueAccent py-3 pl-[52px] pr-[22px] text-white placeholder:text-slate-300;
 }
 
 .clearBtn {
-  @apply absolute right-[20px] translate-y-1/2 text-slate-600 transition-all hover:text-slate-400;
+  @apply absolute top-[-22px] right-0 z-[31] flex h-[44px] w-[44px] translate-y-1/2 items-center justify-center text-slate-600 transition-all hover:text-slate-400;
 }
 
 .resultList {
-  @apply absolute top-full left-0 right-0 z-20 max-h-[212px] overflow-auto rounded-lg border border-blue-200 shadow-lg;
+  @apply absolute top-[64px] left-0 right-0 z-30  max-h-[212px] min-h-[106px] overflow-auto rounded-lg border border-blue-200 bg-slate-50 text-slate-600 shadow-lg;
+}
+
+.notFound {
+  @apply absolute top-[64px] left-0 right-0 z-30 flex h-[212px] items-start overflow-auto rounded-lg border border-blue-200 bg-slate-50 py-3 px-8 text-slate-600 shadow-lg transition-all;
 }
 
 .resultItem {
@@ -24,4 +28,8 @@
 
 .resultDesc {
   @apply truncate text-ellipsis text-xs font-light text-fontGreyLight;
+}
+
+.backdrop {
+  @apply fixed left-0 top-0 z-20 h-screen w-screen bg-fontGrey/50;
 }
