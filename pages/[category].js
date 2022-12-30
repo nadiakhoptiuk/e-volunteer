@@ -17,7 +17,7 @@ const CategoryPage = props => {
       </Head>
 
       {category && (
-        <section className="mx-auto pt-[48px] pb-20 md:pt-10 xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')] xl:bg-fixed xl:bg-[center_top_320px] xl:bg-no-repeat xl:pb-[103px]">
+        <section className="mx-auto pt-[48px] pb-20 md:pt-10 xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')] xl:bg-[length:60vw_60vh] xl:bg-fixed xl:bg-[90%_30%] xl:bg-no-repeat xl:pb-[103px]">
           <Container className="">
             <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
               <Link
@@ -34,7 +34,7 @@ const CategoryPage = props => {
             </div>
 
             <div className="contentWrapper min-h-[420px] xs:ml-auto xs:w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto ">
-              <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 break-words xs:w-full sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
+              <div className="main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 break-words xs:w-full sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>

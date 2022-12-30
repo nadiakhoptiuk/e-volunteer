@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendMessage } from '../../utils/telegramApi';
 import { Schema } from '../../utils/schema';
-import * as s from './Form.module.css';
 import { FormModal, ScreenLoader } from '..';
+import * as s from './Form.module.css';
 
 export const Form = () => {
   const [isOpen, setIsOpen] = useState(false);
