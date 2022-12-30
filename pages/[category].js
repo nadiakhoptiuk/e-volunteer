@@ -15,10 +15,11 @@ const CategoryPage = props => {
       <Head>
         <title>{category && category.title}</title>
       </Head>
+
       {category && (
-        <section className="pt-[48px] pb-[103px] md:pt-10 md:pb-20">
-          <Container className="">
-            <div className="mb-[132px] flex items-center md:mb-[122px] xl:mb-[107px]">
+        <section className="pt-[48px] pb-20 md:pt-10 xl:pb-[103px]">
+          <Container>
+            <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
@@ -27,13 +28,13 @@ const CategoryPage = props => {
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
 
-              <h1 className="ml-10 text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
+              <h1 className="text-big font-medium text-blueAccent xs:ml-[48px] md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[67px]">
                 {category.title}
               </h1>
             </div>
 
-            <div className="contentWrapper mx-auto flex min-h-[420px] justify-between bg-right-top bg-no-repeat xs:w-full xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')]">
-              <div className="main-prose desktop-prose tablet-prose small-mobile-prose prose-heading:first:mt-0 prose shrink-0 break-words xs:w-full sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
+            <div className="contentWrapper flex min-h-[420px] justify-between bg-right-top bg-no-repeat xs:ml-auto xs:w-[calc(100%_-_42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[974px] xl:bg-[url('/image/flower-category.svg')]">
+              <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 break-words xs:w-full sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>
@@ -307,7 +308,7 @@ const CategoryPage = props => {
   );
 };
 
-// xl: bg - [url('/image/flower-category.svg')];
+// xl:bg-[url('/image/flower-category.svg')];
 
 export default CategoryPage;
 
