@@ -4,6 +4,7 @@ import { useLocalChange } from 'hooks/useLocalChange';
 import { useTranslation } from 'next-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { Container, Logo, Navbar } from '@/components';
+import * as s from './Header.module.css';
 
 const MobileMenu = dynamic(() =>
   import('../../components/MobileMenu/MobileMenu.jsx').then(
@@ -26,8 +27,8 @@ export const Header = ({ data, onClick }) => {
   };
 
   return (
-    <header className="bg-blueAccent pt-[19px] pb-[19px]">
-      <Container className="flex items-center justify-between">
+    <header className={s.header}>
+      <Container className={s.containerWrap}>
         <Logo />
 
         {showNavbar ? (
