@@ -1,4 +1,4 @@
 .dialogPanel {
-  @apply h-screen w-full transform overflow-auto  transition-all;
-  background: linear-gradient(179.96deg, #bfdbfe 11.5%, #ffffff 87.34%);
+  @apply h-screen w-full transform overflow-auto  bg-white transition-all;
+  /* background: linear-gradient(179.96deg, #bfdbfe 11.5%, #ffffff 87.34%); */
 }

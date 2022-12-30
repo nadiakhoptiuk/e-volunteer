@@ -63,7 +63,7 @@ export const Search = ({ articles, menu }) => {
       <div
         className={`${
           menu ? 'border-blueAccent' : ''
-        } relative border-b-[1px] border-[#F8FAFC] md:h-8 md:w-[228px] xl:h-11 xl:w-[505px]`}
+        } relative border-b-[1px] border-blueAccent md:h-8 md:w-[228px] md:border-white xl:h-11 xl:w-[505px]`}
       >
         <MagnifyingGlassIcon
           className={`absolute left-5 top-0 z-[31] h-5 w-5 translate-y-1/2  text-white ${

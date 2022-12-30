@@ -70,7 +70,7 @@ export const MobileMenu = ({ slugs, onClick }) => {
                     </div>
                   </div>
 
-                  <div className="relative px-6 pt-9  sm:px-24">
+                  <div className="relative px-6 pt-9 sm:mx-auto sm:w-[440px] sm:px-5">
                     <Search menu articles={slugs} />
 
                     <ul className="mt-11 mb-[38px] flex flex-col gap-5 sm:mb-[72px]">

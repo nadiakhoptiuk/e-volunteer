@@ -17,7 +17,7 @@ const CategoryPage = props => {
       </Head>
 
       {category && (
-        <section className="mx-auto pt-[48px] pb-20 md:pt-10 xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')] xl:bg-[length:60vw_60vh] xl:bg-fixed xl:bg-[90%_30%] xl:bg-no-repeat xl:pb-[103px]">
+        <section className="relative mx-auto pt-[48px] pb-20 after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:w-[1032px] xl:bg-[url('/image/flower-category.svg')] xl:bg-[length:60vw_60vh] xl:bg-fixed xl:bg-[90%_30%] xl:bg-no-repeat xl:after:top-[106px]">
           <Container className="">
             <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
               <Link
