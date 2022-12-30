@@ -23,6 +23,7 @@ export const LinkToTop = () => {
     <>
       {show && (
         <Link
+          to="#"
           onClick={scrollTop}
           className={s.link}
           aria-label="scroll to Top"
