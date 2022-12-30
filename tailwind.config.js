@@ -31,6 +31,8 @@ module.exports = {
 
       boxShadow: {
         card: '-2px -2px 12px rgba(84, 131, 201, 0.25), 2px 2px 12px rgba(84, 131, 201, 0.25)',
+        help: '0px 4px 12px rgba(141, 172, 222, 0.3)',
+        main: '8px 8px 12px rgba(84, 131, 201, 0.5)',
       },
 
       dropShadow: {

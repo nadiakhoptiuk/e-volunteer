@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
+import { ButtonLink } from '/components';
+import { routes } from 'routes';
+import Flower from 'public/image/flower-help.svg';
 import {
   sectionCommon,
   sectionEst,
@@ -7,13 +10,16 @@ import {
   flower,
   content,
   wrapper,
+  buttonLink,
+  buttonType,
 } from './Help.module.css';
-
-import { ButtonLink } from '/components';
-import Flower from 'public/image/flower-help.svg';
 
 export const Help = ({ title, button, EST, help, estModal, openModal }) => {
   const { t } = useTranslation('common');
+
+  const handleClick = evt => {
+    evt.target.blur();
+  };
 
   return (
     <section className={`${sectionCommon} ${EST ? sectionEst : section}`}>
@@ -23,19 +29,17 @@ export const Help = ({ title, button, EST, help, estModal, openModal }) => {
         {EST ? (
           <ButtonLink
             button
-            className="mx-auto mt-6 w-[146px] !px-14 text-white md:mx-0 md:mt-0 xl:ml-12"
-            onClick={() => {
+            className={buttonType}
+            onClick={evt => {
               estModal();
               openModal();
+              handleClick(evt);
             }}
           >
             {button}
           </ButtonLink>
         ) : (
-          <ButtonLink
-            href="helping"
-            className="mx-auto mt-[26px] w-[280px] sm:w-[194px] md:mx-0 md:mt-0"
-          >
+          <ButtonLink href={routes.HELPING} className={buttonLink}>
             {t('btnChoose')}
           </ButtonLink>
         )}
