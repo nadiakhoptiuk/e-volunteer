@@ -20,13 +20,13 @@
   @apply w-full md:ml-auto md:w-[518px] xl:w-[522px] xl:pt-6;
 }
 .title {
-  @apply mb-5 font-sans text-fTitle text-fontGrey sm:mb-3 sm:text-fsmTitle;
+  @apply mb-[28px] text-big font-medium text-fontGrey md:mb-3 md:text-large md:font-normal;
 }
 .subTitle {
-  @apply mb-6 font-sans text-fText text-fontGrey md:mb-[38px];
+  @apply mb-9 text-small font-normal text-fontGrey;
 }
 .wrapperInputs {
-  @apply mb-[46px] grid grid-cols-1 gap-y-[54px] sm:mb-[60px];
+  @apply mb-[50px] grid grid-cols-1 gap-y-[54px] sm:mb-[64px];
 }
 .inputWrapper {
   @apply relative w-full;
@@ -47,7 +47,7 @@
 .textarea::placeholder,
 .inputRed::placeholder,
 .textareaRed::placeholder {
-  @apply text-fPlaceholder text-fontGreyLight;
+  @apply text-small font-normal text-fontGreyLight;
 }
 .input:not(:placeholder-shown),
 .textarea:not(:placeholder-shown) {
@@ -60,13 +60,13 @@
   @apply border-yellowAccent text-yellowAccent outline-0;
 }
 .errorMsg {
-  @apply absolute w-full text-fError text-redAccent;
+  @apply absolute w-full text-[14px] font-normal leading-[24px] text-redAccent;
 }
 .errorMsgTextarea {
-  @apply absolute w-full text-fError text-redAccent;
+  @apply absolute w-full text-[14px] font-normal leading-[24px] text-redAccent;
 }
 .button {
-  @apply block h-[56px] min-w-full rounded-lg border border-blueAccent !bg-blueAccent text-fBtn !text-white transition-all sm:min-w-[214px];
+  @apply block h-[56px] min-w-full rounded-lg border border-blueAccent !bg-blueAccent text-middle font-normal !text-white transition-all sm:min-w-[210px];
 }
 .button:hover,
 .button:focus {
@@ -75,9 +75,6 @@
 .button:active {
   @apply border-yellowAccent !bg-yellowAccent !text-fontGrey;
 }
-.error {
-  @apply text-fModallargeText text-redAccent md:text-fModallargemdText;
-}
 .loading {
-  @apply text-fModallargeText text-blueAccent md:text-fModallargemdText;
+  @apply text-[30px] font-medium leading-[46px] text-blueAccent md:text-[40px];
 }

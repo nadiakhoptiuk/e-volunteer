@@ -1,5 +1,5 @@
 .section {
-  @apply pt-20 pb-[294px] text-blueAccent sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pb-[420px];
+  @apply pt-20 pb-[294px] text-blueAccent sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pt-[100px] xl:pb-[454px];
   background-position: center bottom;
   background-image: url('/image/hero/hero-320.svg');
   background-size: 310px;
@@ -19,22 +19,16 @@
 }
 @media screen and (min-width: 1280px) {
   .section {
-    background-image: url('/image/hero/hero-1440.svg');
+    background-image: url('/image/hero/hero-1280.svg');
     background-size: 1250px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .section {
-    background-image: url('/image/hero/hero-1440.svg');
-    background-size: 1436px;
   }
 }
 .wrapper {
   @apply mx-auto flex max-w-[280px] flex-col gap-8 sm:m-0 sm:max-w-[440px] md:max-w-[558px] md:gap-10;
 }
 .title {
-  @apply text-hTitle uppercase md:text-hmdTitle xl:text-hxlTitle;
+  @apply text-[40px] font-medium uppercase leading-[46px] md:text-[60px] md:leading-[64px];
 }
 .text {
-  @apply max-w-[260px] text-hText md:max-w-[497px] md:text-hmdText xl:text-hxlText;
+  @apply max-w-[260px] text-middle font-normal md:max-w-[497px] md:text-[30px] md:font-medium md:leading-[39px];
 }
