@@ -21,6 +21,10 @@ export const Header = ({ data, onClick }) => {
     setNavbar(isTablet);
   }, [isTablet]);
 
+  const handleClick = evt => {
+    evt.target.blur();
+  };
+
   return (
     <header className="bg-blueAccent pt-[19px] pb-[19px]">
       <Container className="flex items-center justify-between">
@@ -32,10 +36,19 @@ export const Header = ({ data, onClick }) => {
             locale={router.locale}
             handleLocaleChange={handleLocaleChange}
             articles={data}
-            onClick={onClick}
+            onClick={evt => {
+              onClick();
+              handleClick(evt);
+            }}
           />
         ) : (
-          <MobileMenu slugs={data} onClick={onClick} />
+          <MobileMenu
+            slugs={data}
+            onClick={evt => {
+              onClick();
+              handleClick(evt);
+            }}
+          />
         )}
       </Container>
     </header>

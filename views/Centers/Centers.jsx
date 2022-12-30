@@ -11,13 +11,10 @@ export const Centers = ({ centers }) => {
         <ul className="grid gap-9 md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[130px] xl:gap-y-10">
           {centers?.receptionCenter?.map(
             ({ id, city, phoneNumber, centerTitle, address, href }) => {
-              // console.log(href);
-              // const street = address.split(' ');
-
               return (
                 <li
                   key={id}
-                  className="border-b border-slate-50  md:first:row-span-2"
+                  className="border-b border-white  md:first:row-span-2"
                 >
                   {centerTitle && (
                     <h3 className="mb-5 text-middle md:mb-[52px] md:text-big">
@@ -43,7 +40,7 @@ export const Centers = ({ centers }) => {
                   {phoneNumber && (
                     <a
                       rel="noopener noreferrer nofollow"
-                      className=" mb-3 inline-block text-lg leading-tight transition-all hover:text-slate-500 focus:text-slate-500"
+                      className=" mb-3 inline-block text-lg leading-tight transition-all hover:text-yellowAccent focus:text-yellowAccent"
                       href={`tel:${phoneNumber}`}
                     >
                       {phoneNumber}

@@ -3,23 +3,18 @@
 }
 
 .sectionEst {
-  @apply drop-shadow-main xl:shadow-card xl:drop-shadow-none;
-  background: linear-gradient(180deg, #bfdbfe 0%, #ffffff 100%);
+  @apply shadow-main md:shadow-help;
+  background: linear-gradient(360deg, #bfdbfe -39.06%, #ffffff 100%);
 }
 
 .section {
-  @apply drop-shadow-main;
+  @apply drop-shadow-main md:shadow-help md:drop-shadow-none;
   background: linear-gradient(360deg, #bfdbfe -39.06%, #ffffff 100%);
 }
 
 @media screen and (min-width: 1280px) {
-  .section {
-    @apply drop-shadow-none;
-    background: linear-gradient(
-      0deg,
-      #bfdbfe -23.79%,
-      rgba(255, 255, 255, 0.5) 51.12%
-    );
+  .sectionEst {
+    background: linear-gradient(180deg, #bfdbfe 0%, #ffffff 100%);
   }
 }
 
@@ -33,4 +28,12 @@
 
 .content {
   @apply mb-6 text-big font-medium text-fontGrey md:mb-0 md:text-large md:font-normal;
+}
+
+.buttonType {
+  @apply mx-auto mt-6 w-[146px] bg-blueAccent !px-14 text-white md:mx-0 md:mt-0 xl:ml-12;
+}
+
+.buttonLink {
+  @apply mx-auto mt-[26px] w-[280px] sm:w-[190px] md:mx-0 md:mt-0;
 }
