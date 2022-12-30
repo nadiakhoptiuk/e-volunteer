@@ -2,10 +2,11 @@ import Link from 'next/link';
 import React, { useEffect, useCallback } from 'react';
 import { useTranslation } from 'next-i18next';
 import Mail from '../../public/image/form/mail.svg';
+import MailError from '../../public/image/form/mail-error.svg';
 import Close from '../../public/image/form/close.svg';
 import * as s from './FormModal.module.css';
 
-export const FormModal = ({ show, closeModal }) => {
+export const FormModal = ({ show, error, closeModal }) => {
   const { t } = useTranslation('common');
 
   const closeOnEscapeKeyDown = useCallback(
@@ -30,20 +31,31 @@ export const FormModal = ({ show, closeModal }) => {
         <button className={s.button} onClick={closeModal}>
           <Close className={s.close} />
         </button>
-        <Mail className={s.mail} />
-        <h3 className={s.title}>{t('formModalTitle')}</h3>
-        <p className={s.text}>{t('formModalText')}</p>
-        <Link href="https://t.me/eevolunteer" legacyBehavior>
-          <a
-            href="https://t.me/eevolunteer"
-            aria-label="https://t.me/eevolunteer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={s.link}
-          >
-            <span className={s.telegramLink}>{t('formModalLink')}</span>
-          </a>
-        </Link>
+        {error ? (
+          <div className={s.innerWrapper}>
+            <h3 className={s.title}>{t('formModalTitleError')}</h3>
+            <p className={s.text}>{t('formModalTextError')}</p>
+            <MailError className={s.mail} />
+          </div>
+        ) : (
+          <div className={s.innerWrapper}>
+            <h3 className={s.title}>{t('formModalTitle')}</h3>
+            <p className={s.text}>
+              {t('formModalText')}
+              <Link href="https://t.me/eevolunteer" legacyBehavior>
+                <a
+                  href="https://t.me/eevolunteer"
+                  aria-label="https://t.me/eevolunteer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className={s.telegramLink}>{t('formModalLink')}</span>
+                </a>
+              </Link>
+            </p>
+            <Mail className={s.mail} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -2,35 +2,35 @@
   @apply bg-blueAccent;
 }
 .wrapper {
-  @apply flex flex-wrap items-baseline justify-between border-b-2 pb-6 pt-6;
+  @apply flex flex-wrap items-center justify-between border-b-2 pb-[8px] pt-10 md:items-baseline md:pt-6 xl:items-center xl:pt-10;
 }
 .innerWrapper {
-  @apply flex;
-}
-.text {
-  @apply mr-[19px] text-sm text-white;
-}
-.telegram {
-  @apply mr-[19px] w-[22px];
-}
-.email {
-  @apply w-[22px] rotate-180;
-}
-.linkIcon {
   @apply flex items-center;
 }
+.text {
+  @apply mr-[10px] text-[14px] leading-[24px] text-white sm:mr-5 xl:mr-6;
+}
+.telegram {
+  @apply w-[22px] fill-white transition-colors;
+}
+.email {
+  @apply w-[22px] fill-white transition-colors;
+}
+.iconWrp {
+  @apply grid h-[38px] w-[38px] place-items-center rounded-full transition-colors;
+}
 .list {
-  @apply grid grid-cols-1 gap-y-5 pb-8 pt-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4;
+  @apply grid grid-cols-1 gap-y-3 pt-5 pb-[28px] sm:grid-cols-2 md:grid-cols-3 md:gap-y-6 md:py-[32px] xl:grid-cols-4 xl:gap-y-5;
 }
 .item {
-  @apply text-white;
+  @apply text-[14px] leading-[24px] text-white;
 }
 .link {
-  @apply transition-all hover:text-yellowAccent focus:text-yellowAccent;
+  @apply transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }
 .deskText {
-  @apply border-b-2 pb-6 text-center text-white;
+  @apply border-b-2 pb-4 text-[14px] leading-[24px] text-white sm:text-center md:px-[46px] md:pb-6 md:text-[18px] md:font-medium md:leading-[28px];
 }
 .copyright {
-  @apply flex pb-6 pt-5 text-white;
+  @apply flex py-4 text-white md:py-5 xl:pb-[38px];
 }

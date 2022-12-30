@@ -33,10 +33,17 @@ export const Form = () => {
   });
 
   useEffect(() => {
-    isLoading
+    isLoading || isOpen
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto');
-  }, [isLoading]);
+  }, [isLoading, isOpen]);
+
+  useEffect(() => {
+    !isOpen &&
+      setTimeout(() => {
+        setError(false);
+      }, 200);
+  }, [isOpen]);
 
   const onSubmit = async (data, e) => {
     setIsLoading(true);
@@ -56,23 +63,13 @@ export const Form = () => {
     } catch (error) {
       console.log(error);
       setError(true);
+      openModal();
     } finally {
       setIsLoading(false);
-
-      setTimeout(() => {
-        setError(false);
-      }, 4000);
     }
   };
-
   return (
     <>
-      {error && (
-        <ScreenLoader error={error}>
-          <p className={s.error}>{t('error')}</p>
-        </ScreenLoader>
-      )}
-
       {isLoading && (
         <ScreenLoader>
           <p className={s.loading}>{t('loading')}</p>
@@ -140,7 +137,7 @@ export const Form = () => {
             </form>
           </div>
         </div>
-        <FormModal closeModal={closeModal} show={isOpen} />
+        <FormModal closeModal={closeModal} show={isOpen} error={error} />
       </section>
     </>
   );
