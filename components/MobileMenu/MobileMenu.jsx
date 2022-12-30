@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 import * as s from './MobileMenu.module.css';
 import Flower from '@/public/image/flower-menu.svg';
 
-export const MobileMenu = ({ slugs }) => {
+export const MobileMenu = ({ slugs, onClick }) => {
   let [isOpen, setIsOpen] = useState(false);
   const [router, handleLocaleChange] = useLocalChange();
   const { t } = useTranslation('common');
@@ -18,8 +18,6 @@ export const MobileMenu = ({ slugs }) => {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
-
-  console.log(slugs);
 
   return (
     <>
@@ -90,7 +88,8 @@ export const MobileMenu = ({ slugs }) => {
                     </ul>
                     <ButtonLink
                       button
-                      className="mx-auto w-[152px] bg-blueAccent !px-0 text-small text-white"
+                      className="mx-auto w-[152px] bg-blueAccent !px-0 !text-small text-white"
+                      onClick={onClick}
                     >
                       {t('help')}
                     </ButtonLink>

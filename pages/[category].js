@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { categoryRequest, routeRequest } from '@/lib/datoCmsRequests';
@@ -11,6 +12,9 @@ const CategoryPage = props => {
 
   return (
     <>
+      <Head>
+        <title>{category && category.title}</title>
+      </Head>
       {category && (
         <section className="pt-[48px] pb-[103px] md:pt-10 md:pb-20">
           <Container className="">
@@ -339,7 +343,7 @@ export async function getStaticProps({ locale, params: { category } }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'modal'])),
       articles: data.allCategories,
       category: data.allCategories.find(el => el.route === category),
       banner: data.banner.content,
