@@ -3,7 +3,7 @@
 }
 
 .input {
-  @apply relative z-30 h-full w-full py-3 pl-[52px] pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
+  @apply relative z-30 h-full w-full bg-white py-3 pl-[52px] pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
 }
 
 .clearBtn {

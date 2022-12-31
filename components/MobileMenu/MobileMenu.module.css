@@ -19,7 +19,7 @@
 }
 
 .contentWrap {
-  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px] sm:px-5;
+  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px];
 }
 
 .list {
@@ -31,7 +31,7 @@
 }
 
 .buttonType {
-  @apply mx-auto w-[152px] bg-blueAccent !px-0 !text-small text-white;
+  @apply mx-auto w-[152px] !bg-blueAccent !px-0 !text-small text-white;
 }
 
 .flower {
