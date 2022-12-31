@@ -1,10 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import { sendMessage } from '../../utils/telegramApi';
 import { Schema } from '../../utils/schema';
-import { FormModal, ScreenLoader } from '..';
+import { FormModal, ScreenLoader, Container } from '..';
 import * as s from './Form.module.css';
 
 export const Form = () => {
@@ -76,7 +77,7 @@ export const Form = () => {
         </ScreenLoader>
       )}
       <section className={s.section}>
-        <div className={`container ${s.container}`}>
+        <Container className={s.container}>
           <div className={s.wrapper}>
             <h3 className={s.title}>{t('formTitle')}</h3>
             <p className={s.subTitle}>{t('formSubTitle')}</p>
@@ -136,9 +137,13 @@ export const Form = () => {
               </button>
             </form>
           </div>
-        </div>
+        </Container>
         <FormModal closeModal={closeModal} show={isOpen} error={error} />
       </section>
     </>
   );
+};
+
+Form.propTypes = {
+  sendMessage: PropTypes.func,
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Container } from '..';
 import Close from '../../public/image/form/close.svg';
 import * as s from './Banner.module.css';
@@ -18,4 +19,8 @@ export const Banner = ({ data }) => {
       </Container>
     </div>
   );
+};
+
+Banner.propTypes = {
+  data: PropTypes.string,
 };

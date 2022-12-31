@@ -19,7 +19,7 @@
 }
 
 .cardDescription {
-  @apply max-h-[90px] overflow-hidden text-left text-small font-normal text-fontGrey;
+  @apply overflow-hidden text-left text-small font-normal text-fontGrey;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;

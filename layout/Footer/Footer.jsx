@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Logo } from 'components';
+import { Logo, Container } from 'components';
 import Teleg from '../../public/image/teleg.svg';
 import Mail from '../../public/image/mail.svg';
 import * as s from './Footer.module.css';
@@ -12,7 +12,7 @@ export const Footer = ({ data }) => {
     <>
       {data?.footer && (
         <footer className={s.footer}>
-          <div className="container">
+          <Container>
             <div className={s.wrapper}>
               <Logo />
               <div className={s.innerWrapper}>
@@ -77,7 +77,7 @@ export const Footer = ({ data }) => {
               <span>{new Date().getFullYear()}</span>
               <p className="pl-1">E-VOLUNTEER</p>
             </div>
-          </div>
+          </Container>
         </footer>
       )}
     </>
