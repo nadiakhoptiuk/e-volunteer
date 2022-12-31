@@ -19,7 +19,7 @@
 }
 
 .contentWrap {
-  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px] sm:px-5;
+  @apply relative px-5 pt-[34px] sm:mx-auto sm:w-[440px];
 }
 
 .list {
@@ -27,11 +27,11 @@
 }
 
 .item {
-  @apply text-small text-fontGrey sm:text-lg sm:leading-[22px];
+  @apply text-small text-fontGrey hover:text-yellowAccent sm:text-lg sm:leading-[22px];
 }
 
 .buttonType {
-  @apply mx-auto w-[152px] bg-blueAccent !px-0 !text-small text-white;
+  @apply mx-auto w-[152px] !bg-blueAccent !px-0 !text-small text-white;
 }
 
 .flower {
