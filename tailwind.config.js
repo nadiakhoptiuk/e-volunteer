@@ -12,7 +12,6 @@ module.exports = {
 
   theme: {
     screens: {
-      xs: '320px',
       sm: '480px',
       md: '768px',
       xl: '1280px',
@@ -22,7 +21,6 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: '1.25rem',
-          xs: '1.25rem',
           sm: '1.25rem',
           md: '2.25rem',
           xl: '1.25rem',

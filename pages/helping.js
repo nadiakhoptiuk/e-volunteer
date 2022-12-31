@@ -30,8 +30,8 @@ const Helping = props => {
                 {help.title}
               </h1>
             </div>
-            <div className="contentWrapper flex justify-between bg-right-top bg-no-repeat xs:ml-auto xs:w-[calc(100%_-_42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto  xl:w-[1130px] xl:bg-[url('/image/flower-helping.svg')]">
-              <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 break-words xs:w-full sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
+            <div className="contentWrapper xs:ml-auto xs:w-[calc(100%_-_42px)] flex justify-between bg-right-top bg-no-repeat sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto  xl:w-[1130px] xl:bg-[url('/image/flower-helping.svg')]">
+              <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 xs:w-full prose shrink-0 break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>{help && help.content}</ReactMarkdown>
               </div>
             </div>

@@ -62,12 +62,12 @@ export const Search = ({ articles, menu }) => {
     <div className={s.searchBox}>
       <div
         className={`${
-          menu ? 'border-blueAccent' : ''
-        } relative border-b-[1px] border-blueAccent md:h-8 md:w-[228px] md:border-white xl:h-11 xl:w-[505px]`}
+          menu ? 'border-fontGrey' : ''
+        } relative h-8 border-b-[1px] border-fontGrey md:w-[280px] md:border-white xl:h-11 xl:w-[505px]`}
       >
         <MagnifyingGlassIcon
-          className={`absolute left-5 top-0 z-[31] h-5 w-5 translate-y-1/2  text-white ${
-            menu ? '!text-blueAccent' : ''
+          className={`absolute left-[8px] top-0 z-[31] h-6 w-6 translate-y-[4px] text-white xl:top-[50%] xl:translate-y-[-50%] ${
+            menu ? '!text-fontGrey' : ''
           }`}
         />
 
@@ -77,10 +77,11 @@ export const Search = ({ articles, menu }) => {
           value={searchWords}
           className={s.input}
         />
+
         {searchWords && (
           <button type="button" onClick={resetForm} className={s.clearBtn}>
             <XMarkIcon
-              className={`h-5 w-5 ${menu ? 'text-blueAccent' : 'text-white'}`}
+              className={`h-5 w-5 ${menu ? 'text-fontGrey' : 'text-white'}`}
             />
           </button>
         )}

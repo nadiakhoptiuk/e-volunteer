@@ -3,27 +3,31 @@
 }
 
 .input {
-  @apply relative z-30 h-full w-full bg-white py-3 pl-[52px] pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
+  @apply relative z-30 h-full w-full bg-white py-3 pl-10 pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
 }
 
 .clearBtn {
-  @apply absolute top-[-22px] right-0 z-[31] flex h-[44px] w-[44px] translate-y-1/2 items-center justify-center text-slate-600 transition-all hover:text-slate-400;
+  @apply absolute -top-1/2 right-0 z-[31] flex h-8 w-8 translate-y-1/2 items-center justify-center  text-slate-600 transition-all hover:text-slate-400 xl:top-[-1/2] xl:h-11 xl:w-11;
 }
 
 .resultList {
-  @apply absolute top-[64px] left-0 right-0 z-30 max-h-[350px] min-h-[212px] overflow-auto rounded-lg border border-blue-200 bg-slate-50 text-slate-600 shadow-lg md:max-h-[212px];
+  @apply absolute top-10 left-0 right-0 z-30 h-[280px] overflow-auto rounded-lg border border-blue-200 bg-slate-50 text-slate-600 shadow-lg xl:top-[52px];
 }
 
 .notFound {
-  @apply absolute top-[64px] left-0 right-0 z-30 flex h-[212px] items-start overflow-auto rounded-lg border border-blue-200 bg-slate-50 py-3 px-8 text-slate-600 shadow-lg transition-all;
+  @apply absolute top-10 left-0 right-0 z-30 flex h-[280px] items-start overflow-auto rounded-lg border border-blue-200 bg-slate-50 px-8 pt-3 text-[14px] leading-[24px] text-fontGrey shadow-lg transition-all xl:top-[52px] xl:text-small;
 }
 
 .resultItem {
-  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-left text-slate-600;
+  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-left text-slate-600 last:border-b-white xl:text-small;
 }
 
 .resultLink {
-  @apply block h-full w-full overflow-hidden truncate text-ellipsis  whitespace-nowrap py-3 px-8 text-inherit transition-all hover:bg-blue-200 focus:bg-blue-200;
+  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-all hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
+}
+
+.resultLink span {
+  @apply mt-1 text-[12px] font-medium leading-[24px] text-fontGreyLight xl:text-[14px];
 }
 
 .resultDesc {
