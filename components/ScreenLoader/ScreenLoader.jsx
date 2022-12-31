@@ -1,4 +1,5 @@
 import { Spinner } from '..';
+import PropTypes from 'prop-types';
 import * as s from './ScreenLoader.module.css';
 
 export const ScreenLoader = ({ children, error }) => {
@@ -8,4 +9,9 @@ export const ScreenLoader = ({ children, error }) => {
       {!error && <Spinner />}
     </div>
   );
+};
+
+ScreenLoader.propTypes = {
+  children: PropTypes.node,
+  error: PropTypes.bool,
 };

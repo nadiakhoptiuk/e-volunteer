@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React, { useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import Mail from '../../public/image/form/mail.svg';
 import MailError from '../../public/image/form/mail-error.svg';
@@ -59,4 +60,10 @@ export const FormModal = ({ show, error, closeModal }) => {
       </div>
     </div>
   );
+};
+
+FormModal.propTypes = {
+  show: PropTypes.bool,
+  error: PropTypes.bool,
+  closeModal: PropTypes.func,
 };
