@@ -36,10 +36,19 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
             rel="stylesheet"
           />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:description"
+            content={data[currentLocale].metaDescription}
+          />
+          <meta property="og:title" content={data[currentLocale].metaTitle} />
           <meta
             name="description"
             content={data[currentLocale].metaDescription}
           />
+
+          <link rel="canonical" href="https://e-volunteer.vercel.app/" />
+          <link rel="alternate" href="https://e-volunteer.vercel.app/" />
         </Head>
 
         <body>

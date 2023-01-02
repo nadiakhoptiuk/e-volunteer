@@ -28,7 +28,7 @@ const CategoryPage = props => {
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
 
-              <h1 className="xs:ml-[48px] text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[59px]">
+              <h1 className="ml-[48px] text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[59px]">
                 {category.title}
               </h1>
             </div>
