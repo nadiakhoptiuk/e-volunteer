@@ -6,12 +6,15 @@
   }
   ::-webkit-scrollbar {
     @apply !w-[11px] rounded-[8px] bg-transparent;
+    margin: 0;
   }
   ::-webkit-scrollbar-thumb {
     @apply !box-border rounded-[8px] bg-blueAccent; /*color trackbar*/
+    border: 8px solid transparent;
+    border-radius: 15px;
   }
   ::-webkit-scrollbar-track {
-    @apply rounded-[8px];
+    @apply rounded-[8px] border border-solid border-white;
     box-shadow: inset 0 0 2px 2px rgba(141, 172, 222, 0.3);
   }
   ::-webkit-scrollbar-button {
