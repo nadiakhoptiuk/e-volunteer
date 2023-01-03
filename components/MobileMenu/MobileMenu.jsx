@@ -81,7 +81,7 @@ export const MobileMenu = ({ slugs, onClick }) => {
                   </div>
 
                   <div className={s.contentWrap}>
-                    <Search menu articles={slugs} onCloseMenu={toggleModal} />
+                    <Search articles={slugs} onCloseMenu={toggleModal} />
 
                     <ul className={s.list}>
                       {slugs &&

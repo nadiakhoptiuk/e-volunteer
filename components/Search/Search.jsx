@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import { DebounceInput } from 'react-debounce-input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/solid';
-import s from './Search.module.css';
 import Backdrop from './Backdrop';
-import { useTranslation } from 'next-i18next';
+import s from './Search.module.css';
 
-export const Search = ({ articles, menu, onCloseMenu }) => {
+export const Search = ({ articles, onCloseMenu }) => {
   const [searchWords, setSearchWords] = useState('');
   const [filteredData, setFilteredData] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -60,16 +61,8 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
 
   return (
     <div className={s.searchBox}>
-      <div
-        className={`${
-          menu ? 'border-fontGrey' : ''
-        } relative h-8 border-b-[1px] border-fontGrey md:w-[280px] md:border-white xl:h-11 xl:w-[505px]`}
-      >
-        <MagnifyingGlassIcon
-          className={`absolute left-[8px] top-0 z-[31] h-6 w-6 translate-y-[4px] text-white xl:top-[50%] xl:translate-y-[-50%] ${
-            menu ? '!text-fontGrey' : ''
-          }`}
-        />
+      <div className={s.inputWrapper}>
+        <MagnifyingGlassIcon className={s.glassIcon} />
 
         <DebounceInput
           onChange={handleInputChange}
@@ -80,9 +73,7 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
 
         {searchWords && (
           <button type="button" onClick={resetForm} className={s.clearBtn}>
-            <XMarkIcon
-              className={`h-5 w-5 ${menu ? 'text-fontGrey' : 'text-white'}`}
-            />
+            <XMarkIcon className={s.clearIcon} />
           </button>
         )}
       </div>
@@ -131,4 +122,24 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
       )}
     </div>
   );
+};
+
+Search.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      cardInfo: PropTypes.arrayOf(
+        PropTypes.shape({
+          alt: PropTypes.string.isRequired,
+          contentAtPage: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          image: PropTypes.object.isRequired,
+        }).isRequired,
+      ).isRequired,
+      range: PropTypes.number.isRequired,
+      route: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ),
+  onCloseMenu: PropTypes.func,
 };

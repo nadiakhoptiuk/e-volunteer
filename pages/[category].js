@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { categoryRequest, routeRequest } from '@/lib/datoCmsRequests';
 import { Container } from '@/components';
@@ -7,6 +8,7 @@ import { routes } from 'routes';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import { ArrowLongLeftIcon } from '@heroicons/react/20/solid';
+import s from 'styles/[category].module.css';
 
 const CategoryPage = props => {
   const { category } = props;
@@ -31,32 +33,32 @@ const CategoryPage = props => {
       </Head>
 
       {category && (
-        <section className="relative mx-auto pt-[48px] pb-20 after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-['']  md:pt-10 md:pb-20 md:after:top-[126px]  xl:after:top-[106px]">
+        <section className={s.section}>
           <Container>
-            <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
+            <div className={s.titleWrapper}>
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
-                className="flex h-[50px] w-[50px] items-center justify-center text-blueAccent hover:text-yellowAccent focus:text-yellowAccent"
+                className={s.linkBackHome}
               >
-                <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
+                <ArrowLongLeftIcon className={s.backHomeIcon} />
               </Link>
 
-              <h1 className="ml-[48px] text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[59px]">
-                {category.title}
-              </h1>
+              <h1 className={s.pageTitle}>{category.title}</h1>
             </div>
 
-            <div className="contentWrapper ml-auto flex min-h-[420px] w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[1032px]">
-              <div className="main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 basis-full break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
+            <div className={s.contentWrapper}>
+              <div
+                className={`${s.content} main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose`}
+              >
                 <ReactMarkdown components={{ a: LinkRenderer }}>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>
               </div>
 
               {isDesktop && (
-                <div className="min-h-full w-full grow-0">
-                  <div className="w-full xl:sticky xl:top-[100px] xl:h-[420px] xl:bg-[url('/image/flower-category.svg')] xl:bg-right-top xl:bg-no-repeat"></div>
+                <div className={s.flowerWrapper}>
+                  <div className={s.flowerBox}></div>
                 </div>
               )}
             </div>
@@ -110,3 +112,56 @@ export async function getStaticProps({ locale, params: { category } }) {
     },
   };
 }
+
+CategoryPage.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      cardInfo: PropTypes.arrayOf(
+        PropTypes.shape({
+          alt: PropTypes.string.isRequired,
+          contentAtPage: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          image: PropTypes.object.isRequired,
+        }).isRequired,
+      ).isRequired,
+      range: PropTypes.number.isRequired,
+      route: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  banner: PropTypes.string.isRequired,
+  category: PropTypes.arrayOf(
+    PropTypes.shape({
+      cardInfo: PropTypes.arrayOf(
+        PropTypes.shape({
+          alt: PropTypes.string.isRequired,
+          contentAtPage: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          image: PropTypes.object.isRequired,
+        }).isRequired,
+      ).isRequired,
+      range: PropTypes.number.isRequired,
+      route: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ),
+  footer: PropTypes.shape({
+    additionalInfo: PropTypes.string.isRequired,
+    additionalPhone: PropTypes.string.isRequired,
+    connectText: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    telegram: PropTypes.string.isRequired,
+  }).isRequired,
+  help: PropTypes.shape({
+    content: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  modal: PropTypes.shape({
+    closeModal: PropTypes.func.isRequired,
+    estModalOpen: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    openModal: PropTypes.func.isRequired,
+  }).isRequired,
+};
