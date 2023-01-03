@@ -78,7 +78,6 @@ class MyDocument extends Document {
 
           <link rel="canonical" href="https://e-volunteer.vercel.app/" />
           <link rel="alternate" href="https://e-volunteer.vercel.app/" />
-          <base target="_blank"></base>
         </Head>
 
         <body>

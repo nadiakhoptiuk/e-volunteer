@@ -25,7 +25,7 @@ h2:first-of-type {
 }
 
 .main-prose {
-  @apply prose-headings:text-fontGrey prose-h2:before:absolute prose-h2:before:left-[-58px] prose-h2:before:top-[-3px] prose-h2:before:block prose-p:text-fontGrey prose-a:break-words prose-a:text-blueAccent prose-strong:font-medium prose-strong:text-fontGrey prose-em:not-italic prose-ul:list-none prose-ul:pl-0 prose-li:relative prose-li:my-[18px] prose-li:pl-0 prose-li:before:absolute prose-li:before:left-[-50px] prose-li:before:content-[url('/image/check-mark-light.svg')] md:prose-h2:before:content-[url('/image/check-mark.svg')];
+  @apply prose-headings:text-fontGrey prose-h2:before:absolute prose-h2:before:left-[-58px] prose-h2:before:top-[-3px] prose-h2:before:block prose-p:text-fontGrey prose-a:break-words prose-a:text-blueAccent hover:prose-a:text-yellowAccent focus:prose-a:text-yellowAccent prose-strong:font-medium prose-strong:text-fontGrey prose-em:not-italic prose-ul:list-none prose-ul:pl-0 prose-li:relative prose-li:my-[18px] prose-li:pl-0 prose-li:before:absolute prose-li:before:left-[-50px] prose-li:before:content-[url('/image/check-mark-light.svg')] md:prose-h2:before:content-[url('/image/check-mark.svg')];
 }
 
 .small-mobile-prose {
