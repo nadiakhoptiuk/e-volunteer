@@ -78,7 +78,7 @@ Home.propTypes = {
     receptionCenter: PropTypes.arrayOf(
       PropTypes.shape({
         address: PropTypes.string.isRequired,
-        centerTitle: PropTypes.string.isRequired,
+        centerTitle: PropTypes.string,
         city: PropTypes.string.isRequired,
         href: PropTypes.string.isRequired,
         id: PropTypes.string.isRequired,
@@ -103,8 +103,8 @@ Home.propTypes = {
     }),
   ),
   footer: PropTypes.shape({
-    additionalInfo: PropTypes.string.isRequired,
-    additionalPhone: PropTypes.string.isRequired,
+    additionalInfo: PropTypes.string,
+    additionalPhone: PropTypes.string,
     connectText: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     telegram: PropTypes.string.isRequired,
