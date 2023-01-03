@@ -1,46 +1,37 @@
+import PropTypes from 'prop-types';
 import Flower from '@/public/image/flower-centres.svg';
+import * as s from './Centres.module.css';
 
 export const Centers = ({ centers }) => {
   return (
-    <section className=" bg-blueAccent py-20 text-white md:py-[100px]">
+    <section className={s.section}>
       <div className="container relative">
-        <Flower className="hidden h-[214px] w-[260px] xl:absolute xl:top-[-62px] xl:right-5 xl:block" />
-        <h2 className=" mb-12 text-big font-medium xl:mb-[100px] xl:text-[40px] xl:leading-[1.15]">
-          {centers?.titleAtPage}
-        </h2>
-        <ul className="grid gap-9 md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[125px] xl:gap-y-10">
+        <Flower className={s.flower} />
+        <h2 className={s.title}>{centers?.titleAtPage}</h2>
+        <ul className={s.list}>
           {centers?.receptionCenter?.map(
             ({ id, city, phoneNumber, centerTitle, address, href }) => {
               return (
-                <li
-                  key={id}
-                  className="border-b border-white  md:first:row-span-2"
-                >
+                <li key={id} className={s.item}>
                   {centerTitle && (
-                    <h3 className="mb-5 text-middle md:mb-[52px] md:text-big">
-                      {centerTitle}
-                    </h3>
+                    <h3 className={s.titleSecond}>{centerTitle}</h3>
                   )}
 
                   <a
-                    className=" transition-all hover:text-yellowAccent focus:text-yellowAccent"
+                    className={s.link}
                     rel="noopener noreferrer nofollow"
                     target="_blank"
                     href={href}
                   >
-                    {city && (
-                      <p className="mb-3 text-lg tracking-tight">{city}</p>
-                    )}
+                    {city && <p className={s.city}>{city}</p>}
                     {address && (
-                      <address className="mb-3 not-italic md:text-base md:leading-6 xl:text-small">
-                        {address}
-                      </address>
+                      <address className={s.address}>{address}</address>
                     )}
                   </a>
                   {phoneNumber && (
                     <a
                       rel="noopener noreferrer nofollow"
-                      className=" mb-3 inline-block text-lg leading-tight transition-all hover:text-yellowAccent focus:text-yellowAccent"
+                      className={s.phone}
                       href={`tel:${phoneNumber}`}
                     >
                       {phoneNumber}
@@ -54,4 +45,8 @@ export const Centers = ({ centers }) => {
       </div>
     </section>
   );
+};
+
+Centers.propTypes = {
+  centers: PropTypes.object,
 };

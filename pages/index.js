@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { Hero, Help } from 'views';
@@ -22,6 +23,9 @@ const Home = props => {
 
   return (
     <>
+      <Head>
+        <title>E-VOLUNTEER</title>
+      </Head>
       <Hero />
 
       <Help

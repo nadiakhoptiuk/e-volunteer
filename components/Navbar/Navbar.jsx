@@ -1,4 +1,6 @@
 import { LanguageToggle, ButtonLink, Search } from 'components';
+import PropTypes from 'prop-types';
+import * as s from './Navbar.module.css';
 
 export const Navbar = ({
   linkValue,
@@ -8,18 +10,22 @@ export const Navbar = ({
   onClick,
 }) => {
   return (
-    <div className="flex items-center gap-2 xl:gap-[54px]">
+    <div className={s.wrap}>
       <Search articles={articles} />
 
-      <ButtonLink
-        button
-        className="ml-[33px] w-[152px] bg-white !px-0 !text-small text-fontBlueDark xl:ml-[72px]"
-        onClick={onClick}
-      >
+      <ButtonLink button className={s.buttonlink} onClick={onClick}>
         {linkValue}
       </ButtonLink>
 
       <LanguageToggle handleLocaleChange={handleLocaleChange} value={locale} />
     </div>
   );
+};
+
+Navbar.propTypes = {
+  handleLocaleChange: PropTypes.func.isRequired,
+  locale: PropTypes.string.isRequired,
+  linkValue: PropTypes.string.isRequired,
+  articles: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
