@@ -1,0 +1,19 @@
+.section {
+  @apply relative pt-[48px] pb-20  after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:after:top-[106px];
+}
+
+.wrap {
+  @apply mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px];
+}
+
+.buttonBack {
+  @apply flex h-[50px] w-[50px] items-center justify-center text-blueAccent hover:text-yellowAccent;
+}
+
+.title {
+  @apply ml-12 text-big font-medium text-blueAccent  md:ml-[72px]  md:text-[40px] md:leading-[46px] xl:ml-[75px];
+}
+
+.contentWrapper {
+  @apply ml-auto w-[calc(100%-42px)]  justify-between bg-right-top bg-no-repeat sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:min-h-[200px]  xl:w-[1130px] xl:bg-[url('/image/flower-helping.svg')];
+}

@@ -1,5 +1,5 @@
 .listboxbutton {
-  @apply relative flex w-full cursor-pointer items-center gap-2 py-[2px] pl-[17px] pr-[13px] text-left text-small  text-white hover:text-yellowAccent;
+  @apply relative flex w-full cursor-pointer items-center gap-2 py-[2px] pl-[17px] pr-[13px] text-left text-small  text-white hover:text-yellowAccent focus:text-yellowAccent;
 }
 
 .icon {

@@ -1,0 +1,39 @@
+.section {
+  @apply bg-blueAccent py-20 text-white md:py-[100px];
+}
+
+.flower {
+  @apply hidden h-[214px] w-[260px] xl:absolute xl:top-[-62px] xl:right-5 xl:block;
+}
+
+.title {
+  @apply mb-5 text-big font-medium sm:mb-12 md:mb-[100px] md:text-[40px] md:leading-[1.15];
+}
+
+.list {
+  @apply grid gap-9 sm:w-[305px] md:w-auto md:grid-cols-2 md:gap-y-16 md:gap-x-[54px] xl:grid-cols-3 xl:gap-x-[125px] xl:gap-y-10;
+}
+
+.item {
+  @apply border-b border-white  md:first:row-span-2;
+}
+
+.titleSecond {
+  @apply mb-5 text-middle md:mb-[52px] md:text-big;
+}
+
+.link {
+  @apply transition-all hover:text-yellowAccent focus:text-yellowAccent;
+}
+
+.city {
+  @apply mb-3 text-lg tracking-tight;
+}
+
+.address {
+  @apply mb-3 not-italic md:text-base md:leading-6 xl:text-small;
+}
+
+.phone {
+  @apply mb-3 inline-block text-lg leading-tight transition-all hover:text-yellowAccent focus:text-yellowAccent;
+}
