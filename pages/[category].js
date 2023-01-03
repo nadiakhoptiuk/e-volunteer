@@ -17,7 +17,7 @@ const CategoryPage = props => {
       </Head>
 
       {category && (
-        <section className="relative mx-auto pt-[48px] pb-20 after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:bg-[url('/image/flower-category.svg')] xl:bg-[length:50vw_50vh] xl:bg-fixed xl:bg-[90%_100%] xl:bg-no-repeat xl:after:top-[106px]">
+        <section className="relative mx-auto pt-[48px] pb-20 after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-['']  md:pt-10 md:pb-20 md:after:top-[126px]  xl:after:top-[106px]">
           <Container>
             <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
               <Link
@@ -33,11 +33,15 @@ const CategoryPage = props => {
               </h1>
             </div>
 
-            <div className="contentWrapper ml-auto min-h-[420px] w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[1032px]">
-              <div className="main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose w-full shrink-0 break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
+            <div className="contentWrapper ml-auto flex min-h-[420px] w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[1032px]">
+              <div className="main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 basis-full break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>
+              </div>
+
+              <div className="min-h-full w-full grow-0">
+                <div className="w-full xl:sticky xl:top-[100px] xl:h-[420px] xl:bg-[url('/image/flower-category.svg')] xl:bg-right-top xl:bg-no-repeat"></div>
               </div>
             </div>
           </Container>
