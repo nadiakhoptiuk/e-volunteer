@@ -1,5 +1,5 @@
 .section {
-  @apply pt-20 pb-[294px] text-blueAccent sm:pb-[456px] md:pb-[368px] md:pt-[124px] xl:pt-[100px] xl:pb-[454px];
+  @apply pt-[60px] pb-[314px] text-blueAccent sm:pt-20 sm:pb-[456px] md:pb-[392px] md:pt-[100px] xl:pb-[454px];
   background-position: center bottom;
   background-image: url('/image/hero/hero-320.svg');
   background-size: 310px;
@@ -30,5 +30,5 @@
   @apply text-[40px] font-medium uppercase leading-[46px] md:text-[60px] md:leading-[64px];
 }
 .text {
-  @apply max-w-[260px] text-middle font-normal md:max-w-[497px] md:text-[30px] md:font-medium md:leading-[39px];
+  @apply max-w-[260px] text-middle font-normal md:max-w-[497px] md:text-[34px] md:font-medium md:leading-[39px];
 }
