@@ -1,9 +1,22 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Form } from '@/components';
-import { Hero, Categories, Help, Centers } from 'views';
+import dynamic from 'next/dynamic';
+import { Hero, Help } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+const DynamicCategories = dynamic(() =>
+  import('../views/Categories/Categories').then(mod => mod.Categories),
+);
+const DynamicCenters = dynamic(() =>
+  import('../views/Centers/Centers').then(mod => mod.Centers),
+);
+const DynamicHelp = dynamic(() =>
+  import('../views/Help/Help').then(mod => mod.Help),
+);
+const DynamicForm = dynamic(() =>
+  import('../components/Form/Form').then(mod => mod.Form),
+);
 
 const Home = props => {
   const { articles, centers, help, modal } = props;
@@ -23,13 +36,15 @@ const Home = props => {
         openModal={modal.openModal}
       />
 
-      <Categories articles={articles.sort((a, b) => a.range - b.range)} />
+      <DynamicCategories
+        articles={articles.sort((a, b) => a.range - b.range)}
+      />
 
-      <Help help={help} />
+      <DynamicHelp help={help} />
 
-      <Centers centers={centers} />
+      <DynamicCenters centers={centers} />
 
-      <Form />
+      <DynamicForm />
     </>
   );
 };
