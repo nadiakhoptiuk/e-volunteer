@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 import { Hero, Help } from 'views';
@@ -22,6 +23,9 @@ const Home = props => {
 
   return (
     <>
+      <Head>
+        <title>E-VOLUNTEER</title>
+      </Head>
       <Hero />
 
       <Help
@@ -101,22 +105,6 @@ Home.propTypes = {
       }).isRequired,
     ).isRequired,
   }).isRequired,
-  category: PropTypes.arrayOf(
-    PropTypes.shape({
-      cardInfo: PropTypes.arrayOf(
-        PropTypes.shape({
-          alt: PropTypes.string.isRequired,
-          contentAtPage: PropTypes.string.isRequired,
-          description: PropTypes.string.isRequired,
-          id: PropTypes.string.isRequired,
-          image: PropTypes.object.isRequired,
-        }).isRequired,
-      ).isRequired,
-      range: PropTypes.number.isRequired,
-      route: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    }),
-  ),
   footer: PropTypes.shape({
     additionalInfo: PropTypes.string,
     additionalPhone: PropTypes.string,

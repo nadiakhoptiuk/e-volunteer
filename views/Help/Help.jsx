@@ -3,16 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { ButtonLink } from '/components';
 import { routes } from 'routes';
 import Flower from 'public/image/flower-help.svg';
-import {
-  sectionCommon,
-  sectionEst,
-  section,
-  flower,
-  content,
-  wrapper,
-  buttonLink,
-  buttonType,
-} from './Help.module.css';
+import * as s from './Help.module.css';
 
 export const Help = ({ title, button, EST, help, estModal, openModal }) => {
   const { t } = useTranslation('common');
@@ -22,14 +13,14 @@ export const Help = ({ title, button, EST, help, estModal, openModal }) => {
   };
 
   return (
-    <section className={`${sectionCommon} ${EST ? sectionEst : section}`}>
-      <div className={wrapper}>
-        <Flower className={flower} />
-        <h2 className={content}>{help ? help.title : title}</h2>
+    <section className={`${s.sectionCommon} ${EST ? s.sectionEst : s.section}`}>
+      <div className={s.wrapper}>
+        <Flower className={`${EST ? s.flowerEst : s.flower}`} />
+        <h2 className={s.content}>{help ? help.title : title}</h2>
         {EST ? (
           <ButtonLink
             button
-            className={buttonType}
+            className={s.buttonType}
             onClick={evt => {
               estModal();
               openModal();
@@ -39,7 +30,7 @@ export const Help = ({ title, button, EST, help, estModal, openModal }) => {
             {button}
           </ButtonLink>
         ) : (
-          <ButtonLink href={routes.HELPING} className={buttonLink}>
+          <ButtonLink href={routes.HELPING} className={s.buttonLink}>
             {t('btnChoose')}
           </ButtonLink>
         )}

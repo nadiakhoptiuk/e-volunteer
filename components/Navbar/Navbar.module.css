@@ -1,0 +1,7 @@
+.wrap {
+  @apply flex items-center gap-2 xl:gap-[54px];
+}
+
+.buttonlink {
+  @apply ml-[33px] w-[152px] !bg-white !px-0 !text-small !text-fontBlueDark xl:ml-[72px];
+}

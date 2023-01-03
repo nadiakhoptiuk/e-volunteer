@@ -8,7 +8,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 import Backdrop from './Backdrop';
 import s from './Search.module.css';
 
-export const Search = ({ articles, onCloseMenu }) => {
+export const Search = ({ articles, menu, onCloseMenu }) => {
   const [searchWords, setSearchWords] = useState('');
   const [filteredData, setFilteredData] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -93,10 +93,16 @@ export const Search = ({ articles, onCloseMenu }) => {
                   <li key={cardInfo[0].id} className={s.resultItem}>
                     <Link
                       href={route}
-                      onClick={() => {
-                        resetForm();
-                        onCloseMenu();
-                      }}
+                      onClick={
+                        menu
+                          ? () => {
+                              resetForm();
+                              onCloseMenu();
+                            }
+                          : () => {
+                              resetForm();
+                            }
+                      }
                       className={s.resultLink}
                     >
                       {title}
@@ -142,4 +148,5 @@ Search.propTypes = {
     }),
   ),
   onCloseMenu: PropTypes.func,
+  menu: PropTypes.bool,
 };

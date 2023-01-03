@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Fragment } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import PropTypes from 'prop-types';
 import * as s from './LanguageToggle.module.css';
 
 const locales = [
@@ -17,13 +18,11 @@ export const LanguageToggle = ({ handleLocaleChange, value }) => {
     <Listbox value={selectedLng} onChange={handleLocaleChange}>
       <div className="relative">
         <Listbox.Button className={s.listboxbutton}>
-          <span className="block truncate uppercase">
+          <span className=" uppercase">
             {selectedLng === 'uk' ? 'ua' : selectedLng}
           </span>
 
-          <span className={s.chevronDownSpan}>
-            <ChevronDownIcon className={s.icon} aria-hidden="true" />
-          </span>
+          <ChevronDownIcon className={s.icon} aria-hidden="true" />
         </Listbox.Button>
 
         <Transition
@@ -50,4 +49,9 @@ export const LanguageToggle = ({ handleLocaleChange, value }) => {
       </div>
     </Listbox>
   );
+};
+
+LanguageToggle.propTypes = {
+  handleLocaleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
