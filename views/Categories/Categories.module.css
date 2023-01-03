@@ -1,5 +1,5 @@
 .section {
-  @apply py-[80px] md:py-20 xl:pt-[100px] xl:pb-10;
+  @apply pt-20 pb-20 md:pb-10 xl:pt-[100px];
 }
 
 .cardBox {
