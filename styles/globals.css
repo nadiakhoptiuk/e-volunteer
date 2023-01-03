@@ -9,7 +9,7 @@
     margin: 0;
   }
   ::-webkit-scrollbar-thumb {
-    @apply !box-border rounded-[8px] bg-blueAccent; /*color trackbar*/
+    @apply !box-border rounded-[8px] bg-fontGreyLight; /*color trackbar*/
     border: 8px solid transparent;
     border-radius: 15px;
   }
