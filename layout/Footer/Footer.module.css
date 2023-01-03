@@ -11,13 +11,13 @@
   @apply mr-[10px] text-[14px] leading-[24px] text-white sm:mr-5 xl:mr-6;
 }
 .telegram {
-  @apply w-[22px] fill-white transition-colors;
+  @apply w-[22px] fill-white;
 }
 .email {
-  @apply w-[22px] fill-white transition-colors;
+  @apply w-[22px] fill-white;
 }
 .iconWrp {
-  @apply grid h-[38px] w-[38px] place-items-center rounded-full transition-colors;
+  @apply grid h-[38px] w-[38px] place-items-center rounded-full;
 }
 .list {
   @apply grid grid-cols-1 gap-y-3 pt-5 pb-[28px] sm:grid-cols-2 md:grid-cols-3 md:gap-y-6 md:py-[32px] xl:grid-cols-4 xl:gap-y-5;
