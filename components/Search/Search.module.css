@@ -7,7 +7,7 @@
 }
 
 .clearBtn {
-  @apply absolute -top-1/2 right-0 z-[31] flex h-8 w-8 translate-y-1/2 items-center justify-center  text-slate-600 transition-all hover:text-slate-400 xl:top-[-1/2] xl:h-11 xl:w-11;
+  @apply absolute -top-1/2 right-0 z-[31] flex h-8 w-8 translate-y-1/2 items-center justify-center  text-slate-600 transition-colors hover:text-slate-400 xl:top-[-1/2] xl:h-11 xl:w-11;
 }
 
 .resultList {
@@ -23,7 +23,7 @@
 }
 
 .resultLink {
-  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-all hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
+  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-colors hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
 }
 
 .resultLink span {

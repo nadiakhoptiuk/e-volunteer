@@ -5,10 +5,24 @@ import { categoryRequest, routeRequest } from '@/lib/datoCmsRequests';
 import { Container } from '@/components';
 import { routes } from 'routes';
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 import { ArrowLongLeftIcon } from '@heroicons/react/20/solid';
 
 const CategoryPage = props => {
   const { category } = props;
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
+
+  function LinkRenderer(props) {
+    if (props.href.match('http')) {
+      return (
+        <a href={props.href} target="_blank" rel="nofollow noreferrer noopener">
+          {props.children}
+        </a>
+      );
+    }
+
+    return <a href={props.href}>{props.children}</a>;
+  }
 
   return (
     <>
@@ -23,7 +37,7 @@ const CategoryPage = props => {
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
-                className="flex h-[50px] w-[50px] items-center justify-center text-blueAccent"
+                className="flex h-[50px] w-[50px] items-center justify-center text-blueAccent hover:text-yellowAccent focus:text-yellowAccent"
               >
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
@@ -35,14 +49,16 @@ const CategoryPage = props => {
 
             <div className="contentWrapper ml-auto flex min-h-[420px] w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[1032px]">
               <div className="main-prose small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 prose shrink-0 basis-full break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
-                <ReactMarkdown>
+                <ReactMarkdown components={{ a: LinkRenderer }}>
                   {category.cardInfo[0].contentAtPage}
                 </ReactMarkdown>
               </div>
 
-              <div className="min-h-full w-full grow-0">
-                <div className="w-full xl:sticky xl:top-[100px] xl:h-[420px] xl:bg-[url('/image/flower-category.svg')] xl:bg-right-top xl:bg-no-repeat"></div>
-              </div>
+              {isDesktop && (
+                <div className="min-h-full w-full grow-0">
+                  <div className="w-full xl:sticky xl:top-[100px] xl:h-[420px] xl:bg-[url('/image/flower-category.svg')] xl:bg-right-top xl:bg-no-repeat"></div>
+                </div>
+              )}
             </div>
           </Container>
         </section>
@@ -50,8 +66,6 @@ const CategoryPage = props => {
     </>
   );
 };
-
-// xl:bg-[url('/image/flower-category.svg')];
 
 export default CategoryPage;
 
