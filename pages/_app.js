@@ -3,6 +3,7 @@ import { appWithTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import nextI18NextConfig from '../next-i18next.config.js';
 import '../styles/globals.css';
+import { Spinner } from '@/components';
 
 function MyApp({ Component, pageProps }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,7 @@ const Hydrated = ({ children }) => {
     }
   }, []);
 
-  return hydration ? children : <p>Loading...</p>;
+  return hydration ? children : <Spinner />;
 };
 
 export default appWithTranslation(MyApp, nextI18NextConfig);

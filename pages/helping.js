@@ -18,7 +18,7 @@ const Helping = props => {
       {help && (
         <section className=" relative pt-[48px] pb-20  after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-[''] sm:after:top-[104px] md:pt-10 md:pb-20 md:after:top-[126px] xl:after:top-[106px]">
           <Container>
-            <div className="mb-[132px] flex items-center  md:mb-[122px] xl:mb-[107px]">
+            <div className="mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px]">
               <Link
                 href={routes.HOME}
                 aria-label="button back home"
@@ -30,7 +30,7 @@ const Helping = props => {
                 {help.title}
               </h1>
             </div>
-            <div className="contentWrapper xs:ml-auto xs:w-[calc(100%_-_42px)] flex justify-between bg-right-top bg-no-repeat sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto  xl:w-[1130px] xl:bg-[url('/image/flower-helping.svg')]">
+            <div className="contentWrapper ml-auto  w-[calc(100%-42px)] justify-between bg-right-top bg-no-repeat sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto  xl:w-[1130px] xl:bg-[url('/image/flower-helping.svg')]">
               <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 xs:w-full prose shrink-0 break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>{help && help.content}</ReactMarkdown>
               </div>
