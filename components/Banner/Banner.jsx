@@ -13,7 +13,7 @@ export const Banner = ({ data }) => {
     <div className={isOpen ? 'bg-blueLight' : 'visually-hidden'}>
       <Container className={s.container}>
         <h2 className={s.title}>{data}</h2>
-        <button className={s.button} onClick={closeBanner}>
+        <button className={s.button} onClick={closeBanner} name="close button">
           <Close className={s.close} />
         </button>
       </Container>
