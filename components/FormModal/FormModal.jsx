@@ -29,7 +29,12 @@ export const FormModal = ({ show, error, closeModal }) => {
   return (
     <div onClick={closeModal} className={`${show ? s.modalShow : s.modal}`}>
       <div onClick={e => e.stopPropagation()} className={s.wrapper}>
-        <button className={s.button} onClick={closeModal} name="close button">
+        <button
+          className={s.button}
+          onClick={closeModal}
+          name="close button"
+          aria-label="close button"
+        >
           <Close className={s.close} />
         </button>
         {error ? (
