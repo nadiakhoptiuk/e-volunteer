@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import { ButtonLink, Container } from '@/components';
 import s from './Categories.module.css';
 
@@ -41,4 +42,23 @@ export const Categories = ({ articles }) => {
       </Container>
     </section>
   );
+};
+
+Categories.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      cardInfo: PropTypes.arrayOf(
+        PropTypes.shape({
+          alt: PropTypes.string.isRequired,
+          contentAtPage: PropTypes.string.isRequired,
+          description: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          image: PropTypes.object.isRequired,
+        }).isRequired,
+      ).isRequired,
+      range: PropTypes.number.isRequired,
+      route: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ),
 };

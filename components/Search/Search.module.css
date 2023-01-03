@@ -2,12 +2,20 @@
   @apply relative max-md:w-full;
 }
 
+.inputWrapper {
+  @apply relative h-8 border-b-[1px] max-md:border-fontGrey md:w-[280px] md:border-white xl:h-11 xl:w-[505px];
+}
+
 .input {
   @apply relative z-30 h-full w-full bg-white py-3 pl-10 pr-[22px] text-blueAccent placeholder:text-slate-300 md:bg-blueAccent md:text-white;
 }
 
 .clearBtn {
-  @apply absolute -top-1/2 right-0 z-[31] flex h-8 w-8 translate-y-1/2 items-center justify-center  text-slate-600 transition-all hover:text-slate-400 xl:top-[-1/2] xl:h-11 xl:w-11;
+  @apply absolute -top-1/2 right-0 z-[31] flex h-8 w-8 translate-y-1/2 items-center justify-center  text-slate-600 transition-colors hover:text-slate-400 xl:top-[-1/2] xl:h-11 xl:w-11;
+}
+
+.clearIcon {
+  @apply h-5 w-5 md:text-white;
 }
 
 .resultList {
@@ -23,7 +31,7 @@
 }
 
 .resultLink {
-  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-all hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
+  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-colors duration-300 hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
 }
 
 .resultLink span {
@@ -36,4 +44,8 @@
 
 .backdrop {
   @apply fixed left-0 top-0 z-20 h-screen w-screen bg-fontGrey/50;
+}
+
+.glassIcon {
+  @apply absolute left-[8px] top-0 z-[31] h-6 w-6 translate-y-[4px] text-white max-md:text-fontGrey xl:top-[50%] xl:translate-y-[-50%];
 }

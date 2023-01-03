@@ -1,0 +1,35 @@
+.linkBackHome {
+  @apply flex h-[50px] w-[50px] items-center justify-center text-blueAccent transition-colors duration-300 hover:text-yellowAccent focus:text-yellowAccent;
+}
+
+.section {
+  @apply relative mx-auto pt-[48px] pb-20 after:absolute after:top-[126px] after:h-1 after:w-full after:shadow-help after:content-['']  md:pt-10 md:pb-20 md:after:top-[126px]  xl:after:top-[106px];
+}
+
+.titleWrapper {
+  @apply mb-[112px] flex items-center md:mb-[130px] xl:mb-[107px];
+}
+
+.backHomeIcon {
+  @apply h-[34px] w-[34px];
+}
+
+.pageTitle {
+  @apply ml-[48px] text-big font-medium text-blueAccent md:ml-[65px] md:text-[40px] md:leading-[46px] xl:ml-[59px];
+}
+
+.contentWrapper {
+  @apply ml-auto flex min-h-[420px] w-[calc(100%-42px)] sm:mx-auto sm:w-[calc(100%-116px)] md:mr-auto md:ml-0 xl:mx-auto xl:w-[1032px];
+}
+
+.content {
+  @apply shrink-0 basis-full break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px];
+}
+
+.flowerWrapper {
+  @apply min-h-full w-full grow-0;
+}
+
+.flowerBox {
+  @apply w-full xl:sticky xl:top-[100px] xl:h-[420px] xl:bg-[url('/image/flower-category.svg')] xl:bg-right-top xl:bg-no-repeat;
+}

@@ -1,6 +1,34 @@
 @tailwind base;
+
+@layer base {
+  .invisible-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    @apply !w-[11px] rounded-[8px] bg-transparent;
+    margin: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply !box-border rounded-[8px] bg-blueAccent; /*color trackbar*/
+    border: 8px solid transparent;
+    border-radius: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply rounded-[8px] border border-solid border-white;
+    box-shadow: inset 0 0 2px 2px rgba(141, 172, 222, 0.3);
+  }
+  ::-webkit-scrollbar-button {
+    @apply hidden;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
+
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: #60a5fa #f8fafc;
+}
 
 body {
   @apply relative scroll-smooth bg-slate-50 font-sans font-normal;
@@ -25,7 +53,7 @@ h2:first-of-type {
 }
 
 .main-prose {
-  @apply prose-headings:text-fontGrey prose-h2:before:absolute prose-h2:before:left-[-58px] prose-h2:before:top-[-3px] prose-h2:before:block prose-p:text-fontGrey prose-a:break-words prose-a:text-blueAccent prose-strong:font-medium prose-strong:text-fontGrey prose-em:not-italic prose-ul:list-none prose-ul:pl-0 prose-li:relative prose-li:my-[18px] prose-li:pl-0 prose-li:before:absolute prose-li:before:left-[-50px] prose-li:before:content-[url('/image/check-mark-light.svg')] md:prose-h2:before:content-[url('/image/check-mark.svg')];
+  @apply prose-headings:text-fontGrey prose-h2:before:absolute prose-h2:before:left-[-58px] prose-h2:before:top-[-3px] prose-h2:before:block prose-p:text-fontGrey prose-a:break-words prose-a:text-blueAccent prose-a:transition-colors prose-a:duration-300 hover:prose-a:text-yellowAccent focus:prose-a:text-yellowAccent prose-strong:font-medium prose-strong:text-fontGrey prose-em:not-italic prose-ul:list-none prose-ul:pl-0 prose-li:relative prose-li:my-[18px] prose-li:pl-0 prose-li:before:absolute prose-li:before:left-[-50px] prose-li:before:content-[url('/image/check-mark-light.svg')] md:prose-h2:before:content-[url('/image/check-mark.svg')];
 }
 
 .small-mobile-prose {
