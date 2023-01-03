@@ -32,8 +32,7 @@ export const FormModal = ({ show, error, closeModal }) => {
         <button
           className={s.button}
           onClick={closeModal}
-          name="close button"
-          aria-label="close button"
+          aria-label="modal close button"
         >
           <Close className={s.close} />
         </button>
