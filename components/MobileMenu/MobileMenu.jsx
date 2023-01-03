@@ -21,12 +21,7 @@ export const MobileMenu = ({ slugs, onClick }) => {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={toggleModal}
-        aria-label="Відчинити мобільне меню"
-        aria-controls="open modal menu"
-      >
+      <button type="button" onClick={toggleModal} aria-label="open modal menu">
         <Bars3Icon className={s.bars} />
       </button>
 
@@ -64,14 +59,13 @@ export const MobileMenu = ({ slugs, onClick }) => {
                         <div className={s.navbar}>
                           <LanguageToggle
                             handleLocaleChange={handleLocaleChange}
-                            locale={router.locale}
+                            value={router.locale}
                           />
 
                           <button
                             type="button"
                             onClick={toggleModal}
-                            aria-label="Зачинити мобільне меню"
-                            aria-controls="close modal menu"
+                            aria-label="close modal menu"
                           >
                             <XMarkIcon className={s.xicon} />
                           </button>
@@ -113,5 +107,6 @@ export const MobileMenu = ({ slugs, onClick }) => {
 };
 
 MobileMenu.propTypes = {
-  slugs: PropTypes.arrayOf(PropTypes.object),
+  slugs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClick: PropTypes.func.isRequired,
 };

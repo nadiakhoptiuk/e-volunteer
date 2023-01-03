@@ -102,10 +102,16 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
                   <li key={cardInfo[0].id} className={s.resultItem}>
                     <Link
                       href={route}
-                      onClick={() => {
-                        resetForm();
-                        onCloseMenu();
-                      }}
+                      onClick={
+                        menu
+                          ? () => {
+                              resetForm();
+                              onCloseMenu();
+                            }
+                          : () => {
+                              resetForm();
+                            }
+                      }
                       className={s.resultLink}
                     >
                       {title}

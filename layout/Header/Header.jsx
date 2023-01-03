@@ -4,6 +4,7 @@ import { useLocalChange } from 'hooks/useLocalChange';
 import { useTranslation } from 'next-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { Container, Logo, Navbar } from '@/components';
+import PropTypes from 'prop-types';
 import * as s from './Header.module.css';
 
 const MobileMenu = dynamic(() =>
@@ -54,4 +55,9 @@ export const Header = ({ data, onClick }) => {
       </Container>
     </header>
   );
+};
+
+Header.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onClick: PropTypes.func.isRequired,
 };

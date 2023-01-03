@@ -1,3 +1,47 @@
+.modalWrap {
+  @apply min-h-full  w-full sm:py-[71px]  md:py-10 xl:flex xl:items-center  xl:py-10;
+}
+
+.dialogpanel {
+  @apply relative left-1/2  -translate-x-1/2 transform overflow-hidden bg-white px-5 py-[67px] text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px] sm:rounded-[32px] sm:px-[44px]  sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex  xl:w-[1240px] xl:rounded-[20px] xl:px-[108px] xl:py-[80px];
+}
+
+.infoWrap {
+  @apply text-start text-sm  leading-6  sm:text-small md:text-lg md:leading-[22px] xl:relative    xl:mr-[121px];
+}
+
+.title {
+  @apply text-big font-medium sm:text-middle md:text-[34px] md:leading-[39px];
+}
+
+.text {
+  @apply mt-[38px] sm:mt-5 md:mt-8 xl:w-[506px];
+}
+
+.needsList {
+  @apply list-inside list-disc;
+}
+
+.flower {
+  @apply absolute left-[130px] bottom-[-25px] hidden xl:block xl:h-[154px] xl:w-[426px];
+}
+
+.facebookLinks {
+  @apply relative mt-10 text-sm leading-6 sm:text-lg sm:leading-[22px] md:mt-[80px] xl:mt-0 xl:pt-[62px];
+}
+
 .facebookItem {
-  @apply;
+  @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0;
+}
+
+.flowerTab {
+  @apply absolute bottom-0 right-[-67px] hidden h-[612px] w-[215px] md:block xl:hidden;
+}
+
+.xButton {
+  @apply absolute top-5 right-5 sm:top-[33px] sm:right-[33px];
+}
+
+.xIcon {
+  @apply h-[38px] w-[38px] transform rounded-[50%] p-1 text-blueAccent transition-all hover:bg-blueAccent hover:text-white;
 }

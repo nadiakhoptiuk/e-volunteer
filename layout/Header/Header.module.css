@@ -1,5 +1,5 @@
 .header {
-  @apply bg-blueAccent pt-[19px] pb-[19px];
+  @apply bg-blueAccent py-3 md:py-[18px] xl:py-[19px];
 }
 
 .containerWrap {

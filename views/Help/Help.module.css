@@ -22,8 +22,12 @@
   @apply container text-center md:flex md:flex-row md:items-center md:justify-between;
 }
 
-.flower {
+.flowerEst {
   @apply hidden h-[113px] w-[175px]  xl:block;
+}
+
+.flower {
+  @apply hidden h-[113px] w-[175px]  xl:mr-4 xl:block;
 }
 
 .content {
@@ -31,7 +35,7 @@
 }
 
 .buttonType {
-  @apply mx-auto mt-6 w-[146px] bg-blueAccent !px-14 text-white md:mx-0 md:mt-0 xl:ml-12;
+  @apply mx-auto mt-6 w-[146px] bg-blueAccent !px-14 text-white md:mx-0 md:mt-0 xl:ml-7;
 }
 
 .buttonLink {

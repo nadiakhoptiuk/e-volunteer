@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Form } from '@/components';
 import { Hero, Categories, Help, Centers } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
@@ -31,6 +32,9 @@ const Home = props => {
 
   return (
     <>
+      <Head>
+        <title>E-VOLUNTEER</title>
+      </Head>
       <Hero />
 
       <Help
