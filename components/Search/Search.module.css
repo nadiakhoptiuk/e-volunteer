@@ -1,5 +1,5 @@
 .searchBox {
-  @apply relative max-md:w-full xl:mr-[126px];
+  @apply relative max-md:w-full;
 }
 
 .input {

@@ -113,7 +113,7 @@ export const HelpModal = ({
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-20"
+        className="relative z-[31]"
         onClose={() => {
           closeModal();
           estModalClose();
@@ -128,11 +128,11 @@ export const HelpModal = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="bg-button fixed inset-0 bg-opacity-70 blur-xl" />
+          <div className="fixed inset-0 bg-fontGrey/50  " />
         </Transition.Child>
 
         <div className="fixed inset-0  overflow-y-auto">
-          <div className="absolute min-h-full  w-full bg-fontGrey/50 sm:py-[71px] md:py-10  xl:flex xl:items-center  xl:py-1 ">
+          <div className=" min-h-full  w-full sm:py-[71px]  md:py-10 xl:flex xl:items-center  xl:py-1 ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -142,7 +142,7 @@ export const HelpModal = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative left-1/2 min-h-full -translate-x-1/2 transform overflow-hidden bg-white px-5 py-[67px] text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px] sm:rounded-[32px] sm:px-[44px]  sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex xl:h-[700px] xl:w-[1240px] xl:rounded-[20px] xl:px-[108px] xl:py-[40px]">
+              <Dialog.Panel className="relative left-1/2  -translate-x-1/2 transform overflow-hidden bg-white px-5 py-[67px] text-lg leading-[22px] text-fontGrey transition-all sm:w-[440px] sm:rounded-[32px] sm:px-[44px]  sm:pt-[113px] sm:pb-[38px] md:w-[696px] md:px-[87px] md:pt-[104px] md:pb-10 xl:flex xl:h-[700px] xl:w-[1240px] xl:rounded-[20px] xl:px-[108px] xl:py-[40px]">
                 <div className="text-start text-sm  leading-6  sm:text-small md:text-lg md:leading-[22px] xl:relative    xl:mr-[121px] ">
                   <Dialog.Title
                     as="h3"
@@ -181,7 +181,7 @@ export const HelpModal = ({
                       ? links.map(({ name, link }) => (
                           <li
                             key={name}
-                            className="relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-[7px] before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0"
+                            className="relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-0 before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0"
                           >
                             <a
                               href={link}

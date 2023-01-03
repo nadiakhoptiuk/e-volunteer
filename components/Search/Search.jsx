@@ -7,7 +7,7 @@ import s from './Search.module.css';
 import Backdrop from './Backdrop';
 import { useTranslation } from 'next-i18next';
 
-export const Search = ({ articles, menu }) => {
+export const Search = ({ articles, menu, onCloseMenu }) => {
   const [searchWords, setSearchWords] = useState('');
   const [filteredData, setFilteredData] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -102,7 +102,10 @@ export const Search = ({ articles, menu }) => {
                   <li key={cardInfo[0].id} className={s.resultItem}>
                     <Link
                       href={route}
-                      onClick={resetForm}
+                      onClick={() => {
+                        resetForm();
+                        onCloseMenu();
+                      }}
                       className={s.resultLink}
                     >
                       {title}
