@@ -148,8 +148,8 @@ CategoryPage.propTypes = {
     }),
   ),
   footer: PropTypes.shape({
-    additionalInfo: PropTypes.string.isRequired,
-    additionalPhone: PropTypes.string.isRequired,
+    additionalInfo: PropTypes.string,
+    additionalPhone: PropTypes.string,
     connectText: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     telegram: PropTypes.string.isRequired,

@@ -17,6 +17,7 @@ export const Banner = ({ data }) => {
           className={s.button}
           onClick={closeBanner}
           aria-label="banner close button"
+          type="button"
         >
           <Close className={s.close} />
         </button>
