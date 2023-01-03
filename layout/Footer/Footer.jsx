@@ -26,10 +26,10 @@ export const Footer = ({ data }) => {
                     className="group sm:mr-[10px] md:mr-[16px]"
                   >
                     <div
-                      className={`${s.iconWrp} group-hover:bg-white group-focus:bg-white`}
+                      className={`${s.iconWrp} transition-colors group-hover:bg-white group-focus:bg-white`}
                     >
                       <Teleg
-                        className={`${s.telegram} group-hover:fill-blueAccent group-focus:fill-blueAccent`}
+                        className={`${s.telegram} transition-colors group-hover:fill-blueAccent group-focus:fill-blueAccent`}
                       />
                     </div>
                   </a>
@@ -43,10 +43,10 @@ export const Footer = ({ data }) => {
                     className="group xl:mr-20"
                   >
                     <div
-                      className={`${s.iconWrp} group-hover:bg-white group-focus:bg-white`}
+                      className={`${s.iconWrp} transition-colors group-hover:bg-white group-focus:bg-white`}
                     >
                       <Mail
-                        className={`${s.email} group-hover:fill-blueAccent group-focus:fill-blueAccent`}
+                        className={`${s.email} transition-colors group-hover:fill-blueAccent group-focus:fill-blueAccent`}
                       />
                     </div>
                   </a>
