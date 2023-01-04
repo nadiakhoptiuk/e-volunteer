@@ -45,6 +45,10 @@
   @apply relative mt-10 text-sm leading-6 sm:text-lg sm:leading-[22px] md:mt-[80px] xl:mt-0 xl:pt-[62px];
 }
 
+.facebookItem a {
+  word-break: break-word;
+}
+
 .facebookItem {
   @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] text-blueAccent before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent;
 }
