@@ -76,6 +76,18 @@ export const HelpModal = ({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className={s.dialogpanel}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeModal();
+                    estModalClose();
+                  }}
+                  className={s.xButton}
+                  aria-label="close modal"
+                >
+                  <XMarkIcon className={s.xIcon} />
+                </button>
+
                 <div className={s.infoWrap}>
                   <Dialog.Title as="h3" className={s.title}>
                     {estModalStatus ? 'Kallid Eestimaa elanikud!' : t('title')}
@@ -135,18 +147,6 @@ export const HelpModal = ({
                   </ul>
                   <FlowerCategory className={s.flowerTab} />
                 </div>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    closeModal();
-                    estModalClose();
-                  }}
-                  className={s.xButton}
-                  aria-label="close modal"
-                >
-                  <XMarkIcon className={s.xIcon} />
-                </button>
               </Dialog.Panel>
             </Transition.Child>
           </div>

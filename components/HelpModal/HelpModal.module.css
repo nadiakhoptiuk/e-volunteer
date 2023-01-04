@@ -22,7 +22,7 @@
 }
 
 .infoWrap {
-  @apply text-start text-sm  leading-6  sm:text-small md:text-lg md:leading-[22px] xl:relative    xl:mr-[121px];
+  @apply text-start text-sm  leading-6  sm:text-small md:text-lg md:leading-[22px] xl:relative xl:mr-[121px];
 }
 
 .title {
@@ -46,6 +46,7 @@
 }
 
 .facebookItem a {
+  @apply focus:text-yellowAccent;
   word-break: break-word;
 }
 

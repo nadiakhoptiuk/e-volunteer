@@ -23,23 +23,25 @@
 }
 
 .notFound {
-  @apply absolute top-10 left-0 right-0 z-30 flex h-[280px] items-start overflow-auto rounded-lg border border-blue-200 bg-slate-50 px-8 pt-3 text-[14px] leading-[24px] text-fontGrey shadow-lg transition-all xl:top-[52px] xl:text-small;
+  @apply absolute top-10 left-0 right-0 z-30 flex h-[280px] items-start overflow-auto rounded-lg border border-blueAccent bg-slate-50 px-8 pt-3 text-[14px] leading-[24px] text-fontGrey shadow-lg transition-all xl:top-[52px] xl:text-small;
 }
 
 .resultItem {
-  @apply h-[70px] border-b border-blue-200 bg-slate-50 text-left text-slate-600 last:border-b-white xl:text-small;
+  @apply h-[70px] border-b border-blueAccent bg-slate-50 text-left text-slate-600 last:border-b-white xl:text-small;
 }
 
 .resultLink {
-  @apply block h-full w-full overflow-hidden truncate text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-colors duration-300 hover:bg-blue-200 focus:bg-blue-200 xl:text-small;
-}
-
-.resultLink span {
-  @apply mt-1 text-[12px] font-medium leading-[24px] text-fontGreyLight xl:text-[14px];
+  @apply block h-full w-full overflow-hidden text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-colors duration-300 hover:bg-blueAccent hover:text-white focus:bg-blueAccent focus:text-white xl:text-small;
 }
 
 .resultDesc {
-  @apply truncate text-ellipsis text-xs font-light text-fontGreyLight;
+  @apply mt-1 text-ellipsis text-[12px] text-xs font-light leading-[24px] text-fontGreyLight xl:text-[14px];
+}
+
+.resultLink:hover > .resultDesc,
+.resultLink:focus > .resultDesc {
+  /* color: #f8fafc !important; */
+  @apply text-white;
 }
 
 .backdrop {
