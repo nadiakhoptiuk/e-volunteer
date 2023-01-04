@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import useScrollPosition from 'hooks/useScrollPosition.js';
 import dynamic from 'next/dynamic';
 import { Hero, Help } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useLayoutEffect } from 'react';
 
 const DynamicCategories = dynamic(() =>
   import('../views/Categories/Categories').then(mod => mod.Categories),
@@ -20,6 +22,11 @@ const DynamicForm = dynamic(() =>
 
 const Home = props => {
   const { articles, centers, help, modal } = props;
+  const scrollPosition = useScrollPosition();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, scrollPosition), [];
+  });
 
   return (
     <>
