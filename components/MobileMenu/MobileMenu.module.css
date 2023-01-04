@@ -2,6 +2,19 @@
   @apply h-7 w-7 text-white transition-all hover:text-yellowAccent focus:text-yellowAccent;
 }
 
+.mainWrap {
+  @apply fixed inset-0 overflow-y-auto;
+}
+
+.mainWrap::-webkit-scrollbar {
+  display: none;
+}
+
+.mainWrap {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .headerWrap {
   @apply bg-blueAccent py-3;
 }
@@ -27,7 +40,7 @@
 }
 
 .item {
-  @apply text-small text-fontGrey hover:text-yellowAccent sm:text-lg sm:leading-[22px];
+  @apply text-small text-fontGrey hover:text-yellowAccent focus:text-yellowAccent sm:text-lg sm:leading-[22px];
 }
 
 .buttonType {
@@ -40,4 +53,13 @@
 
 .dialogPanel {
   @apply h-screen w-full transform overflow-auto  bg-white transition-all;
+}
+
+.dialogPanel::-webkit-scrollbar {
+  display: none;
+}
+
+.dialogPanel {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

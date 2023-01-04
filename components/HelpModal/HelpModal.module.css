@@ -1,3 +1,18 @@
+.mainWrap {
+  @apply fixed inset-0 overflow-y-auto;
+}
+
+@media screen and (max-width: 1279px) {
+  .mainWrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mainWrap {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 .modalWrap {
   @apply min-h-full  w-full sm:py-[71px]  md:py-10 xl:flex xl:items-center  xl:py-10;
 }
@@ -23,7 +38,7 @@
 }
 
 .flower {
-  @apply absolute left-[130px] bottom-[-25px] hidden xl:block xl:h-[154px] xl:w-[426px];
+  @apply absolute left-[89px] bottom-[20px] hidden xl:block xl:h-[154px] xl:w-[426px];
 }
 
 .facebookLinks {
@@ -31,7 +46,7 @@
 }
 
 .facebookItem {
-  @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent  xl:mb-0;
+  @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] text-blueAccent before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent;
 }
 
 .flowerTab {
