@@ -50,7 +50,7 @@
 }
 
 .facebookItem {
-  @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] text-blueAccent before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent;
+  @apply relative mb-2 cursor-pointer items-center py-2 pl-[52px] text-blueAccent transition-colors before:absolute before:left-0  before:content-[url('/image/check-mark-light.svg')] last-of-type:mb-0 hover:text-yellowAccent focus:text-yellowAccent;
 }
 
 .flowerTab {
@@ -62,5 +62,5 @@
 }
 
 .xIcon {
-  @apply h-[38px] w-[38px] transform rounded-[50%] p-1 text-blueAccent transition-all hover:bg-blueAccent hover:text-white;
+  @apply h-[38px] w-[38px] transform rounded-[50%] p-1 text-blueAccent transition-colors hover:bg-blueAccent hover:text-white focus:bg-blueAccent;
 }

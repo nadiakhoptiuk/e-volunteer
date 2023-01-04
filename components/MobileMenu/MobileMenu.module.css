@@ -40,7 +40,7 @@
 }
 
 .item {
-  @apply text-small text-fontGrey hover:text-yellowAccent focus:text-yellowAccent sm:text-lg sm:leading-[22px];
+  @apply text-small text-fontGrey transition-colors hover:text-yellowAccent focus:text-yellowAccent sm:text-lg sm:leading-[22px];
 }
 
 .buttonType {
