@@ -23,7 +23,7 @@
 }
 
 .link {
-  @apply transition-all hover:text-yellowAccent focus:text-yellowAccent;
+  @apply transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }
 
 .city {
@@ -35,5 +35,5 @@
 }
 
 .phone {
-  @apply mb-3 inline-block text-lg leading-tight transition-all hover:text-yellowAccent focus:text-yellowAccent;
+  @apply mb-3 inline-block text-lg leading-tight transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }

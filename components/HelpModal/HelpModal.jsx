@@ -64,7 +64,7 @@ export const HelpModal = ({
           <div className="fixed inset-0 bg-fontGrey/50  " />
         </Transition.Child>
 
-        <div className="fixed inset-0 overflow-y-auto">
+        <div className={s.mainWrap}>
           <div className={s.modalWrap}>
             <Transition.Child
               as={Fragment}
@@ -111,6 +111,7 @@ export const HelpModal = ({
                       ? links.map(({ name, link }) => (
                           <li key={name} className={s.facebookItem}>
                             <a
+                              className="underline"
                               href={link}
                               target="_blank"
                               rel="noopener noreferrer"
@@ -122,6 +123,7 @@ export const HelpModal = ({
                       : facebookLinks.map(({ name, link }) => (
                           <li key={name} className={s.facebookItem}>
                             <a
+                              className="underline"
                               href={link}
                               target="_blank"
                               rel="noopener noreferrer"

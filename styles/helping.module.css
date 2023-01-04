@@ -7,7 +7,7 @@
 }
 
 .buttonBack {
-  @apply flex h-[50px] w-[50px] items-center justify-center text-blueAccent hover:text-yellowAccent;
+  @apply flex h-[50px] w-[50px] items-center justify-center text-blueAccent transition-colors hover:text-yellowAccent focus:text-yellowAccent;
 }
 
 .title {
