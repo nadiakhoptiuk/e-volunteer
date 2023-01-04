@@ -12,7 +12,7 @@
 }
 
 .buttonLink {
-  @apply tr flex items-center justify-center rounded-lg bg-blueAccent px-[54px] py-4 text-middle text-white transition-colors duration-300 ease-in-out;
+  @apply flex items-center justify-center rounded-lg bg-blueAccent px-[54px] py-4 text-middle text-white transition-colors duration-300 ease-in-out;
 }
 
 .buttonLink:hover,
