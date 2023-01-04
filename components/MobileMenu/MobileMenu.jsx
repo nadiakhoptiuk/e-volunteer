@@ -63,6 +63,7 @@ export const MobileMenu = ({ slugs, onClick }) => {
                           />
 
                           <button
+                            className={s.closeBtn}
                             type="button"
                             onClick={toggleModal}
                             aria-label="close modal menu"

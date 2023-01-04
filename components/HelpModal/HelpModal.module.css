@@ -59,9 +59,14 @@
 }
 
 .xButton {
-  @apply absolute top-5 right-5 rounded-[50%] text-blueAccent transition-colors hover:bg-blueAccent hover:text-white focus:bg-blueAccent focus:text-white sm:top-[33px] sm:right-[33px];
+  @apply absolute top-5 right-5 rounded-full transition-colors hover:bg-blueAccent focus:bg-blueAccent sm:top-[33px] sm:right-[33px];
 }
 
 .xIcon {
-  @apply h-[38px] w-[38px] transform  p-1;
+  @apply h-[38px] w-[38px] text-blueAccent;
+}
+
+.xButton:hover .xIcon,
+.xButton:focus .xIcon {
+  @apply text-white;
 }
