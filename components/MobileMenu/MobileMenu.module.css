@@ -63,3 +63,12 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.closeBtn {
+  @apply rounded-full transition-colors hover:bg-white focus:bg-white;
+}
+
+.closeBtn:hover .xicon,
+.closeBtn:focus .xicon {
+  @apply text-blueAccent;
+}
