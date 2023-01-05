@@ -77,6 +77,10 @@ export const HelpModal = ({
             >
               <Dialog.Panel className={s.dialogpanel}>
                 <button
+                  className="visually-hidden"
+                  aria-label="hidden button"
+                ></button>
+                <button
                   type="button"
                   onClick={() => {
                     closeModal();
