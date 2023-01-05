@@ -27,11 +27,11 @@
 }
 
 .resultItem {
-  @apply h-[70px] border-b border-blueAccent bg-slate-50 text-left text-slate-600 last:border-b-white xl:text-small;
+  @apply h-[70px] border-b border-blueAccent bg-slate-50 text-left last:border-0 xl:text-small;
 }
 
 .resultLink {
-  @apply block h-full w-full overflow-hidden text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-colors duration-300 hover:bg-blueAccent hover:text-white focus:bg-blueAccent focus:text-white xl:text-small;
+  @apply block h-full w-full overflow-hidden text-ellipsis whitespace-nowrap px-8 pb-2 pt-3 text-[14px] leading-[24px] text-fontGrey transition-all hover:bg-blueAccent hover:text-white focus:bg-blueAccent focus:text-white xl:text-small;
 }
 
 .resultDesc {
@@ -40,8 +40,7 @@
 
 .resultLink:hover > .resultDesc,
 .resultLink:focus > .resultDesc {
-  /* color: #f8fafc !important; */
-  @apply text-white;
+  @apply text-white transition-all;
 }
 
 .backdrop {

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import { DebounceInput } from 'react-debounce-input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
@@ -13,8 +14,83 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
   const [filteredData, setFilteredData] = useState(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isResults, setIsResults] = useState(false);
+  const [transformedArticles, setTransformedArticles] = useState(null);
 
   const { t } = useTranslation('common');
+
+  useEffect(() => {
+    const transformData = string => {
+      // regex for markdown links
+      const regex1 = /\[(.*?)\]\((.*?)\)/g;
+      const regex2 = /(#)+/g;
+      const regex3 = /(\*)+/g;
+
+      return string
+        .replace(regex1, '$1')
+        .replace(regex2, '')
+        .replace(regex3, '');
+    };
+
+    const newArticles = articles.reduce((acc, article) => {
+      return [
+        ...acc,
+        {
+          ...article,
+          cardInfo: [
+            {
+              ...article.cardInfo[0],
+              contentAtPage: transformData(article.cardInfo[0].contentAtPage),
+            },
+          ],
+        },
+      ];
+    }, []);
+
+    setTransformedArticles(newArticles);
+  }, [articles]);
+
+  const cutContent = useCallback(
+    data => {
+      if (data.length === 0) {
+        setFilteredData([]);
+        return;
+      }
+
+      return data?.reduce((acc, { route, title, cardInfo }) => {
+        const index = cardInfo[0].contentAtPage
+          .toLowerCase()
+          .indexOf(searchWords.toLowerCase());
+
+        let filteredContent =
+          index === -1
+            ? ''
+            : cardInfo[0].contentAtPage
+                .slice(index, index + 28)
+                .split('\n\n')[0];
+
+        if (filteredContent !== '') {
+          if (filteredContent[0] === filteredContent[0]?.toUpperCase()) {
+            filteredContent = filteredContent.trim().concat('...');
+          } else {
+            filteredContent = '...'
+              .concat(filteredContent.trim())
+              .concat('...');
+          }
+        }
+
+        return [
+          ...acc,
+          {
+            route: route,
+            title: title,
+            content: filteredContent,
+            id: cardInfo[0].id,
+          },
+        ];
+      }, []);
+    },
+    [searchWords],
+  );
 
   useEffect(() => {
     if (!searchWords.trim()) {
@@ -22,16 +98,18 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
       return;
     }
 
-    const filteredArticles = articles.filter(
+    const filteredArticles = transformedArticles?.filter(
       ({ title, cardInfo }) =>
         title.toLowerCase().includes(searchWords) ||
         cardInfo[0].description.toLowerCase().includes(searchWords) ||
         cardInfo[0].contentAtPage.toLowerCase().includes(searchWords),
     );
 
-    setFilteredData(filteredArticles);
+    const results = cutContent(filteredArticles);
+
+    setFilteredData(results);
     setIsSearchOpen(true);
-  }, [articles, searchWords]);
+  }, [cutContent, searchWords, transformedArticles]);
 
   useEffect(() => {
     if (!searchWords && !filteredData?.length > 0) {
@@ -69,6 +147,7 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
           type="text"
           value={searchWords}
           className={s.input}
+          debounceTimeout={300}
         />
 
         {searchWords && (
@@ -88,9 +167,9 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
 
           {isResults && (
             <ul className={s.resultList}>
-              {filteredData?.map(({ route, title, cardInfo }) => {
+              {filteredData?.map(({ route, title, content, id }) => {
                 return (
-                  <li key={cardInfo[0].id} className={s.resultItem}>
+                  <li key={id} className={s.resultItem}>
                     <Link
                       href={route}
                       onClick={
@@ -110,7 +189,7 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
                       <br />
 
                       <span className={s.resultDesc}>
-                        {cardInfo[0].description}
+                        <ReactMarkdown>{content}</ReactMarkdown>
                       </span>
                     </Link>
                   </li>
