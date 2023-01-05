@@ -63,10 +63,10 @@
 }
 
 .xIcon {
-  @apply h-[38px] w-[38px] text-blueAccent;
+  @apply h-[38px] w-[38px] text-blueAccent transition-colors;
 }
 
 .xButton:hover .xIcon,
 .xButton:focus .xIcon {
-  @apply text-white transition-colors;
+  @apply text-white;
 }
