@@ -10,8 +10,6 @@ const useScrollPosition = () => {
   }, []);
 
   useLayoutEffect(() => {
-    console.log(scrollPosition);
-
     window.sessionStorage.setItem(
       'scrollPosition',
       JSON.stringify(scrollPosition),
