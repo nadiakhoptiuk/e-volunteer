@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import { DebounceInput } from 'react-debounce-input';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
@@ -188,9 +187,7 @@ export const Search = ({ articles, menu, onCloseMenu }) => {
 
                       <br />
 
-                      <span className={s.resultDesc}>
-                        <ReactMarkdown>{content}</ReactMarkdown>
-                      </span>
+                      <span className={s.resultDesc}>{content}</span>
                     </Link>
                   </li>
                 );

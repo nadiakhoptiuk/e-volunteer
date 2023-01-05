@@ -44,7 +44,7 @@
 }
 
 .backdrop {
-  @apply fixed left-0 top-0 z-20 h-screen w-screen bg-fontGrey/50;
+  @apply fixed left-0 top-0 z-20 h-[100vh] w-[100vw] bg-fontGrey/50;
 }
 
 .glassIcon {
