@@ -68,5 +68,5 @@
 
 .xButton:hover .xIcon,
 .xButton:focus .xIcon {
-  @apply text-white;
+  @apply text-white transition-colors;
 }
