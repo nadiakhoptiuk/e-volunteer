@@ -30,13 +30,7 @@
   }
 }
 .innerWrapper {
-  @apply m-auto grid w-[224px] justify-items-center py-[50px] sm:w-[324px] md:my-[90px] md:w-[370px] md:rounded-[20px]  md:py-20;
-}
-@media screen and (min-width: 768px) {
-  .innerWrapper {
-    box-shadow: -2px -2px 12px rgba(84, 131, 201, 0.25),
-      2px 2px 12px rgba(84, 131, 201, 0.25);
-  }
+  @apply m-auto grid w-[224px] justify-items-center py-[50px] sm:w-[324px] md:my-[90px] md:w-[370px] md:rounded-[20px] md:py-20 md:shadow-card;
 }
 .button {
   @apply absolute right-[30px] rounded-full stroke-blueAccent p-[11px] transition-colors hover:bg-blueAccent hover:stroke-white focus:bg-blueAccent focus:stroke-white;

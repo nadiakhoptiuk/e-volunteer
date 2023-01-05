@@ -25,6 +25,9 @@ export const Categories = ({ articles }) => {
                     height={220}
                     width={392}
                     className={s.imageWrapper}
+                    placeholder="blur"
+                    quality={70}
+                    loading="lazy"
                   />
                 </div>
 
