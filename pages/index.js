@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-// import useScrollPosition from 'hooks/useScrollPosition.js';
 import dynamic from 'next/dynamic';
 import { Hero, Help } from 'views';
 import { datoCmsRequest } from '@/lib/datoCmsRequests';
@@ -28,25 +27,16 @@ const Home = props => {
     const stored = window.sessionStorage.getItem('scrollPosition');
     const storedPosition = JSON.parse(stored);
 
-    // console.log('stored', storedPosition);
-    // console.log('1');
-
     if (storedPosition !== null) {
-      // console.log('storedPosition > 0', storedPosition);
-
       setScrollPosition(storedPosition);
       window.scrollTo(0, storedPosition);
     } else {
-      // console.log('storedPosition !> 0', storedPosition);
       setScrollPosition(0);
     }
   }, []);
 
   useLayoutEffect(() => {
     if (scrollPosition === null) return;
-
-    // console.log('3');
-    // console.log('scrollPosition', scrollPosition);
 
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset);
@@ -69,6 +59,7 @@ const Home = props => {
       <Head>
         <title>E-VOLUNTEER</title>
       </Head>
+
       <Hero />
 
       <Help

@@ -17,6 +17,7 @@ const Helping = props => {
       <Head>
         <title>{help && help.title}</title>
       </Head>
+
       {help && (
         <section className={s.section}>
           <Container>
@@ -28,8 +29,10 @@ const Helping = props => {
               >
                 <ArrowLongLeftIcon className="h-[34px] w-[34px]" />
               </Link>
+
               <h1 className={s.title}>{help.title}</h1>
             </div>
+
             <div className={s.contentWrapper}>
               <div className="main-prose  small-mobile-prose big-mobile-prose tablet-prose desktop-prose prose-heading:first:mt-0 xs:w-full prose shrink-0 break-words sm:w-full md:w-[517px] md:pl-[58px] xl:w-[612px]">
                 <ReactMarkdown>{help && help.content}</ReactMarkdown>

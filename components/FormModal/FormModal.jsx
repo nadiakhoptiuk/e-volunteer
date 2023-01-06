@@ -37,15 +37,19 @@ export const FormModal = ({ show, error, closeModal }) => {
         >
           <Close className={s.close} />
         </button>
+
         {error ? (
           <div className={s.innerWrapper}>
             <h3 className={s.title}>{t('formModalTitleError')}</h3>
+
             <p className={s.text}>{t('formModalTextError')}</p>
+
             <MailError className={s.mail} />
           </div>
         ) : (
           <div className={s.innerWrapper}>
             <h3 className={s.title}>{t('formModalTitle')}</h3>
+
             <p className={s.text}>
               {t('formModalText')}
               <Link href="https://t.me/eevolunteer" legacyBehavior>
@@ -59,6 +63,7 @@ export const FormModal = ({ show, error, closeModal }) => {
                 </a>
               </Link>
             </p>
+
             <Mail className={s.mail} />
           </div>
         )}

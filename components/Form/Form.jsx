@@ -1,7 +1,7 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useTranslation } from 'next-i18next';
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslation } from 'next-i18next';
 import { useForm } from 'react-hook-form';
 import { sendMessage } from '../../utils/telegramApi';
 import { Schema } from '../../utils/schema';
