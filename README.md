@@ -1,48 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Електронний волонтер для допомоги біженцям в Естонії
 
-## Getting Started
+[Жива сторінка](https://e-volunteer.vercel.app/)
 
-First, run the development server:
+## Документація
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Інструкція для користування адміністративною панеллю DatoCMS](https://docs.google.com/document/d/1a2efvPB5CypQbueMePC9Kofa4vN35ceklX-_PpBcvbg/edit)
+- [Технічне завдання](https://docs.google.com/document/d/1sHNlGuPbGwLxpySgJk7JI2cPU31XmdUmWFzxjes7PvU/edit)
+- [Макет UI/UX дизайну](<https://www.figma.com/file/0L8vMVhlVXjVr44Wrd1dxA/E-VOLUNTEER-(Copy)?node-id=0%3A1&t=36Dg3xfbtPiYAVaU-1>)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+## Технології
 
-You can start editing the page by modifying `pages/index.js`. The page
-auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello). This
-endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are
-treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead
-of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js/) - your
-feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
-details.
+- ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+- DatoCMS
+- ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
+- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
