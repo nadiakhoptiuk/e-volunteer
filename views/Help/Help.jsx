@@ -16,7 +16,9 @@ export const Help = ({ title, button, EST, help, estModal, openModal }) => {
     <section className={`${s.sectionCommon} ${EST ? s.sectionEst : s.section}`}>
       <div className={s.wrapper}>
         <Flower className={`${EST ? s.flowerEst : s.flower}`} />
+
         <h2 className={s.content}>{help ? help.title : title}</h2>
+
         {EST ? (
           <ButtonLink
             button

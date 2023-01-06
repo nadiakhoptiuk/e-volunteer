@@ -28,6 +28,7 @@ export const Banner = ({ data }) => {
         <div className="bg-blueLight">
           <Container className={s.container}>
             <h2 className={s.title}>{data}</h2>
+
             <button
               className={s.button}
               onClick={closeBanner}

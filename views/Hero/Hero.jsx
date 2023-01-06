@@ -10,6 +10,7 @@ export const Hero = () => {
       <div className="container">
         <div className={s.wrapper}>
           <h1 className={s.title}>E-VOLUNTEER</h1>
+
           <p className={s.text}>{t('hero')}</p>
         </div>
       </div>

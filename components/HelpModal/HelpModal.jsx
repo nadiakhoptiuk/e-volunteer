@@ -80,6 +80,7 @@ export const HelpModal = ({
                   className="visually-hidden"
                   aria-label="hidden button"
                 ></button>
+
                 <button
                   type="button"
                   onClick={() => {
@@ -96,16 +97,19 @@ export const HelpModal = ({
                   <Dialog.Title as="h3" className={s.title}>
                     {estModalStatus ? 'Kallid Eestimaa elanikud!' : t('title')}
                   </Dialog.Title>
+
                   <p className={s.text}>
                     {estModalStatus
                       ? 'Kahjuks sõjapõgenikud Ukrainast jätkuvalt tulevad Eestisse ning nad vajavad teie abi ja tuge! Saate vaadata, mida inimesed vajavad, või pakkuda teie abi meie telegrammi kanalis.'
                       : t('first')}
                   </p>
+
                   <p className="mt-3">
                     {estModalStatus
                       ? 'Tavaliselt on need põhilised asjad:'
                       : t('third')}
                   </p>
+
                   <ul className={s.needsList}>
                     {estModalStatus
                       ? needs.map(item => (
@@ -119,8 +123,10 @@ export const HelpModal = ({
                           </li>
                         ))}
                   </ul>
+
                   <ModalFlower className={s.flower} />
                 </div>
+
                 <div className={s.facebookLinks}>
                   <ul>
                     {estModalStatus
@@ -149,6 +155,7 @@ export const HelpModal = ({
                           </li>
                         ))}
                   </ul>
+
                   <FlowerCategory className={s.flowerTab} />
                 </div>
               </Dialog.Panel>

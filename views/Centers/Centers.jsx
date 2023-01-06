@@ -7,7 +7,9 @@ export const Centers = ({ centers }) => {
     <section className={s.section}>
       <div className="container relative">
         <Flower className={s.flower} />
+
         <h2 className={s.title}>{centers?.titleAtPage}</h2>
+
         <ul className={s.list}>
           {centers?.receptionCenter?.map(
             ({ id, city, phoneNumber, centerTitle, address, href }) => {
@@ -28,6 +30,7 @@ export const Centers = ({ centers }) => {
                       <address className={s.address}>{address}</address>
                     )}
                   </a>
+
                   {phoneNumber && (
                     <a
                       rel="noopener noreferrer nofollow"
