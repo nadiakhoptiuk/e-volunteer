@@ -1,35 +1,65 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+// import { useEffect, useLayoutEffect, useState } from 'react';
 
-const useScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = useState(null);
+// const useScrollPosition = () => {
+//   const [scrollPosition, setScrollPosition] = useState(null);
 
-  useLayoutEffect(() => {
-    const stored = window.sessionStorage.getItem('scrollPosition');
+//   useLayoutEffect(() => {
+//     const stored = window.sessionStorage.getItem('scrollPosition');
 
-    setScrollPosition(stored ? JSON.parse(stored) : 0);
-  }, []);
+//     console.log('stored', JSON.parse(stored));
 
-  useLayoutEffect(() => {
-    window.sessionStorage.setItem(
-      'scrollPosition',
-      JSON.stringify(scrollPosition),
-    );
-  }, [scrollPosition]);
+//     console.log('1');
+//     console.log('scrollPosition', scrollPosition);
 
-  useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
+//     if (JSON.parse(stored) > 0) {
+//       console.log('stored > 0');
 
-    window.addEventListener('scroll', updatePosition);
-    updatePosition();
+//       setScrollPosition(JSON.parse(stored));
+//     } else {
+//       console.log('stored !> 0');
+//       setScrollPosition(0);
+//     }
+//     // setScrollPosition(JSON.parse(stored) ? JSON.parse(stored) : 0);
+//     console.log('scrollPosition', scrollPosition);
+//   }, []);
 
-    return () => {
-      window.removeEventListener('scroll', updatePosition);
-    };
-  }, []);
+//   useLayoutEffect(() => {
+//     console.log('2');
 
-  return scrollPosition;
-};
+//     if (scrollPosition !== null) {
+//       setScrollPosition(window.pageYOffset);
+//       console.log('upd state scrollPosition', scrollPosition);
+//     }
+//   }, [scrollPosition]);
 
-export default useScrollPosition;
+//   useEffect(() => {
+//     if (scrollPosition === null) return;
+
+//     window.sessionStorage.setItem(
+//       'scrollPosition',
+//       JSON.stringify(scrollPosition),
+//     );
+
+//     console.log('setStorage', scrollPosition);
+//   }, [scrollPosition]);
+
+//   useEffect(() => {
+//     console.log('3');
+//     console.log('scrollPosition', scrollPosition);
+
+//     const updatePosition = () => {
+//       setScrollPosition(window.pageYOffset);
+//     };
+
+//     window.addEventListener('scroll', updatePosition);
+//     updatePosition();
+
+//     return () => {
+//       window.removeEventListener('scroll', updatePosition);
+//     };
+//   }, []);
+
+//   return scrollPosition;
+// };
+
+// export default useScrollPosition;
