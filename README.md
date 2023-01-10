@@ -7,7 +7,7 @@
 ## Документація
 
 - [Інструкція для користування адміністративною панеллю DatoCMS](https://docs.google.com/document/d/1a2efvPB5CypQbueMePC9Kofa4vN35ceklX-_PpBcvbg/edit)
-- [Схема адмін панелі:](/public/image/structure%20of%20admin%20panel.jpg)
+- [Схема адмін панелі](/public/image/structure%20of%20admin%20panel.jpg)
 - [Технічне завдання](https://docs.google.com/document/d/1sHNlGuPbGwLxpySgJk7JI2cPU31XmdUmWFzxjes7PvU/edit)
 - [Макет UI/UX дизайну](<https://www.figma.com/file/0L8vMVhlVXjVr44Wrd1dxA/E-VOLUNTEER-(Copy)?node-id=0%3A1&t=36Dg3xfbtPiYAVaU-1>)
 
