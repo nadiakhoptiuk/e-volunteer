@@ -2,6 +2,8 @@
 
 [Жива сторінка](https://e-volunteer.vercel.app/)
 
+[Адмінпанель](https://volunteer-dev-project.admin.datocms.com/editor)
+
 ## Документація
 
 - [Інструкція для користування адміністративною панеллю DatoCMS](https://docs.google.com/document/d/1a2efvPB5CypQbueMePC9Kofa4vN35ceklX-_PpBcvbg/edit)
