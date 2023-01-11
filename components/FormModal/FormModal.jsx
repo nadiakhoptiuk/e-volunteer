@@ -52,10 +52,10 @@ export const FormModal = ({ show, error, closeModal }) => {
 
             <p className={s.text}>
               {t('formModalText')}
-              <Link href="https://t.me/eevolunteer" legacyBehavior>
+              <Link href="https://t.me/+PdtVt3syv6RkMDJi" legacyBehavior>
                 <a
-                  href="https://t.me/eevolunteer"
-                  aria-label="https://t.me/eevolunteer"
+                  href="https://t.me/+PdtVt3syv6RkMDJi"
+                  aria-label="https://t.me/+PdtVt3syv6RkMDJi"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
