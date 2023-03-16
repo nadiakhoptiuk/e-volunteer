@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Banner, HelpModal } from '@/components';
 import { Footer, Header } from 'layout';
 import { wrapper, main } from './Layout.module.css';
+
 const LinkToTop = dynamic(() =>
   import('../../components/LinkToTop/LinkToTop').then(mod => mod.LinkToTop),
 );

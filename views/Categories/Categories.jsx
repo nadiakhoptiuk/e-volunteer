@@ -1,30 +1,19 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
+import AOS from 'aos';
 import { useTranslation } from 'next-i18next';
 import PropTypes from 'prop-types';
+import { convertImage, toBase64 } from 'utils/blurDataURL';
 import { ButtonLink, Container } from '@/components';
+import 'aos/dist/aos.css';
 import s from './Categories.module.css';
 
 export const Categories = ({ articles }) => {
   const { t } = useTranslation('common');
 
-  const convertImage = (w, h) => `
-  <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <linearGradient id="g">
-        <stop stop-color="#333" offset="20%" />
-        <stop stop-color="#222" offset="50%" />
-        <stop stop-color="#333" offset="70%" />
-      </linearGradient>
-    </defs>
-    <rect width="${w}" height="${h}" fill="#333" />
-    <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-    <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-  </svg>`;
-
-  const toBase64 = str =>
-    typeof window === 'undefined'
-      ? Buffer.from(str).toString('base64')
-      : window.btoa(str);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section className={s.section}>
@@ -36,7 +25,7 @@ export const Categories = ({ articles }) => {
             const { id, description, image, alt } = cardInfo[0];
 
             return (
-              <article key={id} className={s.card}>
+              <article key={id} className={s.card} data-aos="fade-up">
                 <div className="mb-8 h-[220px] w-full overflow-hidden rounded-[20px]">
                   <Image
                     src={image.url}

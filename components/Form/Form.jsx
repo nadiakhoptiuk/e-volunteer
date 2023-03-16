@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'next-i18next';
 import { useForm } from 'react-hook-form';
 import { sendMessage } from '../../utils/telegramApi';
 import { Schema } from '../../utils/schema';
 import { FormModal, ScreenLoader, Container } from '..';
+import 'aos/dist/aos.css';
 import * as s from './Form.module.css';
 
 export const Form = () => {
@@ -15,6 +17,10 @@ export const Form = () => {
 
   const schema = Schema();
   const { t } = useTranslation('common');
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   function closeModal() {
     setIsOpen(false);
@@ -69,6 +75,7 @@ export const Form = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <>
       {isLoading && (
@@ -76,11 +83,12 @@ export const Form = () => {
           <p className={s.loading}>{t('loading')}</p>
         </ScreenLoader>
       )}
-      <section className={s.section}>
+      <section className={s.section} data-aos="fade-up">
         <Container className={s.container}>
           <div className={s.wrapper}>
             <h3 className={s.title}>{t('formTitle')}</h3>
             <p className={s.subTitle}>{t('formSubTitle')}</p>
+
             <form
               method="POST"
               name="contact"
@@ -95,6 +103,7 @@ export const Form = () => {
                   />
                   <p className={s.errorMsg}>{errors.name?.message}</p>
                 </div>
+
                 <div className={s.inputWrapper}>
                   <input
                     className={
@@ -105,6 +114,7 @@ export const Form = () => {
                   />
                   <p className={s.errorMsg}>{errors.phone?.message}</p>
                 </div>
+
                 <div className={s.inputWrapper}>
                   <input
                     className={
@@ -115,6 +125,7 @@ export const Form = () => {
                   />
                   <p className={s.errorMsg}>{errors.email?.message}</p>
                 </div>
+
                 <div className={s.inputWrapper}>
                   <textarea
                     className={
@@ -128,6 +139,7 @@ export const Form = () => {
                   </p>
                 </div>
               </div>
+
               <button
                 aria-label={t('formButton')}
                 className={s.button}

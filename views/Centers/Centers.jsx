@@ -1,10 +1,17 @@
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
 import Flower from '@/public/image/flower-centres.svg';
+import 'aos/dist/aos.css';
 import * as s from './Centres.module.css';
 
 export const Centers = ({ centers }) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <section className={s.section}>
+    <section className={s.section} data-aos="fade-up">
       <div className="container relative">
         <Flower className={s.flower} />
 
